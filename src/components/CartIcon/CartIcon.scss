@@ -1,0 +1,28 @@
+.cart-icon {
+  cursor: pointer;
+  position: relative;
+  width: 64px;
+  height: 64px;
+
+  .shopping-icon {
+    background-image: url('../../assets/shopping-cart.png');
+    background-size: 64px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .items-count {
+    background-color: #0080DE;
+    width: 25px;
+    height: 25px;
+    font-family: "Hurme Geometric Sans 3 W03 Bold";
+    padding: 5px 5px;
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+    top: 5px;
+    right: 0px;
+    font-size: .82rem;
+    color: white;
+  }
+}

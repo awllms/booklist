@@ -1,0 +1,23 @@
+.header {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+
+  .navigation {
+    margin-top: 0px;
+    font-family: "Cera GR Bold";
+    font-size: 1.25rem;
+  }
+  
+  .options {
+    display: flex;
+    align-items: center;
+
+    .option {
+      margin-right: 30px;
+    }
+    .option.last {
+      margin-right: 25px;
+    }
+  }
+}
