@@ -1,3 +1,47 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +54,34 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@font-face {
+  font-family: "Hurme Geometric Sans 3 W03 Bold";
+  src: url("/fonts/hurmebold/1b691f4637dd58c971711cd611f5f6bd.eot"); /* IE9*/
+  src: url("/fonts/hurmebold/1b691f4637dd58c971711cd611f5f6bd.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("/fonts/hurmebold/1b691f4637dd58c971711cd611f5f6bd.woff2") format("woff2"), /* chrome、firefox */
+  url("/fonts/hurmebold/1b691f4637dd58c971711cd611f5f6bd.woff") format("woff"), /* chrome、firefox */
+  url("/fonts/hurmebold/1b691f4637dd58c971711cd611f5f6bd.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("/fonts/hurmebold/1b691f4637dd58c971711cd611f5f6bd.svg#Hurme Geometric Sans 3 W03 Bold") format("svg"); /* iOS 4.1- */
+}
+
+@font-face {
+  font-family: "Cera GR Bold";
+  src: url("/fonts/cerabold/d191325cfe4f374d6f43147fd57ab2d4.eot"); /* IE9*/
+  src: url("/fonts/cerabold/d191325cfe4f374d6f43147fd57ab2d4.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("/fonts/cerabold/d191325cfe4f374d6f43147fd57ab2d4.woff2") format("woff2"), /* chrome、firefox */
+  url("/fonts/cerabold/d191325cfe4f374d6f43147fd57ab2d4.woff") format("woff"), /* chrome、firefox */
+  url("/fonts/cerabold/d191325cfe4f374d6f43147fd57ab2d4.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("/fonts/cerabold/d191325cfe4f374d6f43147fd57ab2d4.svg#Cera GR Bold") format("svg"); /* iOS 4.1- */
+}
+
+@font-face {
+  font-family: "Cera GR Light";
+  src: url("/fonts/ceralight/4c23d1c747b7c11cecbcc0bc4ecbed1a.eot"); /* IE9*/
+  src: url("/fonts/ceralight/4c23d1c747b7c11cecbcc0bc4ecbed1a.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("/fonts/ceralight/4c23d1c747b7c11cecbcc0bc4ecbed1a.woff2") format("woff2"), /* chrome、firefox */
+  url("/fonts/ceralight/4c23d1c747b7c11cecbcc0bc4ecbed1a.woff") format("woff"), /* chrome、firefox */
+  url("/fonts/ceralight/4c23d1c747b7c11cecbcc0bc4ecbed1a.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("/fonts/ceralight/4c23d1c747b7c11cecbcc0bc4ecbed1a.svg#Cera GR Light") format("svg"); /* iOS 4.1- */
 }
