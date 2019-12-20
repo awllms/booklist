@@ -58,6 +58,27 @@ h4 {
   font-size: .98rem;
 }
 
+button {
+  /* min-width: 165px; */
+  width: auto;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  padding: 0 30px;
+  background-color: black;
+  color: white;
+  font-family: "Hurme Geometric Sans 3 W03 Bold";
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0080DE;
+}
+
 span {
   font-family: "Hurme Geometric Sans 3 W03 Lt";
 }

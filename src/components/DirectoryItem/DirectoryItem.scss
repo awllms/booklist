@@ -1,13 +1,10 @@
 .directory-item {
   position: relative;
-  
-  .directory-item-image {
-    // background-color: #E5E5E5;
-    // border-radius: 10px;
-    // width: auto;
-    // height: 200px;
+  cursor: pointer;
 
-    img {
+  .directory-item-image {
+
+    .image {
       border-radius: 10px;
       max-width: 100%;
       height: auto;
@@ -17,5 +14,23 @@
   h4 {
     margin-top: 10px;
     margin-bottom: 2px;
+  }
+  
+  .custom-button {
+    display: none;
+    width: 90%;
+    top: 58%;
+    right: 5%;
+    position: absolute;
+  }
+
+  &:hover {
+    .custom-button {
+      display: flex;
+    }
+    
+    .image {
+      opacity: 0.8;
+    }
   }
 }

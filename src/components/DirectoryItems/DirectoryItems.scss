@@ -11,23 +11,15 @@
     // display: flex;
     // justify-content: space-between;
     // flex-wrap: wrap;
-    // .slick-prev {
-    //   left: -32px;
-    // }
     
     .slick-prev:before, .slick-next:before {
       color: black;
-      // font-size: 28px;
       opacity: 1;
     }
 
     .slick-slide {
       padding: 0 5px;
     }
-
-    // .slick-prev, .slick-next {
-    //   top: 95px;
-    // }
 
     .slick-dots li button:before {
       font-size: 13px;
