@@ -1,0 +1,28 @@
+.directory-items-container {
+  margin-bottom: 60px; 
+
+  h3 {
+    display: flex;
+    margin-bottom: 30px;
+  }
+  .directory-items {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  
+    .directory-item {
+      min-width: 200px;
+  
+      .directory-item-image {
+        background-color: #E5E5E5;
+        min-height: 200px;
+        max-height: 200px;
+      }
+      h4 {
+        margin-top: 10px;
+        margin-bottom: 2px;
+      }
+    }
+  }
+}
