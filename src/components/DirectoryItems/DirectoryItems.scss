@@ -5,6 +5,7 @@
     display: flex;
     margin-bottom: 30px;
   }
+  
   .directory-items {
     width: 100%;
     display: flex;
@@ -16,9 +17,11 @@
   
       .directory-item-image {
         background-color: #E5E5E5;
+        border-radius: 10px;
         min-height: 200px;
         max-height: 200px;
       }
+
       h4 {
         margin-top: 10px;
         margin-bottom: 2px;
