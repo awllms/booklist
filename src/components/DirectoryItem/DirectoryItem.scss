@@ -1,0 +1,21 @@
+.directory-item {
+  position: relative;
+  
+  .directory-item-image {
+    // background-color: #E5E5E5;
+    // border-radius: 10px;
+    // width: auto;
+    // height: 200px;
+
+    img {
+      border-radius: 10px;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  h4 {
+    margin-top: 10px;
+    margin-bottom: 2px;
+  }
+}
