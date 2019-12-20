@@ -59,7 +59,6 @@ h4 {
 }
 
 button {
-  /* min-width: 165px; */
   width: auto;
   display: flex;
   justify-content: center;

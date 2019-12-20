@@ -1,5 +1,7 @@
 import React from 'react';
 
+import CustomButton from '../CustomButton/CustomButton';
+
 
 import './DirectoryItem.scss';
 
@@ -11,7 +13,7 @@ const DirectoryItem = ({ photo, name, price }) => {
       </div>
       <h4>{ name }</h4>
       <span>{ price }</span>
-      <button className='custom-button'>Add To Cart</button>
+      <CustomButton>Add To Cart</CustomButton>
     </div>
   );
 };
