@@ -16,6 +16,8 @@ const DirectoryItems = ({ title }) => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
+    swipeToSlide: true,
+    arrows: false,
     responsive: [
       {
         breakpoint: 900,
@@ -54,7 +56,7 @@ const DirectoryItems = ({ title }) => {
         </Slider>
       </div>
     </div>
-  )
+  );
 };
 
 export default DirectoryItems;

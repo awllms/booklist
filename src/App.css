@@ -82,10 +82,17 @@ span {
   font-family: "Hurme Geometric Sans 3 W03 Lt";
 }
 
+ul li {
+  font-family: "Cera GR Light";
+  font-size: 0.94rem;
+  color: black;
+}
+
 .main-content {
   margin: 0 auto;
   text-align: center;
   padding: 0px 100px;
+  max-width: 1720px;
 }
 
 @media only screen and (max-width: 1500px) {

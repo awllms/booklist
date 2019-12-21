@@ -2,15 +2,10 @@
   margin-bottom: 60px;
 
   .image-placeholder {
-    border-radius: 10px;
-    background-color: #E5E5E5;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
 
-    img {
+    .slider-image {
       border-radius: 10px;
-      width: 100%;
+      max-width: 100%;
     }
   }
 

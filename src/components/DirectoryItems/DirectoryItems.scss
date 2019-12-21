@@ -13,7 +13,8 @@
     // flex-wrap: wrap;
     
     .slick-prev:before, .slick-next:before {
-      color: black;
+      // color: black;
+      font-size:40px;
       opacity: 1;
     }
 
@@ -28,6 +29,10 @@
 
     .slick-dots li.slick-active button:before {
       opacity: 1;
+    }
+
+    .slick-prev {
+      left: -42px;
     }
   }
 }
