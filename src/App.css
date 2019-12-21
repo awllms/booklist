@@ -88,6 +88,10 @@ ul li {
   color: black;
 }
 
+img {
+  border-radius: 10px;
+}
+
 .main-content {
   margin: 0 auto;
   text-align: center;
