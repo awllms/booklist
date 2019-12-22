@@ -29,6 +29,15 @@
     .nav-option { 
       font-family: "Cera GR Bold";
       font-size: 1.125rem;
+      
+      .cart-icon {
+        display: flex;
+        margin: auto;
+      }
+
+      .shopping-icon {
+        background-size: 44px;
+      }
     }
   }
 }

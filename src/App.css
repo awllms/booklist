@@ -154,12 +154,17 @@ img {
   .directory-items-container .directory-items .slick-prev, .directory-items-container .directory-items .slick-next {
     top: 130px;
   }
+  
   .cart-icon {
     display: none;
   }
 
   .header h1 {
     margin-left: 20px;
+  }
+
+  .nav-dropdown {
+    left: 198px;
   }
 
   .nav-icon {
@@ -172,6 +177,11 @@ img {
   .header h1 {
     margin-left: 0px;
   }
+
+  .nav-dropdown {
+    left: 176px;
+  } 
+
   .nav-icon {
     left: 207px;
   }

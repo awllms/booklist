@@ -1,5 +1,7 @@
 import React from 'react';
 
+import CartIcon from '../CartIcon/CartIcon';
+
 import './NavDropDown.scss';
 
 const NavDropDown = () => {
@@ -9,7 +11,7 @@ const NavDropDown = () => {
         <li><a href='/' className='nav-option'>Shop</a><div className='nav-border'></div></li>
         <li><a href='/' className='nav-option'>SignIn</a><div className='nav-border'></div></li>
         <li><a href='/' className='nav-option'>Contact</a><div className='nav-border'></div></li>
-        <li><a href='/' className='nav-option'>Cart (99)</a></li>
+        <li><a href='/' className='nav-option'><CartIcon /></a></li>
       </ul>
     </div>
   );
