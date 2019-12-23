@@ -48,6 +48,12 @@ h1 {
   line-height: 0.65;
 }
 
+h2 {
+  font-family: "Hurme Geometric Sans 3 W03 Bold";
+  font-size: 2.5rem;
+  line-height: 0.65;
+}
+
 h3 {
   font-family: "Hurme Geometric Sans 3 W03 Bold";
   font-size: 1.56rem;
@@ -154,7 +160,7 @@ img {
   .directory-items-container .directory-items .slick-prev, .directory-items-container .directory-items .slick-next {
     top: 130px;
   }
-  
+
   .cart-icon {
     display: none;
   }

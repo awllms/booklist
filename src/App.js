@@ -1,7 +1,10 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
+
+import HomePage from './pages/HomePage/Homepage';
+import ProductsPage from './pages/ProductsPage/ProductsPage';
 import Header from './components/Header/Header';
-import ImageSlider from './components/ImageSlider/ImageSlider';
-import Directory from './components/Directory/Directory';
+
 import Footer from './components/Footer/Footer';
 
 import './App.css';
@@ -11,8 +14,10 @@ const App = () => {
     <React.Fragment>
       <div className="main-content">
         <Header />
-        <ImageSlider />
-        <Directory />
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route path='/products' component={ProductsPage} />
+        </Switch>
       </div>
       <Footer />
     </React.Fragment>

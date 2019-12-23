@@ -1,0 +1,98 @@
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40px;
+
+  .product-item-top {
+    display: flex;
+    margin-bottom: 60px;
+
+    .product-image {
+      width: 50%;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    .product-details {
+      margin-left: 40px;
+
+      h2 {
+        display: flex;
+        margin-bottom: 15px;
+      }
+
+      h3 {
+        font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        color: #AAAAAA;
+        font-size: 1.25rem;
+        margin-bottom: 15px;
+      }
+
+      .product-details-text {
+        display: flex;
+        font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+        color: #AAAAAA;
+        margin-bottom: 10px;
+
+        a {
+          font-weight: bolder;
+          color: #0080DE;
+
+          &:hover {
+            color: black;
+          }
+        }
+
+        .product-details-text-bold {
+          font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+          font-weight: bolder;
+          color: black;
+          padding-right: 5px;
+        }
+      }
+
+      .product-price {
+        margin-top: 15px;
+        margin-bottom: 20px;
+        display: flex;
+        font-family: "Hurme Geometric Sans 3 W03 Bold";
+        font-size: 2.5rem;
+      }
+      .custom-button {
+        width: 100%;
+        margin-bottom: 20px;
+        height: 60px;
+      }
+
+      .product-share {
+        display: flex;
+
+        .share-text {
+          font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+          font-weight: bolder;
+        }
+      }
+    }
+  }
+  .product-item-bottom {
+    .product-description {
+      h3 {
+        text-align: left;
+        font-size: 1.20rem;
+        margin-bottom: 30px;
+      }
+      .product-description-text {
+        p {
+          text-align: left;
+          margin-bottom: 20px;
+          color: #6A6A6A;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}
