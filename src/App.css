@@ -51,7 +51,7 @@ h1 {
 h2 {
   font-family: "Hurme Geometric Sans 3 W03 Bold";
   font-size: 2.5rem;
-  line-height: 0.65;
+  line-height: 0.8;
 }
 
 h3 {
@@ -129,6 +129,35 @@ img {
   .footer-top h1 {
     margin-bottom: 30px;
   }
+}
+
+@media only screen and (max-width: 770px) {
+  .product-item .product-item-top {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .product-item .product-item-top .product-image {
+    width: 100%;
+  }
+
+  .product-item .product-item-top .product-details {
+    margin-left: 0px;
+  }
+
+  .product-item .product-item-top .product-details h2 {
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .product-item .product-item-top .product-details .product-details-text {
+    justify-content: center;
+  }
+
+  .product-item .product-item-top .product-details .product-price {
+    justify-content: center;
+  }
+
 }
 
 @media only screen and (max-width: 720px) {

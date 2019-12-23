@@ -40,29 +40,29 @@ const ProductItem = ({ match }) => {
             <div className='product-description-text'>
             <p>New York Times Best Seller</p>
 
-<p>Joining the ranks of The Life-Changing Magic of Not Giving a F*ck, The Subtle Art of Not Giving a F*ck, 
-You Are a Badass, and F*ck Feelings is this refreshing, BS-free self-empowerment guide that offers an 
-honest, no-nonsense, tough-love approach to help you move past self-imposed limitations.</p>
+            <p>Joining the ranks of The Life-Changing Magic of Not Giving a F*ck, The Subtle Art of Not Giving a F*ck, 
+            You Are a Badass, and F*ck Feelings is this refreshing, BS-free self-empowerment guide that offers an 
+            honest, no-nonsense, tough-love approach to help you move past self-imposed limitations.</p>
 
-<p>Are you tired of feeling f*cked up? If you are, Gary John Bishop has the answer. In this straightforward 
-handbook, he gives you the tools and advice you need to demolish the slag weighing you down and 
-become the truly unf*cked version of yourself. “Wake up to the miracle you are,” he directs. “Here’s 
-what you’ve forgotten: You’re a f*cking miracle of being.” It isn’t other people that are standing in your 
-way; it isn’t even your circumstances that are blocking your ability to thrive. It’s yourself and the negative 
-self-talk you keep telling yourself.</p> 
+            <p>Are you tired of feeling f*cked up? If you are, Gary John Bishop has the answer. In this straightforward 
+            handbook, he gives you the tools and advice you need to demolish the slag weighing you down and 
+            become the truly unf*cked version of yourself. “Wake up to the miracle you are,” he directs. “Here’s 
+            what you’ve forgotten: You’re a f*cking miracle of being.” It isn’t other people that are standing in your 
+            way; it isn’t even your circumstances that are blocking your ability to thrive. It’s yourself and the negative 
+            self-talk you keep telling yourself.</p> 
 
-<p>In Unf*ck Yourself, Bishop leads you through a series of seven assertions:</p> 
+            <p>In Unf*ck Yourself, Bishop leads you through a series of seven assertions:</p> 
 
-<p>I am willing</p>
-<p>I am wired to win</p> 
-<p>I got this</p> 
-<p>I embrace the uncertainty</p> 
-<p>I am not my thoughts; I am what I do</p> 
-<p>I am relentless</p> 
-<p>I expect nothing and accept everything</p> 
-<p>Lead the life you were meant to have - Unf*ck Yourself.</p> 
+            <p>I am willing</p>
+            <p>I am wired to win</p> 
+            <p>I got this</p> 
+            <p>I embrace the uncertainty</p> 
+            <p>I am not my thoughts; I am what I do</p> 
+            <p>I am relentless</p> 
+            <p>I expect nothing and accept everything</p> 
+            <p>Lead the life you were meant to have - Unf*ck Yourself.</p> 
 
-<p>&copy; Gary John Bishop (P)2017 HarperCollins Publishers</p>
+            <p>&copy; Gary John Bishop (P)2017 HarperCollins Publishers</p>
 
             </div>
           </div>
