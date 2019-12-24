@@ -8,11 +8,11 @@ import './ProductItem.scss';
 
 
 const ProductItem = ({ match }) => {
-  console.log(match)
+  // console.log(match)
   return (
     <React.Fragment>
       <BreadCrumbNav />
-      <div className='product-item'>
+      <section className='product-item'>
         <div className='product-item-top'>
           <div className='product-image'>
             <img src={productImage} alt='book' />
@@ -67,7 +67,7 @@ const ProductItem = ({ match }) => {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </React.Fragment>
   );
 };

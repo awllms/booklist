@@ -4,7 +4,6 @@ import { Route, Switch } from 'react-router-dom';
 import HomePage from './pages/HomePage/Homepage';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import Header from './components/Header/Header';
-
 import Footer from './components/Footer/Footer';
 
 import './App.css';
@@ -22,6 +21,7 @@ const App = () => {
       <Footer />
     </React.Fragment>
   );
-}
+};
+
 
 export default App;

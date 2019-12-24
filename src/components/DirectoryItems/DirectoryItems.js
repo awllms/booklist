@@ -3,13 +3,11 @@ import Slider from 'react-slick';
 import DirectoryItem from '../DirectoryItem/DirectoryItem';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import photo from '../../assets/product.jpg';
 
 import './DirectoryItems.scss';
 
 
-const DirectoryItems = ({ title }) => {
-
+const DirectoryItems = ({ title, items }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -48,11 +46,11 @@ const DirectoryItems = ({ title }) => {
       <h3>{ title }</h3>
       <div className='directory-items'>
         <Slider { ...settings }>
-          <DirectoryItem photo={photo} name={'Unfu*k Yourself'} price={`$10`} />
-          <DirectoryItem photo={photo} name={'Talking to Strangers'} price={`$10`} />
-          <DirectoryItem photo={photo} name={'Outliers'} price={`$10`} />
-          <DirectoryItem photo={photo} name={'Black Swan'} price={`$10`} />
-          <DirectoryItem photo={photo} name={'Thinking Fast Slow'} price={`$10`} />
+          {
+            items.map((item) => (
+            <DirectoryItem key={item.id} item={item} />
+            ))
+          }
         </Slider>
       </div>
     </div>

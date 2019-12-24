@@ -1,21 +1,24 @@
 import React from 'react';
-
+import { withRouter } from 'react-router-dom';
 import CustomButton from '../CustomButton/CustomButton';
 
 
 import './DirectoryItem.scss';
 
-const DirectoryItem = ({ photo, name, price }) => {
+const DirectoryItem = ({ item, history, match }) => {
+  const { title, imageUrl, price } = item;
   return (
     <div className='directory-item'>
-      <div className='directory-item-image'>
-        <img className='image' src={ photo } alt='products' />
+      <div className='directory-item-image' onClick={() => history.push(`${match.url}${item.routeName}`)}>
+        <img className='image' src={ imageUrl } alt='products' />
       </div>
-      <h4>{ name }</h4>
-      <span>{ price }</span>
+      <div className='directory-meta' onClick={() => history.push(`${match.url}${item.routeName}`)}>
+        <h4>{ title }</h4>
+        <span>${ price }</span>
+      </div>
       <CustomButton>Add To Cart</CustomButton>
     </div>
   );
 };
 
-export default DirectoryItem;
+export default withRouter(DirectoryItem);

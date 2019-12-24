@@ -8,7 +8,7 @@ const HomePage = () => {
       <ImageSlider />
       <Directory />
     </React.Fragment>
-  )
+  );
 };
 
 export default HomePage;
