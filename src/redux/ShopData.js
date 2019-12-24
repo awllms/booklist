@@ -2,7 +2,7 @@ const SHOP_DATA = {
   products: [
     {
       id: 1,
-      title: 'UnFu*k YourSelf',
+      title: 'UnFu*k Yourself',
       imageUrl: 'https://i.ibb.co/f2c9W8h/product.jpg',
       subTitle: 'Get Out Of Your Head and Into Your Life',
       author: 'Gary John Bishop',
@@ -39,7 +39,8 @@ const SHOP_DATA = {
       <p>&copy; Gary John Bishop (P)2017 HarperCollins Publishers</p>`,
       timesSold: 5,
       available: true,
-      routeName: 'products/unfu*k-yourself/1',
+      routeName: 'products/' + encodeURIComponent('UnFu*k YourSelf'.replace(/\s/g, '-')
+                                                                   .toLowerCase()),
       categories: {
         bestSeller: true,
         comingSoon: false,
@@ -86,7 +87,7 @@ const SHOP_DATA = {
       <p>&copy; 2019 Malcolm Gladwell (P)2019 Hachette Audio</p>`,
       timesSold: 4,
       available: true,
-      routeName: 'products/talking-to-strangers/2',
+      routeName: 'products/' + encodeURIComponent('Talking to Strangers'.replace(/\s/g, '-').toLowerCase()),
       categories: {
         bestSeller: true,
         comingSoon: true,
@@ -135,7 +136,7 @@ const SHOP_DATA = {
       <p>&copy; 2015 Yuval Noah Harari (P)2017 HarperCollins Publishers</p>`,
       timesSold: 4,
       available: true,
-      routeName: 'products/sapiens/3',
+      routeName: 'products/' + encodeURIComponent('Sapiens'.replace(/\s/g, '-').toLowerCase()),
       categories: {
         bestSeller: true,
         comingSoon: false,
@@ -188,7 +189,7 @@ const SHOP_DATA = {
       <p>&copy; 2017 Matthew Walker (P)2017 Simon & Schuster, Inc.</p>`,
       timesSold: 3,
       available: true,
-      routeName: 'products/why-we-sleep/4',
+      routeName: 'products/' + encodeURIComponent('Why We Sleep'.replace(/\s/g, '-').toLowerCase()),
       categories: {
         bestSeller: false,
         comingSoon: true,
@@ -243,7 +244,7 @@ const SHOP_DATA = {
       <p>&copy; 2010 Nassim Nicholas Taleb	(P)2018 Random House Audio.</p>`,
       timesSold: 1,
       available: true,
-      routeName: 'products/black-swan/5',
+      routeName: 'products/' + encodeURIComponent('The Black Swan'.replace(/\s/g, '-').toLowerCase()),
       categories: {
         bestSeller: true,
         comingSoon: true,
@@ -277,7 +278,7 @@ const SHOP_DATA = {
       <p>&copy; 1988 Paulo Coelho (P)2005 HarperCollins Publishers</p>`,
       timesSold: 3,
       available: true,
-      routeName: 'products/the-alchemist/6',
+      routeName: 'products/' + encodeURIComponent('The Alchemist'.replace(/\s/g, '-').toLowerCase()),
       categories: {
         bestSeller: true,
         comingSoon: true,
@@ -326,7 +327,7 @@ const SHOP_DATA = {
       <p>&copy; 2014 Peter Thiel (P)2014 Random House Audio.</p>`,
       timesSold: 0,
       available: true,
-      routeName: 'products/zero-to-one/7',
+      routeName: 'products/' + encodeURIComponent('Zero to One'.replace(/\s/g, '-').toLowerCase()),
       categories: {
         bestSeller: true,
         comingSoon: true,
@@ -374,7 +375,7 @@ const SHOP_DATA = {
       timesSold: 4,
       available: true,
       comingSoon: false,
-      routeName: 'products/thinking-fast-slow/8',
+      routeName: 'products/' + encodeURIComponent('Thinking, Fast and Slow'.replace(/\s/g, '-').toLowerCase()),
       categories: {
         bestSeller: false,
         comingSoon: false,

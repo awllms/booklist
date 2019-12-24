@@ -1,13 +1,15 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import './BreadCrumbNav.scss';
 
-const BreadCrumbNav = () => {
+const BreadCrumbNav = ({ history, title }) => {
   return (
     <div className='breadcrumb-nav'>
-      <h4>Home / <span className='current-page'>UnFu*ck Yourself</span></h4>
+      <h4 onClick={() => history.push('/')}>Home /</h4>
+      <span className='current-page'>{title}</span>
     </div>
   );
 };
 
-export default BreadCrumbNav;
+export default withRouter(BreadCrumbNav);

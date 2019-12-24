@@ -18,11 +18,13 @@
     }
 
     .product-details {
+      width: 50%;
       margin-left: 40px;
 
       h2 {
-        display: flex;
+        text-align: left;
         margin-bottom: 15px;
+        line-height: 1;
       }
 
       h3 {
@@ -30,6 +32,7 @@
         color: #AAAAAA;
         font-size: 1.25rem;
         margin-bottom: 15px;
+        text-align: left;
       }
 
       .product-details-text {

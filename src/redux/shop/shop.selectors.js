@@ -31,3 +31,10 @@ export const selectShopComingSoon = createSelector(
       .filter(product => product.categories.comingSoon === true)
       .filter((product, index) => index < 6)
 );
+
+export const selectProduct = productUrlParam => createSelector(
+  [selectShopProducts],
+  products => 
+    products.filter(product => '/' + product.routeName === productUrlParam)
+);
+ 

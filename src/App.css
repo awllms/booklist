@@ -51,7 +51,7 @@ h1 {
 h2 {
   font-family: "Hurme Geometric Sans 3 W03 Bold";
   font-size: 2.5rem;
-  line-height: 0.8;
+  line-height: 1;
 }
 
 h3 {
@@ -143,11 +143,17 @@ img {
 
   .product-item .product-item-top .product-details {
     margin-left: 0px;
+    width: 100%;
   }
 
   .product-item .product-item-top .product-details h2 {
     margin-top: 20px;
     justify-content: center;
+    text-align: center;
+  }
+
+  .product-item .product-item-top .product-details h3{
+    text-align: center;
   }
 
   .product-item .product-item-top .product-details .product-details-text {

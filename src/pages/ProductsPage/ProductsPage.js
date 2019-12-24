@@ -8,7 +8,7 @@ import './ProductPage.scss';
 const ProductsPage = ({ match }) => {
   return (
     <Switch>
-      <Route path={`${match.path}/:productId`} component={ProductItem} />
+      <Route path={`${match.path}/:productTitle`} component={ProductItem} />
       <Route path={`${match.path}`} component={ProductsOverview} />
     </Switch>
   );

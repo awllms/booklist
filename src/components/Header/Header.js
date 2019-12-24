@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import CartIcon from '../CartIcon/CartIcon';
 import CartDropDown from '../CartDropDown/CartDropDown';
@@ -8,12 +9,12 @@ import NavDropDown from '../NavDropDown/NavDropDown';
 import '../../assets/shopping-cart.png';
 import './Header.scss';
 
-const Header = () => {
+const Header = ({ history }) => {
   const [hidden, setHidden] = useState(true);
   const [navHidden, setNavHidden] = useState(true);
   return (
     <header className='header'>
-      <h1>BookList</h1>
+      <h1 onClick={() => history.push('/')}>BookList</h1>
       <NavIcon navHidden={navHidden} setNavHidden={setNavHidden} />
       { navHidden ? null : <NavDropDown />}
       <nav className='navigation'>
@@ -30,4 +31,4 @@ const Header = () => {
   )
 };
 
-export default Header;
+export default withRouter(Header);
