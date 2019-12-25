@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import HomePage from './pages/HomePage/Homepage';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
+import ShopPage from './pages/ShopPage/ShopPage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
@@ -16,6 +17,7 @@ const App = () => {
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/products' component={ProductsPage} />
+          <Route path='/shop' component={ShopPage} />
         </Switch>
       </div>
       <Footer />

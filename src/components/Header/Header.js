@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 import CartIcon from '../CartIcon/CartIcon';
 import CartDropDown from '../CartDropDown/CartDropDown';
@@ -19,7 +19,9 @@ const Header = ({ history }) => {
       { navHidden ? null : <NavDropDown />}
       <nav className='navigation'>
         <div className='options'>
-          <a href='/' className='option'>Shop</a>
+          <Link className='option' to='/shop'>
+            Shop
+          </Link>
           <a href='/' className='option'>SignIn</a>
           <a href='/' className='option last'>Contact</a>
 

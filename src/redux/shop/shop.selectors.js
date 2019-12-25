@@ -7,13 +7,17 @@ export const selectShopProducts = createSelector(
   shop => shop.products
 );
 
+export const selectShopCategories = createSelector(
+  [selectShop],
+  shop => shop.categories
+);
+
 export const selectShopBestSellers = createSelector(
   [selectShopProducts],
   products => 
     products
       .slice()
       .sort((a, b) => b.timesSold - a.timesSold)
-      .filter((product, index) => index < 6)
 );
 
 export const selectShopNewReleases = createSelector(
@@ -21,7 +25,6 @@ export const selectShopNewReleases = createSelector(
   products => 
     products
       .filter(product => product.categories.newRelease === true)
-      .filter((product, index) => index < 6)
 );
 
 export const selectShopComingSoon = createSelector(
@@ -29,12 +32,19 @@ export const selectShopComingSoon = createSelector(
   products => 
     products
       .filter(product => product.categories.comingSoon === true)
-      .filter((product, index) => index < 6)
 );
 
 export const selectProduct = productUrlParam => createSelector(
   [selectShopProducts],
   products => 
     products.filter(product => '/' + product.routeName === productUrlParam)
+);
+
+export const selectAllProductCategories = createSelector(
+  [selectShopProducts, selectShopCategories],
+  (products, categories) => Object.keys(categories).map(keys => {
+    return [{ categoryName: categories[keys].name, 
+              items: products.filter(product => product.categories[keys] === true)}];
+  })
 );
  

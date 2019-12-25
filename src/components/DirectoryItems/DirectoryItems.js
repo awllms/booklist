@@ -46,9 +46,10 @@ const DirectoryItems = ({ title, items }) => {
       <h3>{ title }</h3>
       <div className='directory-items'>
         <Slider { ...settings }>
-          {
-            items.map((item) => (
-            <DirectoryItem key={item.id} item={item} />
+          {items
+            .filter((item, index) => index < 6)
+            .map((item) => (
+              <DirectoryItem key={item.id} item={item} />
             ))
           }
         </Slider>

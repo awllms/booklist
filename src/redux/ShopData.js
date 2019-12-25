@@ -39,7 +39,8 @@ const SHOP_DATA = {
       <p>&copy; Gary John Bishop (P)2017 HarperCollins Publishers</p>`,
       timesSold: 5,
       available: true,
-      routeName: 'products/' + encodeURIComponent('UnFu*k YourSelf'.replace(/\s/g, '-')
+      routeName: 'products/' + encodeURIComponent('UnFu*k YourSelf'.replace(/[\s]/g, '-')
+                                                                   .replace(/,/g, '')
                                                                    .toLowerCase()),
       categories: {
         bestSeller: true,
@@ -87,7 +88,9 @@ const SHOP_DATA = {
       <p>&copy; 2019 Malcolm Gladwell (P)2019 Hachette Audio</p>`,
       timesSold: 4,
       available: true,
-      routeName: 'products/' + encodeURIComponent('Talking to Strangers'.replace(/\s/g, '-').toLowerCase()),
+      routeName: 'products/' + encodeURIComponent('Talking to Strangers'.replace(/[\s]/g, '-')
+                                                                        .replace(/,/g, '')
+                                                                        .toLowerCase()),
       categories: {
         bestSeller: true,
         comingSoon: true,
@@ -136,7 +139,9 @@ const SHOP_DATA = {
       <p>&copy; 2015 Yuval Noah Harari (P)2017 HarperCollins Publishers</p>`,
       timesSold: 4,
       available: true,
-      routeName: 'products/' + encodeURIComponent('Sapiens'.replace(/\s/g, '-').toLowerCase()),
+      routeName: 'products/' + encodeURIComponent('Sapiens'.replace(/[\s]/g, '-')
+                                                           .replace(/,/g, '')
+                                                           .toLowerCase()),
       categories: {
         bestSeller: true,
         comingSoon: false,
@@ -189,7 +194,9 @@ const SHOP_DATA = {
       <p>&copy; 2017 Matthew Walker (P)2017 Simon & Schuster, Inc.</p>`,
       timesSold: 3,
       available: true,
-      routeName: 'products/' + encodeURIComponent('Why We Sleep'.replace(/\s/g, '-').toLowerCase()),
+      routeName: 'products/' + encodeURIComponent('Why We Sleep'.replace(/[\s]/g, '-')
+                                                                .replace(/,/g, '')
+                                                                .toLowerCase()),
       categories: {
         bestSeller: false,
         comingSoon: true,
@@ -244,7 +251,9 @@ const SHOP_DATA = {
       <p>&copy; 2010 Nassim Nicholas Taleb	(P)2018 Random House Audio.</p>`,
       timesSold: 1,
       available: true,
-      routeName: 'products/' + encodeURIComponent('The Black Swan'.replace(/\s/g, '-').toLowerCase()),
+      routeName: 'products/' + encodeURIComponent('The Black Swan'.replace(/[\s]/g, '-')
+                                                                  .replace(/,/g, '')
+                                                                  .toLowerCase()),
       categories: {
         bestSeller: true,
         comingSoon: true,
@@ -278,7 +287,9 @@ const SHOP_DATA = {
       <p>&copy; 1988 Paulo Coelho (P)2005 HarperCollins Publishers</p>`,
       timesSold: 3,
       available: true,
-      routeName: 'products/' + encodeURIComponent('The Alchemist'.replace(/\s/g, '-').toLowerCase()),
+      routeName: 'products/' + encodeURIComponent('The Alchemist'.replace(/[\s]/g, '-')
+                                                                 .replace(/,/g, '')
+                                                                 .toLowerCase()),
       categories: {
         bestSeller: true,
         comingSoon: true,
@@ -327,7 +338,9 @@ const SHOP_DATA = {
       <p>&copy; 2014 Peter Thiel (P)2014 Random House Audio.</p>`,
       timesSold: 0,
       available: true,
-      routeName: 'products/' + encodeURIComponent('Zero to One'.replace(/\s/g, '-').toLowerCase()),
+      routeName: 'products/' + encodeURIComponent('Zero to One'.replace(/[\s]/g, '-')
+                                                               .replace(/,/g, '')
+                                                               .toLowerCase()),
       categories: {
         bestSeller: true,
         comingSoon: true,
@@ -375,14 +388,27 @@ const SHOP_DATA = {
       timesSold: 4,
       available: true,
       comingSoon: false,
-      routeName: 'products/' + encodeURIComponent('Thinking, Fast and Slow'.replace(/\s/g, '-').toLowerCase()),
+      routeName: 'products/' + encodeURIComponent('Thinking, Fast and Slow'.replace(/[\s]/g, '-')
+                                                                           .replace(/,/g, '')
+                                                                           .toLowerCase()),
       categories: {
         bestSeller: false,
         comingSoon: false,
         newRelease: true
       }
     }
-  ]
+  ],
+  categories: {
+    bestSeller: {
+      name: 'Best Sellers'
+    },
+    comingSoon: {
+      name: 'Coming Soon'
+    },
+    newRelease: {
+      name: 'New Releases'
+    },
+  }
 };
 
 export default SHOP_DATA;
