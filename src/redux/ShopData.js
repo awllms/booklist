@@ -40,7 +40,7 @@ const SHOP_DATA = {
       timesSold: 5,
       available: true,
       routeName: 'products/' + encodeURIComponent('UnFu*k YourSelf'.replace(/[\s]/g, '-')
-                                                                   .replace(/,/g, '')
+                                                                   .replace(/[,*]/g, '')
                                                                    .toLowerCase()),
       categories: {
         bestSeller: true,
@@ -89,7 +89,7 @@ const SHOP_DATA = {
       timesSold: 4,
       available: true,
       routeName: 'products/' + encodeURIComponent('Talking to Strangers'.replace(/[\s]/g, '-')
-                                                                        .replace(/,/g, '')
+                                                                        .replace(/[,*]/g, '')
                                                                         .toLowerCase()),
       categories: {
         bestSeller: true,
@@ -140,7 +140,7 @@ const SHOP_DATA = {
       timesSold: 4,
       available: true,
       routeName: 'products/' + encodeURIComponent('Sapiens'.replace(/[\s]/g, '-')
-                                                           .replace(/,/g, '')
+                                                           .replace(/[,*]/g, '')
                                                            .toLowerCase()),
       categories: {
         bestSeller: true,
@@ -195,7 +195,7 @@ const SHOP_DATA = {
       timesSold: 3,
       available: true,
       routeName: 'products/' + encodeURIComponent('Why We Sleep'.replace(/[\s]/g, '-')
-                                                                .replace(/,/g, '')
+                                                                .replace(/[,*]/g, '')
                                                                 .toLowerCase()),
       categories: {
         bestSeller: false,
@@ -252,7 +252,7 @@ const SHOP_DATA = {
       timesSold: 1,
       available: true,
       routeName: 'products/' + encodeURIComponent('The Black Swan'.replace(/[\s]/g, '-')
-                                                                  .replace(/,/g, '')
+                                                                  .replace(/[,*]/g, '')
                                                                   .toLowerCase()),
       categories: {
         bestSeller: true,
@@ -288,7 +288,7 @@ const SHOP_DATA = {
       timesSold: 3,
       available: true,
       routeName: 'products/' + encodeURIComponent('The Alchemist'.replace(/[\s]/g, '-')
-                                                                 .replace(/,/g, '')
+                                                                 .replace(/[,*]/g, '')
                                                                  .toLowerCase()),
       categories: {
         bestSeller: true,
@@ -339,7 +339,7 @@ const SHOP_DATA = {
       timesSold: 0,
       available: true,
       routeName: 'products/' + encodeURIComponent('Zero to One'.replace(/[\s]/g, '-')
-                                                               .replace(/,/g, '')
+                                                               .replace(/[,*]/g, '')
                                                                .toLowerCase()),
       categories: {
         bestSeller: true,
@@ -389,7 +389,7 @@ const SHOP_DATA = {
       available: true,
       comingSoon: false,
       routeName: 'products/' + encodeURIComponent('Thinking, Fast and Slow'.replace(/[\s]/g, '-')
-                                                                           .replace(/,/g, '')
+                                                                           .replace(/[,*]/g, '')
                                                                            .toLowerCase()),
       categories: {
         bestSeller: false,
