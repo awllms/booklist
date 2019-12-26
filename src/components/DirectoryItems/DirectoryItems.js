@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
+import { Link } from 'react-router-dom';
 import DirectoryItem from '../DirectoryItem/DirectoryItem';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -41,9 +42,14 @@ const DirectoryItems = ({ title, items }) => {
     ]
   };
 
+  const categoryURL = title.replace(/[\s]/g, '-').toLowerCase();
+
   return (
     <div className='directory-items-container'>
-      <h3>{ title }</h3>
+      <div className='directory-items-title'>
+        <h3>{ title }</h3>
+        <Link className='directory-items-title-link' to={`categories/${categoryURL}`}>View All</Link>
+      </div>
       <div className='directory-items'>
         <Slider { ...settings }>
           {items

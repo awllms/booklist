@@ -1,6 +1,6 @@
 import React from 'react';
 import BreadCrumbNav from '../../components/BreadCrumbNav/BreadCrumbNav';
-import CategoryOverview from '../../components/CategoryOverview/CategoryOverview';
+import CategoriesOverview from '../../components/CategoriesOverview/CategoriesOverview';
 
 const ShopPage = ({ match }) => {
   const shopPath = match.path.replace('/', '');
@@ -8,7 +8,7 @@ const ShopPage = ({ match }) => {
   return (
     <React.Fragment>
       <BreadCrumbNav title={shopTitle} />
-      <CategoryOverview />
+      <CategoriesOverview />
     </React.Fragment>
   );
 };

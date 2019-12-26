@@ -47,4 +47,13 @@ export const selectAllProductCategories = createSelector(
               items: products.filter(product => product.categories[keys] === true)}];
   })
 );
+
+export const selectCategoryItems = productUrlParam => createSelector(
+  [selectShopProducts, selectShopCategories],
+  (products, categories) => Object.keys(categories)
+                                  .filter(keys => categories[keys].name.toLowerCase() === productUrlParam)
+                                  .map(category => 
+                                    products.filter(product => 
+                                                      product.categories[category] === true))
+);
  

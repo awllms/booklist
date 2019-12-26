@@ -1,8 +1,24 @@
 .directory-items-container {
   margin-bottom: 60px; 
 
-  h3 {
+  .directory-items-title {
     display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    .directory-items-title-link {
+      align-items: center;
+      font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+      font-weight: bolder;
+      font-size: 0.94rem;
+
+      &:hover {
+        color: #0080DE;
+      }
+    }
+  }
+
+  h3 {
     margin-bottom: 30px;
   }
 

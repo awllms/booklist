@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectAllProductCategories } from '../../redux/shop/shop.selectors';
 
-import DirectoryItems from '../../components/DirectoryItems/DirectoryItems';
+import DirectoryItems from '../DirectoryItems/DirectoryItems';
 
-import './CategoryOverview.scss';
+import './CategoriesOverview.scss';
 
 const CategoryOverview = ({ categories }) => {
   return (

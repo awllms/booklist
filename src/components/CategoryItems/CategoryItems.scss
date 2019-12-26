@@ -1,0 +1,17 @@
+.category-items-container {
+  margin-top: 40px;
+  
+  h2 {
+    text-align: left;
+    margin-bottom: 40px; 
+  }
+  .category-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+    
+    .directory-item {
+      margin-bottom: 20px;
+    }
+  }
+} 
