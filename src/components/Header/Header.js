@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
+import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import CartIcon from '../CartIcon/CartIcon';
 import CartDropDown from '../CartDropDown/CartDropDown';
 import NavIcon from '../NavIcon/NavIcon';
@@ -9,8 +12,7 @@ import NavDropDown from '../NavDropDown/NavDropDown';
 import '../../assets/shopping-cart.png';
 import './Header.scss';
 
-const Header = ({ history }) => {
-  const [hidden, setHidden] = useState(true);
+const Header = ({ history, hidden }) => {
   const [navHidden, setNavHidden] = useState(true);
   return (
     <header className='header'>
@@ -25,7 +27,7 @@ const Header = ({ history }) => {
           <a href='/' className='option'>SignIn</a>
           <a href='/' className='option last'>Contact</a>
 
-          <CartIcon hidden={hidden} setHidden={setHidden} />
+          <CartIcon /> 
         </div>
         { hidden ? null : <CartDropDown />}
       </nav>
@@ -33,4 +35,8 @@ const Header = ({ history }) => {
   )
 };
 
-export default withRouter(Header);
+const mapStateToProps = createStructuredSelector({
+  hidden: selectCartHidden
+});
+
+export default connect(mapStateToProps)(withRouter(Header));
