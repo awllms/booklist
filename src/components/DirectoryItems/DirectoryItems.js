@@ -19,7 +19,7 @@ const DirectoryItems = ({ title, items, history }) => {
     arrows: false,
     responsive: [
       {
-        breakpoint: 900,
+        breakpoint: 940,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
