@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ReactHtmlParser from 'react-html-parser';
 
+import { addItem } from '../../redux/cart/cart.actions';
 import { selectProduct } from '../../redux/shop/shop.selectors';
 import BreadCrumbNav from '../BreadCrumbNav/BreadCrumbNav';
 import CustomButton from '../CustomButton/CustomButton';
@@ -9,9 +10,8 @@ import CustomButton from '../CustomButton/CustomButton';
 import './ProductItem.scss';
 
 
-const ProductItem = ({ match, product }) => {
-  console.log(match)
-  console.log(product)
+const ProductItem = ({ product, addItem }) => {
+  const item = product[0];
   const { 
     title,
     imageUrl,
@@ -24,7 +24,7 @@ const ProductItem = ({ match, product }) => {
     publisher,
     price,
     description
-   } = product[0];
+   } = item;
   return (
     <React.Fragment>
       <BreadCrumbNav title={title} />
@@ -62,7 +62,7 @@ const ProductItem = ({ match, product }) => {
             </span>
 
             <span className='product-price'>${price}</span>
-            <CustomButton>Add to Cart</CustomButton>
+            <CustomButton onClick={() => addItem(item)}>Add to Cart</CustomButton>
             <div className='product-share'>
               <span className='share-text'>Share:</span>
             </div>
@@ -85,4 +85,8 @@ const mapStateToProps = (state, ownProps) => ({
   product: selectProduct(ownProps.match.url)(state)
 });
 
-export default connect(mapStateToProps)(ProductItem);
+const mapDispatchToProps = dispatch => ({
+  addItem: item => dispatch(addItem(item))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductItem);

@@ -1,11 +1,14 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { addItem } from '../../redux/cart/cart.actions';
 import CustomButton from '../CustomButton/CustomButton';
 
 
 import './DirectoryItem.scss';
 
-const DirectoryItem = ({ item, history }) => {
+const DirectoryItem = ({ item, history, addItem }) => {
   const { title, imageUrl, price } = item;
   return (
     <div className='directory-item'>
@@ -16,9 +19,13 @@ const DirectoryItem = ({ item, history }) => {
         <h4>{ title }</h4>
         <span>${ price }</span>
       </div>
-      <CustomButton>Add To Cart</CustomButton>
+      <CustomButton onClick={() => addItem(item)}>Add To Cart</CustomButton>
     </div>
   );
 };
 
-export default withRouter(DirectoryItem);
+const mapDispatchToProps = dispatch => ({
+  addItem: item => dispatch(addItem(item))
+});
+
+export default connect(null, mapDispatchToProps)(withRouter(DirectoryItem));

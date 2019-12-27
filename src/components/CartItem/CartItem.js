@@ -1,18 +1,19 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
-import photo from '../../assets/product.jpg';
 import './CartItem.scss';
 
-const CartItem = () => {
+const CartItem = ({ item, history }) => {
+  const { title, imageUrl, price, quantity } = item;
   return (
-    <div className='cart-item'>
-      <img src={photo} alt='item' />
+    <div className='cart-item' onClick={() => history.push(`/${item.routeName}`)}>
+      <img src={imageUrl} alt='item' />
       <div className='item-details'>
-        <span className='name'>UnFu*k Yourself</span>
-        <span className='price'>1 x $10</span>
+        <span className='name'>{title}</span>
+        <span className='price'>{quantity} x ${price}</span>
       </div>
     </div>
   );
 };
 
-export default CartItem;
+export default withRouter(CartItem);
