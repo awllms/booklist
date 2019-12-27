@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import DirectoryItem from '../DirectoryItem/DirectoryItem';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -8,7 +8,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import './DirectoryItems.scss';
 
 
-const DirectoryItems = ({ title, items }) => {
+const DirectoryItems = ({ title, items, history }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -47,7 +47,7 @@ const DirectoryItems = ({ title, items }) => {
   return (
     <div className='directory-items-container'>
       <div className='directory-items-title'>
-        <h3>{ title }</h3>
+        <h3 onClick={()=> history.push(`categories/${categoryURL}`)}>{ title }</h3>
         <Link className='directory-items-title-link' to={`categories/${categoryURL}`}>View All</Link>
       </div>
       <div className='directory-items'>
@@ -64,4 +64,4 @@ const DirectoryItems = ({ title, items }) => {
   );
 };
 
-export default DirectoryItems;
+export default withRouter(DirectoryItems);

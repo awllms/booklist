@@ -16,18 +16,15 @@
       &:hover {
         color: #0080DE;
       }
+  
+    }
+    h3 {
+      margin-bottom: 30px;
+      cursor: pointer;
     }
   }
 
-  h3 {
-    margin-bottom: 30px;
-  }
-
   .directory-items {
-    // width: 100%;
-    // display: flex;
-    // justify-content: space-between;
-    // flex-wrap: wrap;
     
     .slick-prev:before, .slick-next:before {
       // color: black;
