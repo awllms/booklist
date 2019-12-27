@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import DirectoryItem from '../DirectoryItem/DirectoryItem';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -48,7 +48,6 @@ const DirectoryItems = ({ title, items, history }) => {
     <div className='directory-items-container'>
       <div className='directory-items-title'>
         <h3 onClick={()=> history.push(`categories/${categoryURL}`)}>{ title }</h3>
-        <Link className='directory-items-title-link' to={`categories/${categoryURL}`}>View All</Link>
       </div>
       <div className='directory-items'>
         <Slider { ...settings }>

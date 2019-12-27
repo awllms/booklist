@@ -206,6 +206,14 @@ img {
   .category-items-container .category-items {
     grid-template-columns: 1fr;
   }
+
+  .directory-items-container .directory-items-title {
+    justify-content: center;
+  }
+
+  .category-items-container h2 {
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 500px) {
