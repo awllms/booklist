@@ -9,7 +9,6 @@ import CustomButton from '../CustomButton/CustomButton';
 
 import './ProductItem.scss';
 
-
 const ProductItem = ({ product, addItem }) => {
   const item = product[0];
   const { 

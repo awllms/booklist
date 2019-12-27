@@ -1,0 +1,37 @@
+.checkout-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  margin-top: 40px;
+
+  .image-container {
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .title,
+  .quantity,
+  .price,
+  .remove {
+    margin: auto 0;
+  }
+
+  .quantity {
+    display: flex;
+    justify-content: center;
+
+    .arrow {
+      cursor: pointer;
+    }
+
+    .value {
+      margin: 0 10px;
+    }
+  }
+
+  .remove {
+    cursor: pointer;
+  }
+}
