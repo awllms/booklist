@@ -40,9 +40,9 @@ const DirectoryItems = ({ title, items, history }) => {
         }
       }
     ]
-  };
+  }; 
 
-  const categoryURL = title.replace(/[\s]/g, '-').toLowerCase();
+  const categoryURL = encodeURIComponent(title.replace(/[\s]/g, '-').toLowerCase());
 
   return (
     <div className='directory-items-container'>
