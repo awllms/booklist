@@ -2,7 +2,30 @@
   margin-bottom: 60px;
 
   .image-placeholder {
+    position: relative;
 
+    .custom-button {
+      position: absolute;
+      width: 35%;
+      height: 15%;
+      background-color: white;
+      color: black;
+      font-size: 0.94rem;
+      // padding: 0px 80px;
+      left: 33%;
+      bottom: 4%;
+      z-index: 5;
+      cursor: pointer;
+
+      // &.slider-one {
+      //   left: 31%;
+      // }
+
+      &:hover {
+        color: white;
+        background-color: black;
+      }
+    }
     .slider-image {
       border-radius: 10px;
       max-width: 100%;

@@ -11,7 +11,7 @@ import './DirectoryItems.scss';
 const DirectoryItems = ({ title, items, history }) => {
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: items.length > 3 ? true : false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,

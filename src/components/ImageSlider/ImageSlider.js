@@ -3,9 +3,11 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import sliderImage from '../../assets/slider.jpg';
-// import photoTwo from '../../assets/photo2.jpg';
-// import photoThree from '../../assets/photo3.jpg';
+import CustomButton from '../CustomButton/CustomButton';
+import sliderImageOne from '../../assets/dash-of-color.jpg';
+import sliderImageTwo from '../../assets/quality-time.jpg';
+import sliderImageThree from '../../assets/morning-refresher.jpg';
+
 import './ImageSlider.scss';
 
 const ImageSlider = () => {
@@ -27,13 +29,16 @@ const ImageSlider = () => {
     <section className='slider'>
       <Slider {...settings } >
         <div className='image-placeholder'>
-          <img className='slider-image' src={sliderImage} alt='Books' />
+          <img className='slider-image' src={sliderImageOne} alt='Books' />
+          <CustomButton>Shop Fiction</CustomButton>
         </div>
         <div className='image-placeholder'>
-          <img className='slider-image' src={sliderImage} alt='Books' />
+          <img className='slider-image' src={sliderImageTwo} alt='Books' />
+          <CustomButton>Shop Best Sellers</CustomButton>
         </div>
         <div className='image-placeholder'>
-          <img className='slider-image' src={sliderImage} alt='Books' />
+          <img className='slider-image' src={sliderImageThree} alt='Books' />
+          <CustomButton>Shop Self-Help</CustomButton>
         </div>
       </Slider>
     </section>
