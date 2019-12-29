@@ -43,6 +43,8 @@ const SHOP_DATA = {
                                                                    .replace(/[,*]/g, '')
                                                                    .toLowerCase()),
       categories: {
+        scienceAndTechnology: false,
+        businessAndMoney: false,
         personalDevelopment: true,
         artsAndEntertainment: false,
         healthAndWellness: false,
@@ -98,6 +100,8 @@ const SHOP_DATA = {
                                                                         .replace(/[,*]/g, '')
                                                                         .toLowerCase()),
       categories: {
+        scienceAndTechnology: false,
+        businessAndMoney: false,
         personalDevelopment: true,
         artsAndEntertainment: false,
         healthAndWellness: false,
@@ -105,7 +109,7 @@ const SHOP_DATA = {
         biosAndMemoirs: false,
         nonFiction: true,
         bestSeller: true,
-        comingSoon: true,
+        comingSoon: false,
         newRelease: true
       }
     },
@@ -155,6 +159,8 @@ const SHOP_DATA = {
                                                            .replace(/[,*]/g, '')
                                                            .toLowerCase()),
       categories: {
+        scienceAndTechnology: true,
+        businessAndMoney: false,
         personalDevelopment: false,
         artsAndEntertainment: false,
         healthAndWellness: true,
@@ -216,6 +222,8 @@ const SHOP_DATA = {
                                                                 .replace(/[,*]/g, '')
                                                                 .toLowerCase()),
       categories: {
+        scienceAndTechnology: true,
+        businessAndMoney: false,
         personalDevelopment: false,
         artsAndEntertainment: false,
         healthAndWellness: true,
@@ -223,7 +231,7 @@ const SHOP_DATA = {
         biosAndMemoirs: false,
         nonFiction: true,
         bestSeller: false,
-        comingSoon: true,
+        comingSoon: false,
         newRelease: false
       }
     },
@@ -279,6 +287,8 @@ const SHOP_DATA = {
                                                                   .replace(/[,*]/g, '')
                                                                   .toLowerCase()),
       categories: {
+        scienceAndTechnology: true,
+        businessAndMoney: false,
         personalDevelopment: false,
         artsAndEntertainment: false,
         healthAndWellness: false,
@@ -286,7 +296,7 @@ const SHOP_DATA = {
         biosAndMemoirs: false,
         nonFiction: true,
         bestSeller: true,
-        comingSoon: true,
+        comingSoon: false,
         newRelease: true
       }
     },
@@ -321,6 +331,8 @@ const SHOP_DATA = {
                                                                  .replace(/[,*]/g, '')
                                                                  .toLowerCase()),
       categories: {
+        scienceAndTechnology: false,
+        businessAndMoney: false,
         personalDevelopment: false,
         artsAndEntertainment: true,
         healthAndWellness: false,
@@ -328,7 +340,7 @@ const SHOP_DATA = {
         biosAndMemoirs: false,
         nonFiction: false,
         bestSeller: true,
-        comingSoon: true,
+        comingSoon: false,
         newRelease: false
       }
     },
@@ -378,6 +390,8 @@ const SHOP_DATA = {
                                                                .replace(/[,*]/g, '')
                                                                .toLowerCase()),
       categories: {
+        scienceAndTechnology: false,
+        businessAndMoney: true,
         personalDevelopment: false,
         artsAndEntertainment: false,
         healthAndWellness: false,
@@ -385,7 +399,7 @@ const SHOP_DATA = {
         biosAndMemoirs: true,
         nonFiction: true,
         bestSeller: true,
-        comingSoon: true,
+        comingSoon: false,
         newRelease: false
       }
     },
@@ -433,6 +447,8 @@ const SHOP_DATA = {
                                                                            .replace(/[,*]/g, '')
                                                                            .toLowerCase()),
       categories: {
+        scienceAndTechnology: true,
+        businessAndMoney: false,
         personalDevelopment: true,
         artsAndEntertainment: false,
         healthAndWellness: false,
@@ -491,6 +507,8 @@ const SHOP_DATA = {
                                                                            .replace(/[,*]/g, '')
                                                                            .toLowerCase()),
       categories: {
+        scienceAndTechnology: false,
+        businessAndMoney: false,
         personalDevelopment: false,
         artsAndEntertainment: true,
         healthAndWellness: false,
@@ -556,6 +574,8 @@ const SHOP_DATA = {
                                                                            .replace(/[,*]/g, '')
                                                                            .toLowerCase()),
       categories: {
+        scienceAndTechnology: false,
+        businessAndMoney: true,
         personalDevelopment: false,
         artsAndEntertainment: false,
         healthAndWellness: false,
@@ -611,6 +631,8 @@ const SHOP_DATA = {
                                                                            .replace(/[,*]/g, '')
                                                                            .toLowerCase()),
       categories: {
+        scienceAndTechnology: false,
+        businessAndMoney: true,
         personalDevelopment: false,
         artsAndEntertainment: false,
         healthAndWellness: false,
@@ -668,6 +690,8 @@ const SHOP_DATA = {
                                                                            .replace(/[,*]/g, '')
                                                                            .toLowerCase()),
       categories: {
+        scienceAndTechnology: false,
+        businessAndMoney: true,
         personalDevelopment: false,
         artsAndEntertainment: false,
         healthAndWellness: false,
@@ -721,6 +745,8 @@ const SHOP_DATA = {
                                                                            .replace(/[,*]/g, '')
                                                                            .toLowerCase()),
       categories: {
+        scienceAndTechnology: false,
+        businessAndMoney: false,
         personalDevelopment: false,
         artsAndEntertainment: false,
         healthAndWellness: false,
@@ -782,6 +808,8 @@ const SHOP_DATA = {
                                                                            .replace(/[,*]/g, '')
                                                                            .toLowerCase()),
       categories: {
+        scienceAndTechnology: false,
+        businessAndMoney: false,
         personalDevelopment: false,
         artsAndEntertainment: false,
         healthAndWellness: false,
@@ -830,19 +858,21 @@ const SHOP_DATA = {
       visionaries of the golden age of science-fiction fantasy.</p>
   
       <p>&copy; Ashlee Vance (P)2015 HarperCollins Publishers</p>`,
-      timesSold: 11,
+      timesSold: 4,
       available: true,
       routeName: 'products/' + encodeURIComponent('Elon Musk'.replace(/[\s]/g, '-')
                                                                            .replace(/[,*]/g, '')
                                                                            .toLowerCase()),
       categories: {
+        scienceAndTechnology: false,
+        businessAndMoney: false,
         personalDevelopment: false,
         artsAndEntertainment: false,
         healthAndWellness: false,
         fiction: false,
         biosAndMemoirs: true,
         nonFiction: true,
-        bestSeller: true,
+        bestSeller: false,
         comingSoon: false,
         newRelease: false
       }
@@ -889,6 +919,8 @@ const SHOP_DATA = {
                                                                            .replace(/[,*]/g, '')
                                                                            .toLowerCase()),
       categories: {
+        scienceAndTechnology: true,
+        businessAndMoney: false,
         personalDevelopment: false,
         artsAndEntertainment: false,
         healthAndWellness: true,
@@ -957,6 +989,8 @@ const SHOP_DATA = {
                                                                            .replace(/[,*]/g, '')
                                                                            .toLowerCase()),
       categories: {
+        scienceAndTechnology: false,
+        businessAndMoney: false,
         personalDevelopment: true,
         artsAndEntertainment: true,
         healthAndWellness: false,
@@ -967,15 +1001,326 @@ const SHOP_DATA = {
         comingSoon: false,
         newRelease: true
       }
+    },
+    {
+      id: 18,
+      title: 'Do the Work',
+      imageUrl: 'https://i.ibb.co/jH5cX2w/do-the-work.jpg',
+      subTitle: `The Official Unrepentant, Ass-Kicking, No-Kidding, 
+      Change-Your-Life Sidekick to Unfu*k Yourself`,
+      author: 'Gary John Bishop',
+      narrator: 'Gary John Bishop',
+      length: '2 hrs and 12 mins',
+      releaseDate: '10-22-19',
+      language: 'English',
+      publisher: 'HarperAudio',
+      price: 20,
+      description: `
+      <p>Based on the life-changing lessons from the New York Times best seller 
+      that has sold more than a million copies, a practical, hands-on guide that 
+      helps you do the work you need to change your life.</p>
+
+      <p>In Unfu*k Yourself, Gary John Bishop inspired people to put his words 
+      into action to help them transform their fu*king lives. While millions 
+      of fans have embraced the messages in the book, Bishop knows it can be 
+      hard to actually take the next step and do the necessary work. Written 
+      in his no-nonsense, tough-love voice, Do the Work is the kick in the ass 
+      you need to get moving and create the life you want. By drilling down 
+      into the three categories of self, people, and purpose, he helps us 
+      identify and remedy the primary problems and challenges that frustrate 
+      and often cripple us.</p>
+      <p>Filled with new material, Do the Work expands the lessons in Unfu*k 
+      Yourself, giving us the tools to identify, explore, and understand our 
+      specific issues and root them out. As Bishop makes clear, "This is a 
+      personal workshop for your brain, a legit resource where you can work 
+      your life out, what matters to you, whats going to make the biggest 
+      difference and empower you to act in ways that make some palpable 
+      change to the direction your life is currently taking."</p>
+      
+      <p>So, what are you waiting for?</p>
+  
+      <p>&copy; 2019 Gary John Bishop (P)2019 HarperAudio</p>`,
+      timesSold: 5,
+      available: true,
+      routeName: 'products/' + encodeURIComponent('Do the Work'.replace(/[\s]/g, '-')
+                                                                           .replace(/[,*]/g, '')
+                                                                           .toLowerCase()),
+      categories: {
+        scienceAndTechnology: false,
+        businessAndMoney: false,
+        personalDevelopment: true,
+        artsAndEntertainment: false,
+        healthAndWellness: false,
+        fiction: false,
+        biosAndMemoirs: false,
+        nonFiction: true,
+        bestSeller: false,
+        comingSoon: false,
+        newRelease: true
+      }
+    },
+    {
+      id: 19,
+      title: 'Mindf*ck',
+      imageUrl: 'https://i.ibb.co/zHgn5D6/mindfck.jpg',
+      subTitle: "Cambridge Analytica and the Plot to Break America",
+      author: 'Christopher Wylie',
+      narrator: 'Graham Halstead',
+      length: '11 hrs and 49 mins',
+      releaseDate: '10-08-19',
+      language: 'English',
+      publisher: 'Random House Audio',
+      price: 20,
+      description: `
+      <p>For the first time, the Cambridge Analytica whistleblower tells the 
+      inside story of the data mining and psychological manipulation behind 
+      the election of Donald Trump and the Brexit referendum, connecting 
+      Facebook, WikiLeaks, Russian intelligence, and international hackers.</p>
+
+      <p>Named one of the Best Books of the Year by Evening Standard</p>
+
+      <p>Mindf*ck goes deep inside Cambridge Analytica’s "American operations", 
+      which were driven by Steve Bannon’s vision to remake America and fueled 
+      by mysterious billionaire Robert Mercer’s money, as it weaponized and 
+      wielded the massive store of data it had harvested on individuals - in 
+      excess of 87 million - to disunite the United States and set Americans 
+      against each other. Bannon had long sensed that deep within America’s 
+      soul lurked an explosive tension. Cambridge Analytica had the data to 
+      prove it, and in 2016 Bannon had a presidential campaign to use as his 
+      proving ground.</p>
+      
+      <p>Christopher Wylie might have seemed an unlikely figure to be at the 
+      center of such an operation. Canadian and liberal in his politics, he 
+      was only 24 when he got a job with a London firm that worked with the 
+      UK Ministry of Defense and was charged putatively with helping to 
+      build a team of data scientists to create new tools to identify and 
+      combat radical extremism online. In short order, those same military 
+      tools were turned to political purposes, and Cambridge Analytica was 
+      born.</p>
+
+      <p>Wylie’s decision to become a whistleblower prompted the largest 
+      data-crime investigation in history. His story is both exposé and 
+      dire warning about a sudden problem born of very new and powerful 
+      capabilities. It has not only laid bare the profound vulnerabilities 
+      - and profound carelessness - in the enormous companies that drive 
+      the attention economy, it has also exposed the profound vulnerabilities 
+      of democracy itself. What happened in 2016 was just a trial run. 
+      Ruthless actors are coming for your data, and they want to control 
+      what you think.</p>
+  
+      <p>&copy; 2019 Christopher Wylie (P)2019 Random House Audio</p>`,
+      timesSold: 5,
+      available: true,
+      routeName: 'products/' + encodeURIComponent('Mindf*ck'.replace(/[\s]/g, '-')
+                                                                           .replace(/[,*]/g, '')
+                                                                           .toLowerCase()),
+      categories: {
+        scienceAndTechnology: true,
+        businessAndMoney: false,
+        personalDevelopment: false,
+        artsAndEntertainment: true,
+        healthAndWellness: false,
+        fiction: false,
+        biosAndMemoirs: false,
+        nonFiction: true,
+        bestSeller: false,
+        comingSoon: true,
+        newRelease: true
+      }
+    },
+    {
+      id: 20,
+      title: 'Start with No',
+      imageUrl: 'https://i.ibb.co/RBd3xZq/start-with-no.jpg',
+      subTitle: "The Negotiating Tools That the Pros Don't Want You to Know",
+      author: 'Jim Camp',
+      narrator: '',
+      length: '7 hrs',
+      releaseDate: '06-02-20',
+      language: 'English',
+      publisher: 'Random House Audio',
+      price: 20,
+      description: `
+      <p>Start with No offers a contrarian, counterintuitive system for 
+      negotiating any kind of deal in any kind of situation - the purchase 
+      of a new house, a multimillion-dollar business deal, or where to take 
+      the kids for dinner.</p>
+
+      <p>Think a win-win solution is the best way to make the deal? Think 
+      again.</p>
+
+      <p>For years now, win-win has been the paradigm for business negotiation. 
+      But today, win-win is just the seductive mantra used by the toughest 
+      negotiators to get the other side to compromise unnecessarily, early, 
+      and often. Win-win negotiations play to your emotions and take advantage 
+      of your instinct and desire to make the deal</p>
+      
+      <p>Start with No introduces a system of decision-based negotiation that 
+      teaches you how to understand and control these emotions. It teaches 
+      you how to ignore the siren call of the final result, which you can’t 
+      really control, and how to focus instead on the activities and behavior 
+      that you can and must control in order to successfully negotiate with 
+      the pros.</p>
+
+      <p>The best negotiators:</p>
+      <p>Aren’t interested in "yes" - they prefer "no"</p>
+      <p>Never, ever rush to close, but always let the other side feel comfortable 
+      and secure</p>
+      <p>Are never needy; they take advantage of the other party’s neediness</p>
+      <p>Create a "blank slate" to ensure they ask questions and listen to the 
+      answers, to make sure they have no assumptions and expectations</p>
+      <p>Always have a mission and purpose that guides their decisions</p>
+      <p>Don’t send so much as an email without an agenda for what they want 
+      to accomplish</p>
+      <p>Know the four "budgets" for themselves and for the other side: time, 
+      energy, money, and emotion</p>
+      <p>Never waste time with people who don’t really make the decision</p>
+      
+      <p>Start with No is full of dozens of business as well as personal 
+      stories illustrating each point of the system. It will change your 
+      life as a negotiator. If you put to good use the principles and practices 
+      revealed here, you will become an immeasurably better negotiator.</p>
+  
+      <p>&copy; 2011 Jim Camp (P)2020 Random House Audio</p>`,
+      timesSold: 5,
+      available: true,
+      routeName: 'products/' + encodeURIComponent('Start with No'.replace(/[\s]/g, '-')
+                                                                           .replace(/[,*]/g, '')
+                                                                           .toLowerCase()),
+      categories: {
+        scienceAndTechnology: false,
+        businessAndMoney: true,
+        personalDevelopment: false,
+        artsAndEntertainment: true,
+        healthAndWellness: false,
+        fiction: false,
+        biosAndMemoirs: false,
+        nonFiction: true,
+        bestSeller: false,
+        comingSoon: true,
+        newRelease: false
+      }
+    },
+    {
+      id: 21,
+      title: 'Brain Wash',
+      imageUrl: 'https://i.ibb.co/TLMck0G/brainwash.jpg',
+      subTitle: "Detox Your Mind for Clearer Thinking, Deeper Relationships, and Lasting Happiness",
+      author: 'David Perlmutter MD, Austin Perlmutter MD, Kristin Loberg',
+      narrator: 'Peter Ganim',
+      length: '7 hrs and 17 mins',
+      releaseDate: '01-14-20',
+      language: 'English',
+      publisher: 'Random House Audio',
+      price: 20,
+      description: `
+      <p>Dr. David Perlmutter, number-one New York Times best-selling author 
+      of Grain Brain, and Dr. Austin Perlmutter, his son, explore how modern c
+      ulture threatens to rewire our brains and damage our health, offering a 
+      practical plan for healing.</p>
+
+      <p>Contemporary life provides us with infinite opportunities, along with 
+      endless temptations. We can eat whatever we want, whenever we want. We 
+      can immerse ourselves in the vast, enticing world of digital media. We 
+      can buy goods and services for rapid delivery with our fingertips or 
+      voice commands. But living in this 24/7 hyper-reality poses serious 
+      risks to our physical and mental states, our connections to others, 
+      and even to the world at large. </p>
+
+      <p>Brain Wash builds from a simple premise: Our brains are being gravely 
+      manipulated, resulting in behaviors that leave us more lonely, anxious, 
+      depressed, distrustful, illness-prone, and overweight than ever before. 
+      </p>
+      
+      <p>Based on the latest science, the book identifies the mental hijacking 
+      that undermines each and every one of us, and presents the tools necessary 
+      to think more clearly, make better decisions, strengthen bonds with others, 
+      and develop healthier habits. Featuring a 10-day bootcamp program, including 
+      a meal plan and 40 delicious original recipes, Brain Wash is the key to 
+      cultivating a more purposeful and fulfilling life. </p>
+  
+      <p>&copy; 2020 David Perlmutter MD, Austin Perlmutter MD, and 
+      Kristin Loberg (P)2020 Little, Brown & Company</p>`,
+      timesSold: 5,
+      available: true,
+      routeName: 'products/' + encodeURIComponent('Brain Wash'.replace(/[\s]/g, '-')
+                                                                           .replace(/[,*]/g, '')
+                                                                           .toLowerCase()),
+      categories: {
+        scienceAndTechnology: true,
+        businessAndMoney: false,
+        personalDevelopment: false,
+        artsAndEntertainment: true,
+        healthAndWellness: true,
+        fiction: false,
+        biosAndMemoirs: false,
+        nonFiction: true,
+        bestSeller: false,
+        comingSoon: true,
+        newRelease: false
+      }
+    },
+    {
+      id: 22,
+      title: 'Tiny Habits',
+      imageUrl: 'https://i.ibb.co/7QFx92W/tiny-habits.jpg',
+      subTitle: "The Small Changes that Change Everything",
+      author: 'BJ Fogg PhD',
+      narrator: '',
+      length: 'Not Yet Known',
+      releaseDate: '01-14-20',
+      language: 'English',
+      publisher: 'Audible Studios',
+      price: 20,
+      description: `
+      <p>The world’s leading expert on habit formation shows how you can have 
+      a happier, healthier life: by starting small. </p>
+
+      <p>Myth: Change is hard. Reality: Change can be easy if you know the simple 
+      steps of behavior design. </p>
+
+      <p>Myth: It’s all about willpower. Reality: Willpower is fickle and finite, 
+      and exactly the wrong way to create habits.</p>
+      
+      <p>Myth: You have to make a plan and stick to it. Reality: You transform 
+      your life by starting small and being flexible. </p>
+      
+      <p>BJ Fogg is here to change your life - and revolutionize how we think about 
+      human behavior. Based on 20 years of research and Fogg’s experience coaching 
+      more than 40,000 people, Tiny Habits cracks the code of habit formation. 
+      With breakthrough discoveries in every chapter, you’ll learn the simplest 
+      proven ways to transform your life. Fogg shows you how to feel good about 
+      your successes instead of bad about your failures. Whether you want to lose 
+      weight, de-stress, sleep better, or be more productive each day, Tiny Habits 
+      makes it easy to achieve. </p>
+
+      <p>Already the habit guru to companies around the world, Fogg brings his 
+      proven method to a global audience for the first time. Whether you want 
+      to lose weight, de-stress, sleep better, or exercise more, Tiny Habits 
+      makes it easy to achieve.</p>
+
+      <p>&copy; 2019 BJ Fogg (P)2019 Audible, Inc.</p>`,
+      timesSold: 5,
+      available: true,
+      routeName: 'products/' + encodeURIComponent('Tiny Habits'.replace(/[\s]/g, '-')
+                                                                           .replace(/[,*]/g, '')
+                                                                           .toLowerCase()),
+      categories: {
+        scienceAndTechnology: true,
+        businessAndMoney: false,
+        personalDevelopment: false,
+        artsAndEntertainment: true,
+        healthAndWellness: true,
+        fiction: false,
+        biosAndMemoirs: false,
+        nonFiction: true,
+        bestSeller: false,
+        comingSoon: true,
+        newRelease: false
+      }
     }
   ],
   categories: {
-    bestSeller: {
-      name: 'Best Sellers'
-    },
-    comingSoon: {
-      name: 'Coming Soon'
-    },
     newRelease: {
       name: 'New Releases'
     },
@@ -985,17 +1330,29 @@ const SHOP_DATA = {
     biosAndMemoirs: {
       name: 'Biographies & Memoirs'
     },
-    fiction: {
-      name: 'Fiction'
+    bestSeller: {
+      name: 'Best Sellers'
     },
-    healthAndWellness: {
-      name: 'Health & Wellness'
+    personalDevelopment: {
+      name: 'Personal Development'
+    },
+    businessAndMoney: {
+      name: 'Business & Money'
+    },
+    scienceAndTechnology: {
+      name: 'Science & Technology'
     },
     artsAndEntertainment: {
       name: 'Arts & Entertainment'
     },
-    personalDevelopment: {
-      name: 'Personal Development'
+    healthAndWellness: {
+      name: 'Health & Wellness'
+    },
+    fiction: {
+      name: 'Fiction'
+    },
+    comingSoon: {
+      name: 'Coming Soon'
     }
   }
 };

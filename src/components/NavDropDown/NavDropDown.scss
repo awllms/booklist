@@ -29,6 +29,10 @@
     .nav-option { 
       font-family: "Cera GR Bold";
       font-size: 1.125rem;
+
+      &:hover {
+        color: #0080DE;
+      }
       
       .cart-icon {
         display: flex;
