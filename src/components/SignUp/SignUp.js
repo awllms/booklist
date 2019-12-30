@@ -8,19 +8,19 @@ import './SignUp.scss';
 const SignUp = () => {
   
   const [userCredentials, setUserCredentials] = useState({
-    name: '',
+    displayName: '',
     email: '',
     password: '',
     confirmPassword: ''
   });
   
-  const { name, email, password, confirmPassword } = userCredentials;
+  const { displayName, email, password, confirmPassword } = userCredentials;
   
   const onInputSubmit = (event) => {
     event.preventDefault();
   
     if (password !== confirmPassword) {
-      alert('Passwords don\'t match');
+      alert("Passwords don't match");
       return;
     }
   };
@@ -37,9 +37,9 @@ const SignUp = () => {
       <span>Sign up with your email and password</span>
       <form onSubmit={onInputSubmit}>
       <FormInput 
-          name='name'
+          name='displayName'
           type='text'
-          value={name}
+          value={displayName}
           onChange={onInputChange} 
           label='Name'
           placeholder='Name' 

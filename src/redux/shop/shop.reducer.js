@@ -1,4 +1,5 @@
 import SHOP_DATA from '../ShopData';
+import ShopActionTypes from './shop.types';
 
 const INITIAL_STATE = {
   products: SHOP_DATA.products,
@@ -7,6 +8,16 @@ const INITIAL_STATE = {
 
 const shopReducer = (state = INITIAL_STATE, action) => {
   switch(action.type) {
+    case ShopActionTypes.UPDATE_PRODUCTS:
+      return {
+        ...state,
+        products: action.payload
+      };
+    case ShopActionTypes.UPDATE_CATEGORIES:
+      return {
+        ...state,
+        categories: action.payload
+      };
     default:
       return state;
   }
