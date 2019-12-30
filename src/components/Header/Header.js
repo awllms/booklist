@@ -21,10 +21,8 @@ const Header = ({ history, hidden }) => {
       { navHidden ? null : <NavDropDown />}
       <nav className='navigation'>
         <div className='options'>
-          <Link className='option' to='/shop'>
-            Shop
-          </Link>
-          <a href='/' className='option'>SignIn</a>
+          <Link className='option' to='/shop'>Shop</Link>
+          <Link className='option' to='/signin'>SignIn</Link>
           <a href='/' className='option last'>Contact</a>
 
           <CartIcon /> 

@@ -118,9 +118,27 @@ img {
   }
 }
 
+@media only screen and (min-width: 1100px) {
+  .regular-sign-in, .google-sign-in {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  .regular-sign-in {
+    width: 40%;
+  }
+}
+
 @media only screen and (max-width: 940px) {
   .category-items-container .category-items {
     grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 882px) {
+  .buttons {
+    flex-direction: column;
   }
 }
 
@@ -190,6 +208,22 @@ img {
 
   .slider .image-placeholder .custom-button {
     font-size: 0.64rem;
+  }
+  .sign-in-and-sign-up {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .sign-in {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .sign-up {
+    width: 100%;
+  }
+
+  .sign-up .custom-button {
+    width: 100%;
   }
 }
 

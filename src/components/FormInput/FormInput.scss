@@ -1,0 +1,26 @@
+.form-input-container {
+  
+  .form-input {
+    background-color: #f6f6f6;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 10px;
+    display: block;
+    margin: 15px 0;
+    outline: none;
+    font-family: "Cera GR Bold";
+    font-size: 0.94rem;
+
+    &::placeholder {
+      color: #BCBCBC;
+    }
+  }
+  input[type='password'] {
+    letter-spacing: 0.3em;
+    
+    &::placeholder {
+      letter-spacing: 0;
+    }
+  }
+}
