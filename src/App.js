@@ -14,16 +14,18 @@ import Footer from './components/Footer/Footer';
 
 import { fetchProductsStart, fetchCategoriesStart } from './redux/shop/shop.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
+import { checkUserSession } from './redux/user/user.actions';
  
 
 import './App.css';
 
-const App = ({ fetchProductsStart, fetchCategoriesStart, currentUser }) => {
+const App = ({ fetchProductsStart, fetchCategoriesStart, currentUser, checkUserSession }) => {
 
   useEffect(() => {
     fetchProductsStart()
     fetchCategoriesStart()
-  }, [fetchProductsStart, fetchCategoriesStart])
+    checkUserSession()
+  }, [fetchProductsStart, fetchCategoriesStart, checkUserSession])
 
   return (
     <React.Fragment>
@@ -52,7 +54,8 @@ const mapStateToProps = createStructuredSelector({
 
 const mapDispatchToProps = dispatch => ({
   fetchProductsStart: () => dispatch(fetchProductsStart()),
-  fetchCategoriesStart: () => dispatch(fetchCategoriesStart())
+  fetchCategoriesStart: () => dispatch(fetchCategoriesStart()),
+  checkUserSession: () => dispatch(checkUserSession())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

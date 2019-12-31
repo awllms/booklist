@@ -11,11 +11,11 @@ import NavDropDown from '../NavDropDown/NavDropDown';
 
 import { selectCartHidden } from '../../redux/cart/cart.selectors'
 import { selectCurrentUser } from '../../redux/user/user.selectors';
-
+import { signOutStart } from '../../redux/user/user.actions';
 import '../../assets/shopping-cart.png';
 import './Header.scss';
 
-const Header = ({ history, hidden, currentUser }) => {
+const Header = ({ history, hidden, currentUser, signOutStart }) => {
   const [navHidden, setNavHidden] = useState(true);
   return (
     <header className='header'>
@@ -27,7 +27,7 @@ const Header = ({ history, hidden, currentUser }) => {
           <Link className='option' to='/shop'>Shop</Link>
           {
             currentUser ? 
-            <div className='option'>SignOut</div>
+            <div className='option' onClick={signOutStart}>SignOut</div>
             : 
             <Link className='option' to='/signin'>SignIn</Link>
           }
@@ -45,4 +45,8 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
 });
 
-export default connect(mapStateToProps)(withRouter(Header));
+const mapDispatchToProps = dispatch => ({
+  signOutStart: () => dispatch(signOutStart())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Header));
