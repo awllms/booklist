@@ -12,7 +12,7 @@ export const selectShopCategories = createSelector(
   shop => shop.categories
 );
 
-export const selectShopBestSellers = createSelector(
+export const selectShopBestSellersFromTimesSold = createSelector(
   [selectShopProducts],
   products => 
     products
@@ -20,40 +20,60 @@ export const selectShopBestSellers = createSelector(
       .sort((a, b) => b.timesSold - a.timesSold)
 );
 
+export const selectShopBestSellers = createSelector(
+  [selectShopProducts],
+  products => products ? 
+    products.filter(product => product.categories.bestSeller === true)
+    : []
+);
+
 export const selectShopNewReleases = createSelector(
   [selectShopProducts],
-  products => 
-    products
-      .filter(product => product.categories.newRelease === true)
+  products => products ?
+    products.filter(product => product.categories.newRelease === true)
+    : []
 );
 
 export const selectShopComingSoon = createSelector(
   [selectShopProducts],
-  products => 
-    products
-      .filter(product => product.categories.comingSoon === true)
+  products => products ?
+    products.filter(product => product.categories.comingSoon === true)
+    : []
 );
 
 export const selectProduct = productUrlParam => createSelector(
-  [selectShopProducts],
-  products => 
+  [selectShopProducts], 
+  products => products ?
     products.filter(product => '/' + product.routeName === productUrlParam)
+    : []
 );
 
 export const selectAllProductCategories = createSelector(
   [selectShopProducts, selectShopCategories],
-  (products, categories) => Object.keys(categories).map(keys => {
-    return [{ categoryName: categories[keys].name, 
-              items: products.filter(product => product.categories[keys] === true)}];
+  (products, categories) => products && categories ? 
+    Object.keys(categories).map(keys => {
+      return [{ categoryName: categories[keys].name, 
+                items: products.filter(product => product.categories[keys] === true)}];
   })
+  : []
 );
 
 export const selectCategoryItems = productUrlParam => createSelector(
   [selectShopProducts, selectShopCategories],
-  (products, categories) => Object.keys(categories)
-                                  .filter(keys => categories[keys].name.toLowerCase() === productUrlParam)
-                                  .map(category => 
-                                    products.filter(product => 
-                                                      product.categories[category] === true))
+  (products, categories) => products && categories ? 
+    Object.keys(categories)
+      .filter(keys => categories[keys].name.toLowerCase() === productUrlParam)
+      .map(category => products.filter(product => product.categories[category] === true))
+  : []
+);
+
+export const selectIsProductFetching = createSelector(
+  [selectShop],
+  shop => shop.isProductsFetching
+);
+
+export const selectIsProductLoaded = createSelector(
+  [selectShop],
+  shop => !!shop.products
 );
  

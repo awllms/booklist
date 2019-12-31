@@ -12,7 +12,7 @@ const ShopPage = ({ match }) => {
     <React.Fragment>
       <BreadCrumbNav title={shopTitle} />
       <section className='shop-page'>
-        <h2>Shop</h2>
+        <h2>{shopTitle}</h2>
         <CategoriesOverview />
       </section>
     </React.Fragment>

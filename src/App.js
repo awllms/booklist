@@ -2,42 +2,36 @@ import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import HomePage from './pages/HomePage/Homepage';
-import ProductsPage from './pages/ProductsPage/ProductsPage';
-import ShopPage from './pages/ShopPage/ShopPage';
-import CategoriesPage from './pages/CategoriesPage/CategoriesPage';
+import HomePageContainer from './pages/HomePage/HomePageContainer';
+import ProductsPageContainer from './pages/ProductsPage/ProductsPageContainer';
+import ShopPageContainer from './pages/ShopPage/ShopPageContainer';
+import CategoriesPageContainer from './pages/CategoriesPage/CategoriesPageContainer';
 import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 import SignInAndSignUpPage from './pages/SignInAndSignUpPage/SignInAndSignUpPage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import { firestore, convertProductsSnapshot, convertCategoriesSnapshotToMap } from './firebase/firebase.utils';
-import { updateProducts, updateCategories } from './redux/shop/shop.actions';
+
+import { fetchProductsStart, fetchCategoriesStart } from './redux/shop/shop.actions';
+
+
 import './App.css';
 
-const App = ({ updateProducts, updateCategories}) => {
+const App = ({ fetchProductsStart, fetchCategoriesStart}) => {
 
   useEffect(() => {
-    const productsRef = firestore.collection('products');
-    const categoriesRef = firestore.collection('categories')
-    productsRef.onSnapshot(async snapShot => {
-      const productList = convertProductsSnapshot(snapShot);
-      updateProducts(productList);
-    })
-    categoriesRef.onSnapshot(async snapShot => {
-      const categoriesMap = convertCategoriesSnapshotToMap(snapShot);
-      updateCategories(categoriesMap);
-    })
-  }, [updateProducts, updateCategories])
+    fetchProductsStart()
+    fetchCategoriesStart()
+  }, [fetchProductsStart, fetchCategoriesStart])
 
   return (
     <React.Fragment>
       <div className="main-content">
         <Header />
         <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route path='/products' component={ProductsPage} />
-          <Route path='/shop' component={ShopPage} />
-          <Route path='/categories' component={CategoriesPage} />
+          <Route exact path='/' component={HomePageContainer} />
+          <Route path='/products' component={ProductsPageContainer} />
+          <Route path='/shop' component={ShopPageContainer} />
+          <Route path='/categories' component={CategoriesPageContainer} />
           <Route exact path='/checkout' component={CheckoutPage} />
           <Route exact path='/signin' component={SignInAndSignUpPage} />
         </Switch>
@@ -48,8 +42,8 @@ const App = ({ updateProducts, updateCategories}) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  updateProducts: productList => dispatch(updateProducts(productList)),
-  updateCategories: categoriesMap => dispatch(updateCategories(categoriesMap))
+  fetchProductsStart: () => dispatch(fetchProductsStart()),
+  fetchCategoriesStart: () => dispatch(fetchCategoriesStart())
 });
 
 export default connect(null, mapDispatchToProps)(App);

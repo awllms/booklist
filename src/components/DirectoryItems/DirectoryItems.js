@@ -8,7 +8,8 @@ import 'slick-carousel/slick/slick-theme.css';
 import './DirectoryItems.scss';
 
 
-const DirectoryItems = ({ title, items, history }) => {
+const DirectoryItems = ({ title, items, history, match }) => {
+  
   const settings = {
     dots: true,
     infinite: items.length > 3 ? true : false,
@@ -47,7 +48,13 @@ const DirectoryItems = ({ title, items, history }) => {
   return (
     <div className='directory-items-container'>
       <div className='directory-items-title'>
-        <h3 onClick={()=> history.push(`categories/${categoryURL}`)}>{ title }</h3>
+        <h3 onClick={() => 
+          match.path === '/categories' ? 
+          history.push(`${categoryURL}`) : 
+          history.push(`categories/${categoryURL}`)
+        }>
+          { title }
+        </h3>
       </div>
       <div className='directory-items'>
         <Slider { ...settings }>

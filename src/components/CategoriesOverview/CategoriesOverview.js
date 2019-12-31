@@ -3,20 +3,21 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectAllProductCategories } from '../../redux/shop/shop.selectors';
 
+
 import DirectoryItems from '../DirectoryItems/DirectoryItems';
 
 import './CategoriesOverview.scss';
 
 const CategoryOverview = ({ categories }) => {
   return (
-    <div className='category-overview'>
+    <section className='category-overview'>
       {
         categories.map((category, index) => 
         <DirectoryItems key={index} 
                         title={category[0].categoryName} 
                         items={category[0].items}  />)
       }
-    </div>
+    </section>
   );
 };
 
