@@ -31,7 +31,6 @@ const Header = ({ history, hidden, currentUser }) => {
             : 
             <Link className='option' to='/signin'>SignIn</Link>
           }
-          <a href='/' className='option last'>Contact</a>
 
           <CartIcon /> 
         </div>
