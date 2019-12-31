@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import HomePageContainer from './pages/HomePage/HomePageContainer';
 import ProductsPageContainer from './pages/ProductsPage/ProductsPageContainer';
@@ -12,11 +13,12 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 import { fetchProductsStart, fetchCategoriesStart } from './redux/shop/shop.actions';
-
+import { selectCurrentUser } from './redux/user/user.selectors';
+ 
 
 import './App.css';
 
-const App = ({ fetchProductsStart, fetchCategoriesStart}) => {
+const App = ({ fetchProductsStart, fetchCategoriesStart, currentUser }) => {
 
   useEffect(() => {
     fetchProductsStart()
@@ -33,7 +35,10 @@ const App = ({ fetchProductsStart, fetchCategoriesStart}) => {
           <Route path='/shop' component={ShopPageContainer} />
           <Route path='/categories' component={CategoriesPageContainer} />
           <Route exact path='/checkout' component={CheckoutPage} />
-          <Route exact path='/signin' component={SignInAndSignUpPage} />
+          <Route 
+            exact 
+            path='/signin' 
+            render={() => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)} />
         </Switch>
       </div>
       <Footer />
@@ -41,9 +46,13 @@ const App = ({ fetchProductsStart, fetchCategoriesStart}) => {
   );
 };
 
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
+});
+
 const mapDispatchToProps = dispatch => ({
   fetchProductsStart: () => dispatch(fetchProductsStart()),
   fetchCategoriesStart: () => dispatch(fetchCategoriesStart())
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
