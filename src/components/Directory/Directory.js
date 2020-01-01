@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+
+import DirectoryItems from '../DirectoryItems/DirectoryItems';
+
 import { selectShopBestSellers, 
          selectShopNewReleases, 
          selectShopComingSoon } from '../../redux/shop/shop.selectors';
-import DirectoryItems from '../DirectoryItems/DirectoryItems';
 
 import './Directory.scss';
 

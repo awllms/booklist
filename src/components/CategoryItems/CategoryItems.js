@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import BreadCrumbNav from '../BreadCrumbNav/BreadCrumbNav';
 import DirectoryItem from '../DirectoryItem/DirectoryItem';
+
 import { titleCase } from './CategoryItems.utils';
 import { selectCategoryItems } from '../../redux/shop/shop.selectors';
 

@@ -6,6 +6,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { signOutStart } from '../../redux/user/user.actions';
 import { toggleNavHidden } from '../../redux/nav/nav.actions';
+
 import './NavDropDown.scss';
 
 const NavDropDown = ({ history, currentUser, signOutStart, toggleNavHidden }) => {

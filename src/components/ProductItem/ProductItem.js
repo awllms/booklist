@@ -2,10 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ReactHtmlParser from 'react-html-parser';
 
-import { addItem } from '../../redux/cart/cart.actions';
-import { selectProduct } from '../../redux/shop/shop.selectors';
 import BreadCrumbNav from '../BreadCrumbNav/BreadCrumbNav';
 import CustomButton from '../CustomButton/CustomButton';
+
+import { addItem } from '../../redux/cart/cart.actions';
+import { selectProduct } from '../../redux/shop/shop.selectors';
 
 import './ProductItem.scss';
 

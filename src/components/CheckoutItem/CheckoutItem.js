@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+
 import { addItem, removeItem, clearItem } from '../../redux/cart/cart.actions';
+
 import './CheckoutItem.scss';
 
 const CheckoutItem = ({ item, addItem, removeItem, clearItem, history }) => {

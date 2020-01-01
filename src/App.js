@@ -15,7 +15,6 @@ import Footer from './components/Footer/Footer';
 import { fetchProductsStart, fetchCategoriesStart } from './redux/shop/shop.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { checkUserSession } from './redux/user/user.actions';
- 
 
 import './App.css';
 

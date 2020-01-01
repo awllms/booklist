@@ -1,14 +1,15 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { withRouter } from 'react-router-dom';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 import CustomButton from '../CustomButton/CustomButton';
+
 import sliderImageOne from '../../assets/dash-of-color.jpg';
 import sliderImageTwo from '../../assets/quality-time.jpg';
 import sliderImageThree from '../../assets/morning-refresher.jpg';
 
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import './ImageSlider.scss';
 
 const ImageSlider = ({ history }) => {

@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 
-import { toggleCartHidden } from '../../redux/cart/cart.actions';
-import { selectCartItems } from '../../redux/cart/cart.selectors';
 import CartItem from '../CartItem/CartItem';
 import CustomButton from '../CustomButton/CustomButton';
+
+import { toggleCartHidden } from '../../redux/cart/cart.actions';
+import { selectCartItems } from '../../redux/cart/cart.selectors';
+
 import './CartDropDown.scss';
 
 const CartDropDown = ({ cartItems, history, toggleCartHidden }) => {

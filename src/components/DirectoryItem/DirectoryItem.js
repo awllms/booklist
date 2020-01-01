@@ -3,8 +3,8 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { addItem } from '../../redux/cart/cart.actions';
-import CustomButton from '../CustomButton/CustomButton';
 
+import CustomButton from '../CustomButton/CustomButton';
 
 import './DirectoryItem.scss';
 

@@ -19,6 +19,9 @@
 
     .option {
       margin-right: 30px;
+      &:hover {
+        color: #0080DE;
+      }
     }
     .option.last {
       margin-right: 20px;
