@@ -1,11 +1,15 @@
 .regular-sign-in {
   margin-bottom: 5px;
+  &:hover {
+    background-color: black;
+    opacity: 0.9;
+  }
 }
 
 .google-sign-in {
   background-color: #0080DE;
 
   &:hover {
-    background-color: black;
+    opacity: 0.9;
   }
 }

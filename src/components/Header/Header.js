@@ -20,8 +20,8 @@ import './Header.scss';
 const Header = ({ history, hidden, navHidden, currentUser, signOutStart, toggleNavHidden }) => {
   return (
     <header className='header'>
-      <h1 onClick={() => history.push('/')}>BookList</h1>
-      <NavIcon toggleNavHidden={toggleNavHidden} />
+        <h1 onClick={() => history.push('/')}>BookList</h1>
+        <NavIcon toggleNavHidden={toggleNavHidden} />
       { navHidden ? null : <NavDropDown />}
       <nav className='navigation'>
         <div className='options'>

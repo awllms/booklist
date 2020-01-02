@@ -140,6 +140,9 @@ img {
   .buttons {
     flex-direction: column;
   }
+  .main-content {
+    padding: 0px 50px;
+  }
 }
 
 
@@ -206,9 +209,9 @@ img {
     display: flex;
   }
 
-  .slider .image-placeholder .custom-button {
+  /* .slider .image-placeholder .custom-button {
     font-size: 0.64rem;
-  }
+  } */
   .sign-in-and-sign-up {
     flex-direction: column;
     justify-content: center;
@@ -225,6 +228,12 @@ img {
   .sign-up .custom-button {
     width: 100%;
   }
+
+  .main-content {
+    width: auto;
+    overflow:hidden;
+    max-width: auto;
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -237,9 +246,11 @@ img {
   .footer .footer-content .footer-top .footer-list li {
     border-left: none;
   }
+}
 
-  .slider .image-placeholder .custom-button {
-    font-size: 0.34rem;
+@media only screen and (max-width: 650px) {
+  .main-content {
+    padding: 0px 20px;
   }
 }
 
@@ -264,7 +275,7 @@ img {
   }
 
   .slider .image-placeholder .custom-button {
-    font-size: 7px;
+    font-size: .64rem;
     padding: 0px 10px;
   }
 }
@@ -275,24 +286,32 @@ img {
   }
 
   .cart-icon {
-    display: none;
-  }
-
-  .header h1 {
-    margin-left: 20px;
+    /* display: none; */
+    margin-right: 2px;
   }
 
   .nav-dropdown {
-    left: 198px;
+    /* left: 198px; */
+    left: 175px;
   }
 
   .nav-icon {
-    top: 2px;
-    left: 230px;
+    /* top: 2px; */
+    left: 206px;
+    /* left: 230px; */
   }
 
   .category-items-container h2 {
     text-align: center;
+  }
+
+  .footer-top .footer-list  {
+    flex-direction: column;
+  }
+
+  .footer .footer-content .footer-top .footer-list li {
+    margin-bottom: 10px;
+    padding-left: 0;
   }
 }
 
@@ -314,6 +333,18 @@ img {
     padding: 0px 36px; */
     display: none;
   }
+
+  .product-item .product-item-bottom .product-description .product-description-text p {
+    text-align: center;
+  }
+
+  .main-content {
+    padding: 0px 5px;
+  }
+
+  .footer .footer-content .footer-bottom .footer-bottom-text {
+    text-align: center;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -325,6 +356,7 @@ img {
   }
   .nav-icon {
     background-size: 30px;
+    top: 11px;
     left: 165px;
   }
   .nav-dropdown {
