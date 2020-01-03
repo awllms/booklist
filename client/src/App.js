@@ -9,6 +9,7 @@ import ShopPageContainer from './pages/ShopPage/ShopPageContainer';
 import CategoriesPageContainer from './pages/CategoriesPage/CategoriesPageContainer';
 import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 import SignInAndSignUpPage from './pages/SignInAndSignUpPage/SignInAndSignUpPage';
+import AccountPage from './pages/AccountPage/AccountPage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
@@ -39,7 +40,13 @@ const App = ({ fetchProductsStart, fetchCategoriesStart, currentUser, checkUserS
           <Route 
             exact 
             path='/signin' 
-            render={() => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)} />
+            render={() => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)} 
+          />
+          <Route 
+            exact 
+            path='/account' 
+            render={() => !currentUser ? (<Redirect to='/signin' />) : (<AccountPage />)} 
+          />
         </Switch>
       </div>
       <Footer />
