@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import BreadCrumbNav from '../../components/BreadCrumbNav/BreadCrumbNav';
-import OrderItems from '../../components/OrderItems/OrderItems';
+import OrdersContainer from '../../components/Orders/OrdersContainer';
 
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { selectOrderItems } from '../../redux/orders/order.selectors';
@@ -27,10 +27,7 @@ const AccountPage = ({ currentUser, fetchOrdersStart, orderItems }) => {
         <div className='orders-overview'>
           <h4>Orders</h4>
           <div className='orders-seperator'></div>
-          { orderItems.length ?
-            orderItems.map(order => <OrderItems key={order.id} order={order} />)
-            : (<div className='orders-empty-message'>There are no orders</div>)
-          }
+          <OrdersContainer orderItems={orderItems} />
         </div>
       </section>
     </React.Fragment>

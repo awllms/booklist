@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
+
 import { selectIsProductFetching } from '../../redux/shop/shop.selectors';
 
 import Spinner from '../../components/Spinner/Spinner';
@@ -15,4 +16,4 @@ const CategoriesPageContainer = compose(
   Spinner
 )(CategoriesPage);
 
-export default CategoriesPageContainer;
+export default CategoriesPageContainer; 
