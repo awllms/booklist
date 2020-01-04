@@ -16,8 +16,9 @@ export function* fetchOrdersAsync({ payload: currentUserId }) {
     const ordersSnapShot = yield firestore.collection('orders')
                                           .where('userId', '==', currentUserId)
                                           .get();
-    yield console.log(ordersSnapShot)
-    if (ordersSnapShot.empty) return;  
+    if (ordersSnapShot.empty) return;
+    const orders = yield ordersSnapShot.docs.map(doc => doc.data());
+    yield put(fetchOrdersSuccess(orders));
   } catch (error) {
     yield put(fetchOrdersFailure(error));
   }

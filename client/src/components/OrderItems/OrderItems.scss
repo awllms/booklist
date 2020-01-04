@@ -1,9 +1,28 @@
 .order-items {
   width: 100%;
+  
+  .order-details {
+    margin-bottom: 30px; 
+    
+    .order-number {
+      font-family: "Hurme Geometric Sans 3 W03 Lt";
+      font-size: 1.0rem;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .order-date {
+      display: block;
+    }
+
+    .bold {
+      font-family: "Hurme Geometric Sans 3 W03 Bold";
+    }
+  }
 
   .order-header {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
     padding-bottom: 20px;
     border-bottom: 2px solid #ededed;
