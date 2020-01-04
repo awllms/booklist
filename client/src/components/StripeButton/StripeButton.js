@@ -1,10 +1,14 @@
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+
+import { setOrderStart } from '../../redux/orders/orders.actions';
 
 import CustomButton from '../CustomButton/CustomButton';
 
-const StripeCheckoutButton = ({ price }) => {
+const StripeCheckoutButton = ({ price, cartItems, setOrderStart, currentUser }) => {
   const priceForStripe = price * 100;
   const publishableKey = 'pk_test_Scr0qKBcKbhdWzEUC1QDuIaU00b3ncU2Cc';
 
@@ -18,6 +22,7 @@ const StripeCheckoutButton = ({ price }) => {
       }
     }).then(response => {
       alert('Payment Successful');
+      setOrderStart({cartItems, currentUser, price});
     }).catch(error => {
       console.log('Payment Error: ', JSON.parse(error));
       alert('There was an issue with your payment. Please use the provided credit card.');
@@ -25,22 +30,31 @@ const StripeCheckoutButton = ({ price }) => {
   };
 
   return (
-    <StripeCheckout 
-      name='Booklist'
-      description={`Your total is $${price}`}
-      image='https://i.ibb.co/xjxSt8v/booklist-stripe-button-logo.png'
-      label='Pay Now'
-      panelLabel='Pay Now'
-      amount={priceForStripe}
-      currency='USD'
-      stripeKey={publishableKey}
-      billingAddress
-      shippingAddress
-      token={onToken}
-    >
-    <CustomButton>Pay Now</CustomButton>
-    </StripeCheckout>
+    <React.Fragment>
+    { !currentUser ? (<Redirect to='/signin' />) : 
+      <StripeCheckout 
+        name='Booklist'
+        description={`Your total is $${price}`}
+        image='https://i.ibb.co/xjxSt8v/booklist-stripe-button-logo.png'
+        label='Pay Now'
+        panelLabel='Pay Now'
+        amount={priceForStripe}
+        currency='USD'
+        stripeKey={publishableKey}
+        billingAddress
+        shippingAddress
+        token={onToken}
+      >
+      <CustomButton>Pay Now</CustomButton>
+      </StripeCheckout>
+    }
+    </React.Fragment>
+    
   )
 };
 
-export default StripeCheckoutButton;
+const mapDispatchToProps = dispatch => ({
+  setOrderStart: userAndItems => dispatch(setOrderStart(userAndItems))
+})
+
+export default connect(null, mapDispatchToProps)(StripeCheckoutButton);

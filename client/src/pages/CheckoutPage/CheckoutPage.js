@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import { selectCartItems, selectCheckoutTotal } from '../../redux/cart/cart.selectors';
+import { selectCurrentUser } from '../../redux/user/user.selectors';
 
 import BreadCrumbNav from '../../components/BreadCrumbNav/BreadCrumbNav';
 import CheckoutItem from '../../components/CheckoutItem/CheckoutItem';
@@ -10,7 +11,7 @@ import StripeCheckoutButton from '../../components/StripeButton/StripeButton';
 
 import './CheckoutPage.scss';
 
-const CheckoutPage = ({ cartItems, total }) => {
+const CheckoutPage = ({ cartItems, total, currentUser }) => {
   return (
     <React.Fragment>
       <BreadCrumbNav title='Checkout'/>
@@ -47,7 +48,7 @@ const CheckoutPage = ({ cartItems, total }) => {
             <span>4242 4242 4242 4242 - Exp: 01/20 - CVV: 123</span>
           </div>
           <div className='checkout-button'>
-            <StripeCheckoutButton price={total} />
+            <StripeCheckoutButton price={total} cartItems={cartItems} currentUser={currentUser} />
           </div>
         </div>
       </section>
@@ -57,7 +58,8 @@ const CheckoutPage = ({ cartItems, total }) => {
 
 const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,
-  total: selectCheckoutTotal
+  total: selectCheckoutTotal,
+  currentUser: selectCurrentUser
 });
 
 export default connect(mapStateToProps)(CheckoutPage);
