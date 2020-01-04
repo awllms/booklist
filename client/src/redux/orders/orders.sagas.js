@@ -28,7 +28,9 @@ export function* fetchOrdersAsync({ payload: currentUserId }) {
                                           .where('userId', '==', currentUserId)
                                           .orderBy('createdAt', 'desc')
                                           .get();
-    if (ordersSnapShot.empty) return;
+    if (ordersSnapShot.empty) {
+      yield put(fetchOrdersSuccess([]));
+    }
     const orders = yield ordersSnapShot.docs.map(doc => doc.data());
     yield put(fetchOrdersSuccess(orders));
   } catch (error) {

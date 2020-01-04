@@ -25,7 +25,11 @@
     .orders-seperator {
       border-bottom: 2px solid #ededed;
       margin-bottom: 20px;
-      width: 8.5%;
+      width: 76px;
+    }
+
+    .orders-empty-message {
+      color: #6A6A6A;
     }
   }
 }

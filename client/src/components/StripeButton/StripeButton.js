@@ -2,13 +2,14 @@ import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 
 import { setOrderStart } from '../../redux/orders/orders.actions';
+import { clearCart } from '../../redux/cart/cart.actions';
 
 import CustomButton from '../CustomButton/CustomButton';
 
-const StripeCheckoutButton = ({ price, cartItems, setOrderStart, currentUser }) => {
+const StripeCheckoutButton = ({ price, cartItems, setOrderStart, currentUser, history, clearCart }) => {
   const priceForStripe = price * 100;
   const publishableKey = 'pk_test_Scr0qKBcKbhdWzEUC1QDuIaU00b3ncU2Cc';
 
@@ -21,8 +22,10 @@ const StripeCheckoutButton = ({ price, cartItems, setOrderStart, currentUser }) 
         token
       }
     }).then(response => {
-      alert('Payment Successful');
+      alert('Payment Successful!');
       setOrderStart({cartItems, currentUser, price});
+      clearCart();
+      history.push(`/thank-you`, {token})
     }).catch(error => {
       console.log('Payment Error: ', JSON.parse(error));
       alert('There was an issue with your payment. Please use the provided credit card.');
@@ -54,7 +57,8 @@ const StripeCheckoutButton = ({ price, cartItems, setOrderStart, currentUser }) 
 };
 
 const mapDispatchToProps = dispatch => ({
-  setOrderStart: userAndItems => dispatch(setOrderStart(userAndItems))
-})
+  setOrderStart: userAndItems => dispatch(setOrderStart(userAndItems)),
+  clearCart: () => dispatch(clearCart())
+});
 
-export default connect(null, mapDispatchToProps)(StripeCheckoutButton);
+export default connect(null, mapDispatchToProps)(withRouter(StripeCheckoutButton));

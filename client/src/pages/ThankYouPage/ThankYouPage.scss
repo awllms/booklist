@@ -1,0 +1,37 @@
+.thank-you-page {
+  margin: 0 auto;
+
+  .thank-you {
+    margin-top: 60px;
+    
+    .image-container {
+      width: 8%;
+      margin: 0 auto 10px;
+      
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+  
+    span {
+      font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+    }
+  
+    .details {
+      display: block;
+      color: #6A6A6A;
+      margin-bottom: 10px;
+    }
+    
+    .custom-button {
+      margin: 0 auto;
+    }
+  }
+  
+}

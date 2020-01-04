@@ -11,20 +11,20 @@ const ordersReducer = (state=INITIAL_STATE, action) => {
     case OrdersActionTypes.FETCH_ORDERS_START:
       return {
         ...state,
-        isOrdersFetching: !state.isOrdersFetching
+        isOrdersFetching: true
       };
     case OrdersActionTypes.FETCH_ORDERS_SUCCESS:
       return {
         ...state,
         orderItems: action.payload,
         error: null,
-        isOrdersFetching: !state.isOrdersFetching
+        isOrdersFetching: false
       };
     case OrdersActionTypes.FETCH_ORDERS_FAILURE:
       return {
         ...state,
         error: action.payload,
-        isOrdersFetching: !state.isOrdersFetching
+        isOrdersFetching: false
       };
     default:
       return state;

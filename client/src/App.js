@@ -10,6 +10,7 @@ import CategoriesPageContainer from './pages/CategoriesPage/CategoriesPageContai
 import CheckoutPage from './pages/CheckoutPage/CheckoutPage';
 import SignInAndSignUpPage from './pages/SignInAndSignUpPage/SignInAndSignUpPage';
 import AccountPage from './pages/AccountPage/AccountPage';
+import ThankYouPage from './pages/ThankYouPage/ThankYouPage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
@@ -47,6 +48,7 @@ const App = ({ fetchProductsStart, fetchCategoriesStart, currentUser, checkUserS
             path='/account' 
             render={() => !currentUser ? (<Redirect to='/signin' />) : (<AccountPage />)} 
           />
+          <Route exact path='/thank-you' component={ThankYouPage} />
         </Switch>
       </div>
       <Footer />
