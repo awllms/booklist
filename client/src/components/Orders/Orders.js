@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import OrderItems from '../../components/OrderItems/OrderItems';
 
@@ -7,7 +8,12 @@ const Orders = ({ orderItems }) => {
     <React.Fragment>
       { orderItems.length ?
         orderItems.map(order => <OrderItems key={order.id} order={order} />)
-        : (<div className='orders-empty-message'>There are no orders</div>)
+        : (
+            <div className='orders-empty-message'>
+              <span>There are no orders. Let's change that. </span>
+              <Link className='shop-link' to='/shop'>Shop Now</Link>
+            </div>
+          )
       }
     </React.Fragment>
   );
