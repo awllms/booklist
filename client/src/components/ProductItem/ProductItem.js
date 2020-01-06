@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import ReactHtmlParser from 'react-html-parser';
 
 import BreadCrumbNav from '../BreadCrumbNav/BreadCrumbNav';
@@ -25,6 +26,8 @@ const ProductItem = ({ product, addItem }) => {
     price,
     description
    } = item;
+  const authorURL = encodeURIComponent(author.replace(/[\s]/g, '-').toLowerCase());
+  const narratorURL = encodeURIComponent(narrator.replace(/[\s]/g, '-').toLowerCase());
   return (
     <React.Fragment>
       <BreadCrumbNav title={title} />
@@ -38,11 +41,15 @@ const ProductItem = ({ product, addItem }) => {
             <h3>{subTitle}</h3>
             <span className='product-details-text'>
               <span className='product-details-text-bold'>By:</span>
-              <a href='/'>{author}</a>
+              <Link 
+                to={`/authors/${authorURL}`}
+              >{author}</Link>
             </span>
             <span className='product-details-text'>
               <span className='product-details-text-bold'>Narrated By:</span>
-              <a href='/'>{narrator}</a>
+              <Link 
+                to={`/authors/${narratorURL}`}
+              >{narrator}</Link>
             </span>
             <span className='product-details-text'>
               <span className='product-details-text-bold'>Length:</span>

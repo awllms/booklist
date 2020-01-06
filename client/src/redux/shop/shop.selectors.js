@@ -77,3 +77,11 @@ export const selectIsProductLoaded = createSelector(
   shop => !!shop.products
 );
  
+export const selectAuthorItems = authorUrlParam => createSelector(
+  [selectShopProducts],
+  products => products ? 
+    products.filter(product => 
+      product.author.toLowerCase() === authorUrlParam || 
+      product.narrator.toLowerCase() === authorUrlParam)
+  : []
+);

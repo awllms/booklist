@@ -1,17 +1,26 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import CategoryItems from '../../components/CategoryItems/CategoryItems';
-import ShopPageContainer from '../ShopPage/ShopPageContainer';
+
+import { titleCase } from '../../components/CategoryItems/CategoryItems.utils';
+import { selectCategoryItems } from '../../redux/shop/shop.selectors';
 
 
-const CategoriesPage = ({ match }) => {
+const CategoriesPage = ({ match, categoryItemsList }) => {
+  const categoryItems = categoryItemsList[0];
+  const categoryTitle = titleCase(decodeURIComponent(match.params.categoryTitle).replace(/[-]/g, ' '));
+
   return (
-    <Switch>
-      <Route path={`${match.path}/:categoryTitle`} component={CategoryItems} />
-      <Route exact path={`${match.path}`} component={ShopPageContainer} />
-    </Switch>
+    <Route 
+      path={`${match.path}`} 
+      render={(props) => <CategoryItems {...props} categoryItems={categoryItems} categoryTitle={categoryTitle} /> } />
   );
-};
+}; 
 
-export default CategoriesPage;
+const mapStateToProps = (state, ownProps) => ({
+  categoryItemsList: selectCategoryItems(decodeURIComponent(ownProps.match.params.categoryTitle).replace(/[-]/g, ' '))(state)
+});
+
+export default connect(mapStateToProps)(CategoriesPage);

@@ -8,6 +8,8 @@ import ProductsPageContainer from './pages/ProductsPage/ProductsPageContainer';
 import ShopPageContainer from './pages/ShopPage/ShopPageContainer';
 import CategoriesPageContainer from './pages/CategoriesPage/CategoriesPageContainer';
 import CheckoutPageContainer from './pages/CheckoutPage/CheckoutPageContainer';
+import AuthorPageContainer from './pages/AuthorsPage/AuthorsPageContainer';
+
 import SignInAndSignUpPage from './pages/SignInAndSignUpPage/SignInAndSignUpPage';
 import AccountPage from './pages/AccountPage/AccountPage';
 import ThankYouPage from './pages/ThankYouPage/ThankYouPage';
@@ -40,8 +42,10 @@ const App = ({ fetchProductsStart, fetchCategoriesStart, currentUser, checkUserS
           <Route exact path='/' component={HomePageContainer} />
           <Route path='/products' component={ProductsPageContainer} />
           <Route exact path='/shop' component={ShopPageContainer} />
-          <Route path='/categories' component={CategoriesPageContainer} />
+          <Route exact path='/categories' component={ShopPageContainer} />
+          <Route path='/categories/:categoryTitle' component={CategoriesPageContainer} />
           <Route exact path='/checkout' component={CheckoutPageContainer} />
+          <Route path='/authors/:authorName' component={AuthorPageContainer} />
           <Route 
             exact 
             path='/signin' 
