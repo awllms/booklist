@@ -22,7 +22,7 @@ const StripeCheckoutButton = ({ price, cartItems, setOrderStart, currentUser, hi
         token
       }
     }).then(response => {
-      alert('Payment Successful!');
+      // alert('Payment Successful!');
       setOrderStart({cartItems, currentUser, price});
       clearCart();
       history.push(`/thank-you`, {token})

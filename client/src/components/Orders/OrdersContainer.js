@@ -3,7 +3,7 @@ import { compose } from 'redux';
 
 import { createStructuredSelector } from 'reselect';
 
-import { selectIsOrdersFetching } from '../../redux/orders/order.selectors';
+import { selectIsOrdersFetching } from '../../redux/orders/orders.selectors';
 import Spinner from '../Spinner/Spinner';
 import Orders from './Orders';
 

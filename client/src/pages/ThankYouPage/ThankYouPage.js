@@ -16,7 +16,7 @@ const ThankYouPage = ({ location, history }) => {
             <section className='thank-you-page'>
               <div className='thank-you'>
                 <div className='image-container'>
-                  <img src='https://i.ibb.co/PzKMPjS/thank-you-success.png' alt='success' />
+                  <img src='https://i.ibb.co/YQh8Tfy/thank-you-success.png' alt='success' />
                 </div>
                 <h2>Thank you for your purchase!</h2>
                 <span className='details'>

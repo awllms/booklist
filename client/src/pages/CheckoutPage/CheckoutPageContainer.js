@@ -2,18 +2,18 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
-import { selectIsProductFetching } from '../../redux/shop/shop.selectors';
+import { selectIsOrderSetting } from '../../redux/orders/orders.selectors';
 
 import Spinner from '../../components/Spinner/Spinner';
-import CategoriesPage from './CategoriesPage';
+import CheckoutPage from './CheckoutPage';
 
 const mapStateToProps = createStructuredSelector({
-  isLoading: selectIsProductFetching
+  isLoading: selectIsOrderSetting
 });
 
-const CategoriesPageContainer = compose(
+const CheckoutPageContainer = compose(
   connect(mapStateToProps),
   Spinner
-)(CategoriesPage);
+)(CheckoutPage);
 
-export default CategoriesPageContainer;  
+export default CheckoutPageContainer;

@@ -6,7 +6,7 @@ import BreadCrumbNav from '../../components/BreadCrumbNav/BreadCrumbNav';
 import OrdersContainer from '../../components/Orders/OrdersContainer';
 
 import { selectCurrentUser } from '../../redux/user/user.selectors';
-import { selectOrderItems } from '../../redux/orders/order.selectors';
+import { selectOrderItems } from '../../redux/orders/orders.selectors';
 import { fetchOrdersStart } from '../../redux/orders/orders.actions';
 
 import './AccountPage.scss';

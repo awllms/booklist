@@ -4,11 +4,15 @@ const selectOrders = state => state.orders;
 
 export const selectOrderItems = createSelector(
   [selectOrders],
-  order => order.orderItems
+  orders => orders.orderItems
 );
 
 export const selectIsOrdersFetching = createSelector(
   [selectOrders],
-  order => order.isOrdersFetching
+  orders => orders.isOrdersFetching
 );
 
+export const selectIsOrderSetting = createSelector(
+  [selectOrders],
+  orders => orders.isOrderSetting
+);
