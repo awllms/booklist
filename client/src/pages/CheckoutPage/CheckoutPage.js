@@ -5,13 +5,16 @@ import { createStructuredSelector } from 'reselect';
 import { selectCartItems, selectCheckoutTotal } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 
+import { setAlert } from '../../redux/alert/alert.actions';
+
 import BreadCrumbNav from '../../components/BreadCrumbNav/BreadCrumbNav';
 import CheckoutItem from '../../components/CheckoutItem/CheckoutItem';
+import CustomButton from '../../components/CustomButton/CustomButton';
 import StripeCheckoutButton from '../../components/StripeButton/StripeButton';
 
 import './CheckoutPage.scss';
 
-const CheckoutPage = ({ cartItems, total, currentUser }) => {
+const CheckoutPage = ({ cartItems, total, currentUser, setAlert }) => {
   return (
     <React.Fragment>
       <BreadCrumbNav title='Checkout'/>
@@ -48,7 +51,17 @@ const CheckoutPage = ({ cartItems, total, currentUser }) => {
             <span>4242 4242 4242 4242 - Exp: 01/20 - CVV: 123</span>
           </div>
           <div className='checkout-button'>
-            <StripeCheckoutButton price={total} cartItems={cartItems} currentUser={currentUser} />
+            { cartItems.length ?  
+              <StripeCheckoutButton price={total} cartItems={cartItems} currentUser={currentUser} />
+              : (<CustomButton 
+                  onClick={() => {
+                    setAlert({
+                      status: 'failure',
+                      message: 'Your cart is empty. Please add an item to complete checkout process.'
+                    });
+                  }}>Pay Now</CustomButton>
+                )
+           }
           </div>
         </div>
       </section>
@@ -62,4 +75,8 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
 });
 
-export default connect(mapStateToProps)(CheckoutPage);
+const mapDispatchToProps = dispatch => ({
+  setAlert: alert => dispatch(setAlert(alert))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CheckoutPage);

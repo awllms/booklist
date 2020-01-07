@@ -118,8 +118,8 @@ export function* showAlertOnOrdersStart() {
 
 export function* alertSagas() {
   yield all([
-    call(onSignInSuccess),
     call(onSetAlert),
+    call(onSignInSuccess),
     call(onSignOutSuccess),
     call(onSignUpSuccess),
     call(onSignInFailure),
