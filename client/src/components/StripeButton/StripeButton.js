@@ -4,16 +4,18 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { Redirect, withRouter } from 'react-router-dom';
 
-import { setOrderStart } from '../../redux/orders/orders.actions';
+import { setOrderStart, setOrderIsLoading } from '../../redux/orders/orders.actions';
+import { setAlert } from '../../redux/alert/alert.actions';
 import { clearCart } from '../../redux/cart/cart.actions';
 
 import CustomButton from '../CustomButton/CustomButton';
 
-const StripeCheckoutButton = ({ price, cartItems, setOrderStart, currentUser, history, clearCart }) => {
+const StripeCheckoutButton = ({ price, cartItems, setOrderStart, currentUser, history, clearCart, setOrderIsLoading, setAlert }) => {
   const priceForStripe = price * 100;
   const publishableKey = 'pk_test_Scr0qKBcKbhdWzEUC1QDuIaU00b3ncU2Cc';
 
   const onToken = token => {
+    setOrderIsLoading()
     axios({
       url: 'payment',
       method: 'post',
@@ -22,13 +24,15 @@ const StripeCheckoutButton = ({ price, cartItems, setOrderStart, currentUser, hi
         token
       }
     }).then(response => {
-      // alert('Payment Successful!');
       setOrderStart({cartItems, currentUser, price});
       clearCart();
       history.push(`/thank-you`, {token})
     }).catch(error => {
       console.log('Payment Error: ', JSON.parse(error));
-      alert('There was an issue with your payment. Please use the provided credit card.');
+      setAlert({ 
+        status: 'failure',
+        message: 'There was an issue with your payment. Please use the provided credit card.'
+      });
     })
   };
 
@@ -58,7 +62,9 @@ const StripeCheckoutButton = ({ price, cartItems, setOrderStart, currentUser, hi
 
 const mapDispatchToProps = dispatch => ({
   setOrderStart: userAndItems => dispatch(setOrderStart(userAndItems)),
-  clearCart: () => dispatch(clearCart())
+  clearCart: () => dispatch(clearCart()),
+  setOrderIsLoading: () => dispatch(setOrderIsLoading()),
+  setAlert: () => dispatch(setAlert())
 });
 
 export default connect(null, mapDispatchToProps)(withRouter(StripeCheckoutButton));

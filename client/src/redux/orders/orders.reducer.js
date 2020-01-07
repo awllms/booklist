@@ -3,7 +3,7 @@ import OrdersActionTypes from './orders.types';
 const INITIAL_STATE = {
   orderItems: [],
   isOrdersFetching: false,
-  isOrderSetting: false,
+  isOrderLoading: false,
   error: null
 };
 
@@ -27,20 +27,20 @@ const ordersReducer = (state=INITIAL_STATE, action) => {
         error: action.payload,
         isOrdersFetching: false
       };
-    case OrdersActionTypes.SET_ORDER_START:
-      return {
-        ...state,
-        isOrderSetting: true
-      };
     case OrdersActionTypes.SET_ORDER_SUCCESS:
       return {
         ...state,
-        isOrderSetting: false
+        isOrderLoading: false
       };
     case OrdersActionTypes.SET_ORDER_FAILURE:
       return {
         ...state,
-        isOrderSetting: false
+        isOrderLoading: false
+      };
+    case OrdersActionTypes.SET_ORDER_IS_LOADING:
+      return {
+        ...state,
+        isOrderLoading: true
       };
     default:
       return state;

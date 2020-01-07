@@ -28,3 +28,7 @@ export const setOrderFailure = error => ({
   type: OrdersActionTypes.SET_ORDER_FAILURE,
   payload: error
 });
+
+export const setOrderIsLoading = () => ({
+  type: OrdersActionTypes.SET_ORDER_IS_LOADING
+});

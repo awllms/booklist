@@ -12,7 +12,7 @@ export const selectIsOrdersFetching = createSelector(
   orders => orders.isOrdersFetching
 );
 
-export const selectIsOrderSetting = createSelector(
+export const selectIsOrderLoading = createSelector(
   [selectOrders],
-  orders => orders.isOrderSetting
+  orders => orders.isOrderLoading
 );

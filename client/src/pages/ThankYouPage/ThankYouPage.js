@@ -19,9 +19,6 @@ const ThankYouPage = ({ location, history }) => {
                   <img src='https://i.ibb.co/YQh8Tfy/thank-you-success.png' alt='success' />
                 </div>
                 <h2>Thank you for your purchase!</h2>
-                <span className='details'>
-                  Your order is confirmed.
-                </span>
                 <CustomButton onClick={() => history.push('/account')}>
                   View Order
                 </CustomButton>
