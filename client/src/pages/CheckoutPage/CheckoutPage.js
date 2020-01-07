@@ -61,7 +61,7 @@ const CheckoutPage = ({ cartItems, total, currentUser, setAlert }) => {
                     });
                   }}>Pay Now</CustomButton>
                 )
-           }
+            }
           </div>
         </div>
       </section>

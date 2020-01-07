@@ -72,6 +72,13 @@ const ProductItem = ({ product, addItem }) => {
             <CustomButton onClick={() => addItem(item)}>Add to Cart</CustomButton>
             <div className='product-share'>
               <span className='share-text'>Share:</span>
+                <div className='social-icons'>
+                  <img src='https://i.ibb.co/LgFdhmx/facebook.png' alt='facebook' />
+                  <img src='https://i.ibb.co/fkfzVPc/twitter.png' alt='twitter' />
+                  <img src='https://i.ibb.co/RchS8jc/pinterest.png' alt='pinterest' />
+                  <img src='https://i.ibb.co/1MdrS6M/google-plus.png' alt='google plus' />
+                  <img src='https://i.ibb.co/5K7KhCF/envelope.png' alt='email' />
+                </div>
             </div>
           </div>
         </div>
