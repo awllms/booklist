@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import CategoryItems from '../../components/CategoryItems/CategoryItems';
 
-import { titleCase } from '../../components/CategoryItems/CategoryItems.utils';
+import { titleCase } from '../../utils/utils';
 import { selectCategoryItems } from '../../redux/shop/shop.selectors';
 
 

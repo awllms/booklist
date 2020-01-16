@@ -82,6 +82,7 @@ export const selectAuthorItems = authorUrlParam => createSelector(
   products => products ? 
     products.filter(product => 
       product.author.toLowerCase() === authorUrlParam || 
-      product.narrator.toLowerCase() === authorUrlParam)
+      product.narrator.toLowerCase() === authorUrlParam ||
+      product.publisher.toLowerCase() === authorUrlParam)
   : []
 );

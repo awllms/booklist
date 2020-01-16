@@ -28,6 +28,7 @@ const ProductItem = ({ product, addItem }) => {
    } = item;
   const authorURL = encodeURIComponent(author.replace(/[\s]/g, '-').toLowerCase());
   const narratorURL = encodeURIComponent(narrator.replace(/[\s]/g, '-').toLowerCase());
+  const publisherURL = encodeURIComponent(publisher.replace(/[\s]/g, '-').toLowerCase());
   return (
     <React.Fragment>
       <BreadCrumbNav title={title} />
@@ -65,7 +66,9 @@ const ProductItem = ({ product, addItem }) => {
             </span>
             <span className='product-details-text'>
               <span className='product-details-text-bold'>Publisher:</span>
-              <a href='/'>{publisher}</a>
+              <Link 
+                to={`/authors/${publisherURL}`}
+              >{publisher}</Link>
             </span>
 
             <span className='product-price'>${price}</span>
