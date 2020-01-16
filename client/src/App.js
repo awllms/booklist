@@ -20,11 +20,24 @@ import Alert from './components/Alert/Alert';
 
 import { fetchProductsStart, fetchCategoriesStart } from './redux/shop/shop.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
+import { selectCartHidden } from './redux/cart/cart.selectors';
+import { selectNavHidden } from './redux/nav/nav.selectors';
+
 import { checkUserSession } from './redux/user/user.actions';
+import { toggleCartHidden } from './redux/cart/cart.actions';
+import { toggleNavHidden } from './redux/nav/nav.actions';
 
 import './App.css';
 
-const App = ({ fetchProductsStart, fetchCategoriesStart, currentUser, checkUserSession }) => {
+const App = ({ 
+  fetchProductsStart, 
+  fetchCategoriesStart, 
+  currentUser, 
+  checkUserSession, 
+  hidden, 
+  toggleCartHidden,
+  navHidden,
+  toggleNavHidden }) => {
 
   useEffect(() => {
     fetchProductsStart();
@@ -33,10 +46,19 @@ const App = ({ fetchProductsStart, fetchCategoriesStart, currentUser, checkUserS
 
   }, [fetchProductsStart, fetchCategoriesStart, checkUserSession])
 
+  const onAppClick = () => {
+    if (hidden === false) {
+      toggleCartHidden();
+    }
+    if (navHidden === false) {
+      toggleNavHidden();
+    }
+  };
+
   return (
     <React.Fragment>
       <Alert />
-      <div className="main-content">
+      <div className="main-content" onClick={onAppClick}>
         <Header />
         <Switch>
           <Route exact path='/' component={HomePageContainer} />
@@ -65,13 +87,17 @@ const App = ({ fetchProductsStart, fetchCategoriesStart, currentUser, checkUserS
 };
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
+  hidden: selectCartHidden,
+  navHidden: selectNavHidden
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchProductsStart: () => dispatch(fetchProductsStart()),
   fetchCategoriesStart: () => dispatch(fetchCategoriesStart()),
-  checkUserSession: () => dispatch(checkUserSession())
+  checkUserSession: () => dispatch(checkUserSession()),
+  toggleCartHidden: () => dispatch(toggleCartHidden()),
+  toggleNavHidden: () => dispatch(toggleNavHidden())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
