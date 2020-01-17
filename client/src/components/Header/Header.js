@@ -18,7 +18,7 @@ import '../../assets/shopping-cart.png';
 import './Header.scss';
 
 const Header = ({ history, hidden, navHidden, currentUser, signOutStart, toggleNavHidden }) => {
-
+  
   return (
     <header className='header'>
         <h1 onClick={() => history.push('/')}>BookList</h1>

@@ -47,14 +47,16 @@ const App = ({
   }, [fetchProductsStart, fetchCategoriesStart, checkUserSession])
 
   const onAppClick = (event) => {
+    console.log(event.target.className)
     const className = event.target.className;
-    if (hidden === false) {
-      if (className === 'main-content' || className === 'header') {
+    if (!hidden) {
+      if (className !== 'arrow') {
         toggleCartHidden();
-      }
+      } 
     }
-    if (navHidden === false) {
-      if (className === 'header') {
+    if (!navHidden) {
+      console.log(event.target.className)
+      if (className !== 'nav-option') {
         toggleNavHidden();
       }
     }

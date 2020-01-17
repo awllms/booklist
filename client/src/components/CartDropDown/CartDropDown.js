@@ -11,7 +11,7 @@ import { selectCartItems } from '../../redux/cart/cart.selectors';
 
 import './CartDropDown.scss';
 
-const CartDropDown = ({ cartItems, history, toggleCartHidden }) => {
+const CartDropDown = ({ cartItems, history }) => {
   return (
     <div className='cart-dropdown'>
       <div className='cart-items'>
@@ -19,13 +19,13 @@ const CartDropDown = ({ cartItems, history, toggleCartHidden }) => {
         cartItems.length ?
         cartItems.map(cartItem => <CartItem key={cartItem.id} item={cartItem} />)
         : 
-        (<span className='cart-message' onClick={toggleCartHidden}>It's looking a bit empty here...</span>)
+        (<span className='cart-message'>It's looking a bit empty here...</span>)
       }
 
       </div>
       <CustomButton onClick={() => {
         history.push('/checkout')
-        toggleCartHidden()
+        // toggleCartHidden()
       }}>Go to Checkout</CustomButton>
     </div>
   );

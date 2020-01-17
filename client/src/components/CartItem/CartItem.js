@@ -13,16 +13,16 @@ const CartItem = ({ item, history, toggleCartHidden, addItem, removeItem }) => {
     <div className='cart-item'>
       <img src={imageUrl} alt='item' onClick={() => {
         history.push(`/${item.routeName}`)
-        toggleCartHidden()
+        // toggleCartHidden()
       }}/>
       <div className='item-details'>
         <span className='name' onClick={() => {
           history.push(`/${item.routeName}`)
-          toggleCartHidden()
+          // toggleCartHidden()
         }}>{title}</span>
         <span className='quantity'>
         <div className='arrow' onClick={() => removeItem(item)}>&#10094;</div>
-        <span className='value'>{quantity} x ${price}</span>
+        <span className='value value-price'>{quantity} x ${price}</span>
         <div className='arrow' onClick={() => addItem(item)}>&#10095;</div>
       </span>
       </div>
