@@ -22,7 +22,7 @@ const CartItem = ({ item, history, toggleCartHidden, addItem, removeItem }) => {
         }}>{title}</span>
         <span className='quantity'>
         <div className='arrow' onClick={() => removeItem(item)}>&#10094;</div>
-        <span className='value value-price'>{quantity} x ${price}</span>
+        <span className='value'>{quantity} x ${price}</span>
         <div className='arrow' onClick={() => addItem(item)}>&#10095;</div>
       </span>
       </div>

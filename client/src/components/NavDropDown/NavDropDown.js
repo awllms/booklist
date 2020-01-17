@@ -58,7 +58,6 @@ const NavDropDown = ({ history, currentUser, signOutStart, toggleNavHidden }) =>
         <li>
           <span className='nav-option checkout' onClick={() => {
             history.push('/checkout')
-            toggleNavHidden()
           }}>
             Checkout
           </span>
