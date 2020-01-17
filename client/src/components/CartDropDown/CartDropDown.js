@@ -19,7 +19,7 @@ const CartDropDown = ({ cartItems, history, toggleCartHidden }) => {
         cartItems.length ?
         cartItems.map(cartItem => <CartItem key={cartItem.id} item={cartItem} />)
         : 
-        (<span className='cart-message'>It's looking a bit empty here...</span>)
+        (<span className='cart-message' onClick={toggleCartHidden}>It's looking a bit empty here...</span>)
       }
 
       </div>

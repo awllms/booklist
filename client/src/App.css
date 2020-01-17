@@ -389,3 +389,13 @@ img {
     z-index: 5;
   }
 }
+
+@media only screen and (max-width: 260px) {
+  .cart-icon {
+    display: none;
+  }
+
+  .nav-icon {
+    top: 2px;
+  }
+}

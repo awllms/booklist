@@ -46,40 +46,47 @@ const App = ({
 
   }, [fetchProductsStart, fetchCategoriesStart, checkUserSession])
 
-  const onAppClick = () => {
+  const onAppClick = (event) => {
+    const className = event.target.className;
     if (hidden === false) {
-      toggleCartHidden();
+      if (className === 'main-content' || className === 'header') {
+        toggleCartHidden();
+      }
     }
     if (navHidden === false) {
-      toggleNavHidden();
+      if (className === 'header') {
+        toggleNavHidden();
+      }
     }
   };
 
   return (
     <React.Fragment>
       <Alert />
-      <div className="main-content" onClick={onAppClick}>
+      <div className="main-content" onClick={(event) => onAppClick(event)}>
         <Header />
-        <Switch>
-          <Route exact path='/' component={HomePageContainer} />
-          <Route path='/products' component={ProductsPageContainer} />
-          <Route exact path='/shop' component={ShopPageContainer} />
-          <Route exact path='/categories' component={ShopPageContainer} />
-          <Route path='/categories/:categoryTitle' component={CategoriesPageContainer} />
-          <Route exact path='/checkout' component={CheckoutPageContainer} />
-          <Route path='/authors/:authorName' component={AuthorPageContainer} />
-          <Route 
-            exact 
-            path='/signin' 
-            render={() => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)} 
-          />
-          <Route 
-            exact 
-            path='/account' 
-            render={() => !currentUser ? (<Redirect to='/signin' />) : (<AccountPage />)} 
-          />
-          <Route exact path='/thank-you' component={ThankYouPage} />
-        </Switch>
+        <div>
+          <Switch>
+            <Route exact path='/' component={HomePageContainer} />
+            <Route path='/products' component={ProductsPageContainer} />
+            <Route exact path='/shop' component={ShopPageContainer} />
+            <Route exact path='/categories' component={ShopPageContainer} />
+            <Route path='/categories/:categoryTitle' component={CategoriesPageContainer} />
+            <Route exact path='/checkout' component={CheckoutPageContainer} />
+            <Route path='/authors/:authorName' component={AuthorPageContainer} />
+            <Route 
+              exact 
+              path='/signin' 
+              render={() => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)} 
+            />
+            <Route 
+              exact 
+              path='/account' 
+              render={() => !currentUser ? (<Redirect to='/signin' />) : (<AccountPage />)} 
+            />
+            <Route exact path='/thank-you' component={ThankYouPage} />
+          </Switch>
+        </div>
       </div>
       <Footer />
     </React.Fragment>

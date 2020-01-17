@@ -8,6 +8,7 @@ import './CartItem.scss';
 
 const CartItem = ({ item, history, toggleCartHidden, addItem, removeItem }) => {
   const { title, imageUrl, price, quantity } = item;
+
   return (
     <div className='cart-item'>
       <img src={imageUrl} alt='item' onClick={() => {
