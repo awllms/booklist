@@ -4,7 +4,7 @@ import { createStructuredSelector } from 'reselect';
 
 import { selectIsOrderLoading } from '../../redux/orders/orders.selectors';
 
-import Spinner from '../../components/Spinner/Spinner';
+import WithSpinner from '../../components/WithSpinner/WithSpinner';
 import CheckoutPage from './CheckoutPage';
 
 const mapStateToProps = createStructuredSelector({
@@ -13,7 +13,7 @@ const mapStateToProps = createStructuredSelector({
 
 const CheckoutPageContainer = compose(
   connect(mapStateToProps),
-  Spinner
+  WithSpinner
 )(CheckoutPage);
 
 export default CheckoutPageContainer;

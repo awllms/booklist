@@ -3,7 +3,7 @@ import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { selectIsProductLoaded } from '../../redux/shop/shop.selectors';
 
-import Spinner from '../../components/Spinner/Spinner';
+import WithSpinner from '../../components/WithSpinner/WithSpinner';
 import ProductsPage from './ProductsPage';
 
 const mapStateToProps = createStructuredSelector({
@@ -12,7 +12,7 @@ const mapStateToProps = createStructuredSelector({
 
 const ProductPageContainer = compose(
   connect(mapStateToProps),
-  Spinner
+  WithSpinner
 )(ProductsPage);
 
 export default ProductPageContainer;

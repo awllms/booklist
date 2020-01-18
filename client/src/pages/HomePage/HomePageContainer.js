@@ -3,7 +3,7 @@ import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { selectIsProductFetching } from '../../redux/shop/shop.selectors';
 
-import Spinner from '../../components/Spinner/Spinner';
+import WithSpinner from '../../components/WithSpinner/WithSpinner';
 import HomePage from './HomePage';
 
 const mapStateToProps = createStructuredSelector({
@@ -12,7 +12,7 @@ const mapStateToProps = createStructuredSelector({
 
 const HomePageContainer = compose(
   connect(mapStateToProps),
-  Spinner
+  WithSpinner
 )(HomePage);
 
 export default HomePageContainer;

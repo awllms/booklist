@@ -4,7 +4,7 @@ import { createStructuredSelector } from 'reselect';
 
 import { selectIsProductFetching } from '../../redux/shop/shop.selectors';
 
-import Spinner from '../../components/Spinner/Spinner';
+import WithSpinner from '../../components/WithSpinner/WithSpinner';
 import AuthorsPage from './AuthorsPage';
 
 const mapStateToProps = createStructuredSelector({
@@ -13,7 +13,7 @@ const mapStateToProps = createStructuredSelector({
 
 const AuthorsPageContainer = compose(
   connect(mapStateToProps),
-  Spinner
+  WithSpinner
 )(AuthorsPage);
 
 export default AuthorsPageContainer;  

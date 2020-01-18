@@ -4,7 +4,7 @@ import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
 import { selectIsOrdersFetching } from '../../redux/orders/orders.selectors';
-import Spinner from '../Spinner/Spinner';
+import WithSpinner from '../WithSpinner/WithSpinner';
 import Orders from './Orders';
 
 const mapStateToProps = createStructuredSelector({
@@ -13,7 +13,7 @@ const mapStateToProps = createStructuredSelector({
 
 const OrdersContainer = compose(
   connect(mapStateToProps),
-  Spinner
+  WithSpinner
 )(Orders);
 
 export default OrdersContainer;

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -17,6 +17,7 @@ import ThankYouPage from './pages/ThankYouPage/ThankYouPage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Alert from './components/Alert/Alert';
+import Spinner from './components/Spinner/Spinner';
 
 import { fetchProductsStart, fetchCategoriesStart } from './redux/shop/shop.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
@@ -47,7 +48,6 @@ const App = ({
   }, [fetchProductsStart, fetchCategoriesStart, checkUserSession])
 
   const onAppClick = (event) => {
-    console.log(event.target)
     const className = event.target.className;
     if (!hidden) {
       if (className !== 'arrow' && 
