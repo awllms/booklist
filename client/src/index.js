@@ -10,17 +10,28 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-
-ReactDOM.render(
-  <Provider store={store}>
-    <Router>
-      <ScrollToTop />
-      <PersistGate persistor={persistor}>
-        <App />
-      </PersistGate>
-    </Router>
-  </Provider>, 
-  document.getElementById('root'));
+const rootElement = document.getElementById('root');
+if (rootElement.hasChildNodes()) {
+  ReactDOM.hydrate(
+    <Provider store={store}>
+      <Router>
+        <ScrollToTop />
+        <PersistGate persistor={persistor}>
+          <App />
+        </PersistGate>
+      </Router>
+    </Provider>, rootElement);
+} else {
+  ReactDOM.render(
+    <Provider store={store}>
+     <Router>
+       <ScrollToTop />
+       <PersistGate persistor={persistor}>
+         <App />
+       </PersistGate>
+     </Router>
+    </Provider>, rootElement)
+}
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
