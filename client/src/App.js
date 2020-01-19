@@ -7,6 +7,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Alert from './components/Alert/Alert';
 import Spinner from './components/Spinner/Spinner';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
 import { fetchProductsStart, fetchCategoriesStart } from './redux/shop/shop.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
@@ -69,26 +70,28 @@ const App = ({
       <div className="main-content" onClick={(event) => onAppClick(event)}>
         <Header />
           <Switch>
-            <Suspense fallback={<Spinner />}>
-              <Route exact path='/' component={HomePageContainer} />
-              <Route path='/products' component={ProductsPageContainer} />
-              <Route exact path='/shop' component={ShopPageContainer} />
-              <Route exact path='/categories' component={ShopPageContainer} />
-              <Route path='/categories/:categoryTitle' component={CategoriesPageContainer} />
-              <Route exact path='/checkout' component={CheckoutPageContainer} />
-              <Route path='/authors/:authorName' component={AuthorPageContainer} />
-              <Route 
-                exact 
-                path='/signin' 
-                render={() => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)} 
-              />
-              <Route 
-                exact 
-                path='/account' 
-                render={() => !currentUser ? (<Redirect to='/signin' />) : (<AccountPage />)} 
-              />
-              <Route exact path='/thank-you' component={ThankYouPage} />
-            </Suspense>
+            <ErrorBoundary>
+              <Suspense fallback={<Spinner />}>
+                <Route exact path='/' component={HomePageContainer} />
+                <Route path='/products' component={ProductsPageContainer} />
+                <Route exact path='/shop' component={ShopPageContainer} />
+                <Route exact path='/categories' component={ShopPageContainer} />
+                <Route path='/categories/:categoryTitle' component={CategoriesPageContainer} />
+                <Route exact path='/checkout' component={CheckoutPageContainer} />
+                <Route path='/authors/:authorName' component={AuthorPageContainer} />
+                <Route 
+                  exact 
+                  path='/signin' 
+                  render={() => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)} 
+                />
+                <Route 
+                  exact 
+                  path='/account' 
+                  render={() => !currentUser ? (<Redirect to='/signin' />) : (<AccountPage />)} 
+                />
+                <Route exact path='/thank-you' component={ThankYouPage} />
+              </Suspense>
+            </ErrorBoundary>
           </Switch>
       </div>
       <Footer />

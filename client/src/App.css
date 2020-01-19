@@ -233,9 +233,6 @@ img {
     display: flex;
   }
 
-  /* .slider .image-placeholder .custom-button {
-    font-size: 0.64rem;
-  } */
   .sign-in-and-sign-up {
     flex-direction: column;
     justify-content: center;
