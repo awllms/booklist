@@ -72,7 +72,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
   const userRef = firestore.doc(`users/${userAuth.uid}`);
-  const snapShot = await userRef.get()
+  const snapShot = await userRef.get();
 
   if (!snapShot.exists) {
     const {displayName, email } = userAuth;
@@ -87,6 +87,39 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
       })
     } catch (error) {
       console.log('Error creating user', error.message);
+    }
+  }
+  return userRef;
+};
+
+export const updateUserProfileDocument = async (userAuth, updateData) => {
+  if (!userAuth) return;
+
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const snapShot = await userRef.get();
+  if(snapShot.exists) {
+    try {
+      if ('email' in updateData) {
+        try {
+          const user = auth.currentUser;
+          const credential = firebase.auth.EmailAuthProvider.credential(
+            userAuth.email, 
+            updateData.password
+          );
+          // Now you can use that to reauthenticate
+          await user.reauthenticateWithCredential(credential);
+          await user.updateEmail(updateData['email']);
+        } catch (error) {
+          console.log('Error updating user', error.message);
+          return null;
+        }
+      
+      }
+      await userRef.update({
+        ...updateData
+      });
+    } catch (error) {
+      console.log('Error updating user', error.message);
     }
   }
   return userRef;

@@ -62,6 +62,35 @@ export function* onSetOrderStart() {
   )
 }
 
+export function* onUpdateNameSuccess() {
+  yield takeLatest(
+    UserActionTypes.UPDATE_NAME_SUCCESS,
+    showAlertOnUpdateNameSuccess
+  );
+}
+
+export function* onUpdateNameFailure() {
+  yield takeLatest(
+    UserActionTypes.UPDATE_NAME_FAILURE,
+    showAlertOnUpdateNameFailure
+  );
+}
+
+
+export function* onUpdateEmailSuccess() {
+  yield takeLatest(
+    UserActionTypes.UPDATE_EMAIL_SUCCESS,
+    showAlertOnUpdateEmailSuccess
+  );
+}
+
+export function* onUpdateEmailFailure() {
+  yield takeLatest(
+    UserActionTypes.UPDATE_EMAIL_FAILURE,
+    showAlertOnUpdateEmailFailure
+  );
+}
+
 export function* removeSetAlert() {
   yield delay(3000);
   yield put(removeAlert())
@@ -102,7 +131,7 @@ export function* showAlertOnSignOutFailure() {
   }));
 }
 
-export function* showAlertOnSignUpFailure({ payload: { message }}) {
+export function* showAlertOnSignUpFailure({ payload: { message } }) {
   yield put(setAlert({
     status: 'failure', 
     message: message
@@ -116,6 +145,34 @@ export function* showAlertOnOrdersStart() {
   }));
 }
 
+export function* showAlertOnUpdateNameSuccess() {
+  yield put(setAlert({
+    status: 'success',
+    message: 'Name Updated Successfully!'
+  }));
+}
+
+export function* showAlertOnUpdateNameFailure({ payload: { message } }) {
+  yield put(setAlert({
+    status: 'failure',
+    message: message
+  }));
+}
+
+export function* showAlertOnUpdateEmailSuccess() {
+  yield put(setAlert({
+    status: 'success',
+    message: 'Email Updated Successfully!'
+  }));
+}
+
+export function* showAlertOnUpdateEmailFailure({ payload: { message } }) {
+  yield put(setAlert({
+    status: 'failure',
+    message: message
+  }));
+}
+
 export function* alertSagas() {
   yield all([
     call(onSetAlert),
@@ -125,6 +182,10 @@ export function* alertSagas() {
     call(onSignInFailure),
     call(onSignOutFailure),
     call(onSignUpFailure),
-    call(onSetOrderStart)
+    call(onSetOrderStart),
+    call(onUpdateNameSuccess),
+    call(onUpdateNameFailure),
+    call(onUpdateEmailSuccess),
+    call(onUpdateEmailFailure)
   ]);
 }

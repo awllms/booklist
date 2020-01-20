@@ -64,7 +64,7 @@ const mapDispatchToProps = dispatch => ({
   setOrderStart: userAndItems => dispatch(setOrderStart(userAndItems)),
   clearCart: () => dispatch(clearCart()),
   setOrderIsLoading: () => dispatch(setOrderIsLoading()),
-  setAlert: () => dispatch(setAlert())
+  setAlert: alert => dispatch(setAlert(alert))
 });
 
 export default connect(null, mapDispatchToProps)(withRouter(StripeCheckoutButton));

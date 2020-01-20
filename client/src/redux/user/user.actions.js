@@ -50,3 +50,33 @@ export const signUpFailure = error => ({
   type: UserActionTypes.SIGN_UP_FAILURE,
   payload: error
 });
+
+export const updateNameStart = (displayName, ownProps) => ({
+  type: UserActionTypes.UPDATE_NAME_START,
+  payload: { displayName, ownProps }
+});
+
+export const updateNameSuccess = currentUser => ({
+  type: UserActionTypes.UPDATE_NAME_SUCCESS,
+  payload: currentUser
+});
+
+export const updateNameFailure = error => ({
+  type: UserActionTypes.UPDATE_NAME_FAILURE,
+  payload: error
+});
+
+export const updateEmailStart = (email, password, ownProps) => ({
+  type: UserActionTypes.UPDATE_EMAIL_START,
+  payload: { email, password, ownProps }
+});
+
+export const updateEmailSuccess = currentUser => ({
+  type: UserActionTypes.UPDATE_EMAIL_SUCCESS,
+  payload: currentUser
+});
+
+export const updateEmailFailure = error => ({
+  type: UserActionTypes.UPDATE_EMAIL_FAILURE,
+  payload: error
+});

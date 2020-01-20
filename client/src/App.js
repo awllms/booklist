@@ -30,6 +30,7 @@ const AuthorPageContainer = lazy(() => import('./pages/AuthorsPage/AuthorsPageCo
 const SignInAndSignUpPage = lazy(() => import('./pages/SignInAndSignUpPage/SignInAndSignUpPage'));
 const AccountPage = lazy(() => import('./pages/AccountPage/AccountPage'));
 const ThankYouPage = lazy(() => import('./pages/ThankYouPage/ThankYouPage'));
+const EditProfilePage = lazy(() => import('./pages/EditProfilePage/EditProfilePage'));
 
 const App = ({ 
   fetchProductsStart, 
@@ -82,7 +83,7 @@ const App = ({
                 <Route 
                   exact 
                   path='/signin' 
-                  render={() => currentUser ? (<Redirect to='/' />) : (<SignInAndSignUpPage />)} 
+                  render={() => currentUser ? (<Redirect to='/account' />) : (<SignInAndSignUpPage />)} 
                 />
                 <Route 
                   exact 
@@ -90,6 +91,11 @@ const App = ({
                   render={() => !currentUser ? (<Redirect to='/signin' />) : (<AccountPage />)} 
                 />
                 <Route exact path='/thank-you' component={ThankYouPage} />
+                <Route 
+                  exact 
+                  path='/edit-profile' 
+                  render={() => !currentUser ? (<Redirect to='/signin' />) : (<EditProfilePage />)} 
+                />
               </Suspense>
             </ErrorBoundary>
           </Switch>

@@ -1,0 +1,15 @@
+.edit-profile {
+  text-align: left;
+  h2 {
+    margin: 20px 0;
+    font-size: 2rem; 
+  }
+
+  span.back-span {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

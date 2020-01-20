@@ -1,13 +1,22 @@
 import { takeLatest, put, all, call } from 'redux-saga/effects';
 
 import UserActionTypes from './user.types';
-import { auth, googleProvider, createUserProfileDocument, getCurrentUser } from '../../firebase/firebase.utils';
+import { auth, 
+         googleProvider, 
+         createUserProfileDocument,
+         updateUserProfileDocument,
+         getCurrentUser } from '../../firebase/firebase.utils';
+
 import { signInSuccess, 
          signInFailure, 
          signOutSuccess, 
          signOutFailure,
          signUpSuccess,
-         signUpFailure} from '../user/user.actions';
+         signUpFailure,
+         updateNameSuccess,
+         updateNameFailure,
+         updateEmailSuccess,
+         updateEmailFailure} from '../user/user.actions';
 
 export function* onGoogleSignInStart() {
   yield takeLatest(
@@ -48,6 +57,20 @@ export function* onSignUpSuccess() {
   yield takeLatest(
     UserActionTypes.SIGN_UP_SUCCESS,
     signInAfterSignUp
+  );
+}
+
+export function* onUpdateNameStart() {
+  yield takeLatest(
+    UserActionTypes.UPDATE_NAME_START,
+    updateName
+  );
+}
+
+export function* onUpdateEmailStart() {
+  yield takeLatest(
+    UserActionTypes.UPDATE_EMAIL_START,
+    updateEmail
   );
 }
 
@@ -109,7 +132,34 @@ export function* signUp({ payload: { email, password, displayName } }) {
 }
 
 export function* signInAfterSignUp({ payload: { user, displayName }}) {
-  yield getSnapshotFromUserAuth(user, {displayName});
+  yield getSnapshotFromUserAuth(user, { displayName });
+}
+
+export function* updateName({ payload: { displayName, ownProps }}) {
+  try {
+    const user = yield getCurrentUser();
+    const userRef = yield call(updateUserProfileDocument, user, { displayName });
+    const userSnapShot = yield userRef.get();
+    yield put(updateNameSuccess({ id: userSnapShot.id, ...userSnapShot.data() }));
+    yield call(ownProps.history.push, '/account');
+  } catch (error) {
+    yield put(updateNameFailure(error));
+  }
+}
+
+export function* updateEmail({ payload: { email, password, ownProps }}) {
+  try {
+    const user = yield getCurrentUser(); // yield auth.currentUser;
+    const userRef = yield call(updateUserProfileDocument, user, { email, password });
+    if (!userRef) {
+      throw Error('Incorrect Password');
+    }
+    const userSnapShot = yield userRef.get()
+    yield put(updateEmailSuccess({ id: userSnapShot.id, ...userSnapShot.data() }));
+    yield call(ownProps.history.push, '/account');
+  } catch (error) {
+    yield put(updateEmailFailure(error));
+  }
 }
 
 export function* userSagas() {
@@ -119,6 +169,8 @@ export function* userSagas() {
     call(onCheckUserSession),
     call(onSignOutStart),
     call(onSignUpStart),
-    call(onSignUpSuccess)
+    call(onSignUpSuccess),
+    call(onUpdateNameStart),
+    call(onUpdateEmailStart)
   ]);
 }

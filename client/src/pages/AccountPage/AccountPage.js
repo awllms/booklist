@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { createStructuredSelector } from 'reselect';
 
 import BreadCrumbNav from '../../components/BreadCrumbNav/BreadCrumbNav';
@@ -11,7 +12,7 @@ import { fetchOrdersStart } from '../../redux/orders/orders.actions';
 
 import './AccountPage.scss';
 
-const AccountPage = ({ currentUser, fetchOrdersStart, orderItems }) => {
+const AccountPage = ({ currentUser, fetchOrdersStart, orderItems, history }) => {
   const { id, displayName } = currentUser;
   useEffect(() => {
     fetchOrdersStart(id);
@@ -23,7 +24,10 @@ const AccountPage = ({ currentUser, fetchOrdersStart, orderItems }) => {
       <section className='account-page'>
         <h2>Account</h2>
         <h3>{`Hello, ${displayName}!`}</h3>
-        <span className='edit-profile'>Edit Profile</span>
+        <span className='edit-profile' 
+          onClick={() => history.push('/edit-profile')}>
+          Edit Profile
+        </span>
         <div className='orders-overview'>
           <h4>Orders</h4>
           <div className='orders-seperator'></div>
@@ -43,4 +47,4 @@ const mapDispatchToProps = dispatch => ({
   fetchOrdersStart: currentUserId => dispatch(fetchOrdersStart(currentUserId))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(AccountPage);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(AccountPage));
