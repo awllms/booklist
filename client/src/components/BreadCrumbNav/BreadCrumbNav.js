@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import './BreadCrumbNav.scss';
 
-const BreadCrumbNav = ({ history, title }) => {
+export const BreadCrumbNav = ({ history, title }) => {
   return (
     <div className='breadcrumb-nav'>
       <h4 onClick={() => history.push('/')}>Home /</h4>

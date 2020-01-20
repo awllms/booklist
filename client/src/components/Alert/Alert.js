@@ -6,7 +6,7 @@ import { selectAlertItem } from '../../redux/alert/alert.selectors';
 
 import './Alert.scss';
 
-const Alert = ({ alert }) => {
+export const Alert = ({ alert }) => {
 
   return (
     <React.Fragment>
