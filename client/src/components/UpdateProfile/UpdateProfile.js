@@ -7,27 +7,33 @@ import FormInput from '../FormInput/FormInput';
 import CustomButton from '../CustomButton/CustomButton';
 
 import { selectCurrentUser } from '../../redux/user/user.selectors';
-import { updateNameStart, updateEmailStart } from '../../redux/user/user.actions';
+import { updateNameStart, updateEmailStart, updatePasswordStart } from '../../redux/user/user.actions';
 import { setAlert } from '../../redux/alert/alert.actions';
 
 import './UpdateProfile.scss';
 
-const UpdateProfile = ({ currentUser, updateNameStart, updateEmailStart, setAlert }) => {
+const UpdateProfile = ({ currentUser, 
+                         updateNameStart, 
+                         updateEmailStart,
+                         updatePasswordStart, 
+                         setAlert }) => {
 
   const [userCredentials, setUserCredentials] = useState({
     displayName: currentUser.displayName,
     email: currentUser.email,
     emailInputPassword: '',
-    password: '',
-    confirmPassword: ''
+    oldPassword: '',
+    newPassword: '',
+    confirmNewPassword: ''
   });
 
   const [emailPasswordInputHidden, setEmailPasswordInputHidden] = useState(true);
 
   const { displayName, 
           email, 
-          password, 
-          confirmPassword, 
+          oldPassword,
+          newPassword,
+          confirmNewPassword,
           emailInputPassword } = userCredentials;
 
   const onInputChange = (event) => {
@@ -69,6 +75,14 @@ const UpdateProfile = ({ currentUser, updateNameStart, updateEmailStart, setAler
 
   const onPasswordSubmit = (event) => {
     event.preventDefault();
+    if (newPassword !== confirmNewPassword) {
+      setAlert({
+        status: 'failure',
+        message: 'New passwords must match.'
+      });
+      return;
+    }
+    updatePasswordStart(oldPassword, newPassword);
   };
 
 
@@ -116,21 +130,30 @@ const UpdateProfile = ({ currentUser, updateNameStart, updateEmailStart, setAler
         </div>
         <form className='update-password' onSubmit={onPasswordSubmit}>
           <FormInput 
-            name='password'
+            name='oldPassword'
             type='password'
-            value={password}
+            value={oldPassword}
             onChange={onInputChange} 
-            label='Password'
-            placeholder='Password' 
+            label='Old Password'
+            placeholder='Old Password' 
             required 
           />
           <FormInput 
-            name='confirm-password'
+            name='newPassword'
             type='password'
-            value={confirmPassword}
+            value={newPassword}
             onChange={onInputChange} 
-            label='Confirm Password'
-            placeholder='Confirm Password' 
+            label='New Password'
+            placeholder='New Password' 
+            required 
+          />
+          <FormInput 
+            name='confirmNewPassword'
+            type='password'
+            value={confirmNewPassword}
+            onChange={onInputChange} 
+            label='Confirm New Password'
+            placeholder='Confirm New Password' 
             required 
           />
           <CustomButton>Update Password</CustomButton>
@@ -146,6 +169,7 @@ const mapStateToProps = createStructuredSelector({
 const mapDispatchToProps = (dispatch, ownProps) => ({
   updateNameStart: displayName => dispatch(updateNameStart(displayName, ownProps)),
   updateEmailStart: (email, password) => dispatch(updateEmailStart(email, password, ownProps)),
+  updatePasswordStart: (oldPassword, newPassword) => dispatch(updatePasswordStart(oldPassword, newPassword, ownProps)),
   setAlert: alert => dispatch(setAlert(alert))
 });
 

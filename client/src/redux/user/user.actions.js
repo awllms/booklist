@@ -80,3 +80,18 @@ export const updateEmailFailure = error => ({
   type: UserActionTypes.UPDATE_EMAIL_FAILURE,
   payload: error
 });
+
+export const updatePasswordStart = (oldPassword, newPassword, ownProps) => ({
+  type: UserActionTypes.UPDATE_PASSWORD_START,
+  payload: { oldPassword, newPassword, ownProps }
+});
+
+export const updatePasswordSuccess = currentUser => ({
+  type: UserActionTypes.UPDATE_PASSWORD_SUCCESS,
+  payload: currentUser
+});
+
+export const updatePasswordFailure = error => ({
+  type: UserActionTypes.UPDATE_PASSWORD_FAILURE,
+  payload: error
+});

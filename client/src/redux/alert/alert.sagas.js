@@ -91,6 +91,23 @@ export function* onUpdateEmailFailure() {
   );
 }
 
+
+export function* onUpdatePasswordSuccess() {
+  yield takeLatest(
+    UserActionTypes.UPDATE_PASSWORD_SUCCESS,
+    showAlertOnUpdatePasswordSuccess
+  );
+}
+
+export function* onUpdatePasswordFailure() {
+  yield takeLatest(
+    UserActionTypes.UPDATE_PASSWORD_FAILURE,
+    showAlertOnUpdatePasswordFailure
+  );
+}
+
+
+
 export function* removeSetAlert() {
   yield delay(3000);
   yield put(removeAlert())
@@ -173,6 +190,20 @@ export function* showAlertOnUpdateEmailFailure({ payload: { message } }) {
   }));
 }
 
+export function* showAlertOnUpdatePasswordSuccess() {
+  yield put(setAlert({
+    status: 'success',
+    message: 'Password Updated Successfully!'
+  }));
+}
+
+export function* showAlertOnUpdatePasswordFailure({ payload: { message } }) {
+  yield put(setAlert({
+    status: 'failure',
+    message: message
+  }));
+}
+
 export function* alertSagas() {
   yield all([
     call(onSetAlert),
@@ -186,6 +217,8 @@ export function* alertSagas() {
     call(onUpdateNameSuccess),
     call(onUpdateNameFailure),
     call(onUpdateEmailSuccess),
-    call(onUpdateEmailFailure)
+    call(onUpdateEmailFailure),
+    call(onUpdatePasswordSuccess),
+    call(onUpdatePasswordFailure)
   ]);
 }

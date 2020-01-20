@@ -93,8 +93,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 };
 
 export const updateUserProfileDocument = async (userAuth, updateData) => {
-  if (!userAuth) return;
-
   const userRef = firestore.doc(`users/${userAuth.uid}`);
   const snapShot = await userRef.get();
   if(snapShot.exists) {
@@ -102,16 +100,22 @@ export const updateUserProfileDocument = async (userAuth, updateData) => {
       if ('email' in updateData) {
         try {
           const user = auth.currentUser;
+          if (user.providerData[0].providerId === 'google.com') {
+            return {
+              error: `Email cannot be updated on accounts using 
+              sign in with Google.`
+            };
+          }
           const credential = firebase.auth.EmailAuthProvider.credential(
-            userAuth.email, 
+            user.email, 
             updateData.password
           );
-          // Now you can use that to reauthenticate
+
           await user.reauthenticateWithCredential(credential);
           await user.updateEmail(updateData['email']);
         } catch (error) {
           console.log('Error updating user', error.message);
-          return null;
+          return  {error: 'The password is invalid.'};
         }
       
       }
@@ -125,6 +129,33 @@ export const updateUserProfileDocument = async (userAuth, updateData) => {
   return userRef;
 };
 
+export const updateUserPassword = async (userAuth, updateData) => {
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  const snapShot = await userRef.get();
+  if(snapShot.exists) {
+    try {
+      const user = auth.currentUser;
+      if (user.providerData[0].providerId === 'google.com') {
+        return {
+          error: `Passwords cannot be updated on accounts using 
+          sign in with Google. You can update your password on 
+          your Google account.`
+        };
+      }
+      const credential = firebase.auth.EmailAuthProvider.credential(
+        user.email, 
+        updateData.oldPassword
+      );
+
+      await user.reauthenticateWithCredential(credential);
+      await user.updatePassword(updateData['newPassword']);
+    } catch (error) {
+      console.log('Error updating user', error.message);
+      return  {error: 'The password is invalid.'};
+    }
+  }
+  return userRef;
+};
 
 export const getCurrentUser = () => {
   return new Promise((resolve, reject) => {
