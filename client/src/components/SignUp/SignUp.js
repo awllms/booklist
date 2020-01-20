@@ -5,10 +5,11 @@ import FormInput from '../FormInput/FormInput';
 import CustomButton from '../CustomButton/CustomButton';
 
 import { signUpStart } from '../../redux/user/user.actions';
+import { setAlert } from '../../redux/alert/alert.actions';
 
 import './SignUp.scss';
 
-const SignUp = ({ signUpStart }) => {
+const SignUp = ({ signUpStart, setAlert }) => {
   
   const [userCredentials, setUserCredentials] = useState({
     displayName: '',
@@ -23,7 +24,10 @@ const SignUp = ({ signUpStart }) => {
     event.preventDefault();
   
     if (password !== confirmPassword) {
-      alert("Passwords don't match");
+      setAlert({
+        status: 'failure',
+        message: 'Passwords must match.'
+      });
       return;
     }
     signUpStart({ email, password, displayName });
@@ -85,7 +89,8 @@ const SignUp = ({ signUpStart }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  signUpStart: (userCredentials) => dispatch(signUpStart(userCredentials))
-})
+  signUpStart: userCredentials => dispatch(signUpStart(userCredentials)),
+  setAlert: alert => dispatch(setAlert(alert))
+});
 
 export default connect(null, mapDispatchToProps)(SignUp);
