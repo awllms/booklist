@@ -17,7 +17,7 @@ import { toggleNavHidden } from '../../redux/nav/nav.actions';
 import '../../assets/shopping-cart.png';
 import './Header.scss';
 
-const Header = ({ history, hidden, navHidden, currentUser, signOutStart, toggleNavHidden }) => {
+export const Header = ({ history, hidden, navHidden, currentUser, signOutStart, toggleNavHidden }) => {
   
   return (
     <header className='header'>
@@ -30,11 +30,11 @@ const Header = ({ history, hidden, navHidden, currentUser, signOutStart, toggleN
           {
             currentUser ? 
             <React.Fragment>
-            <Link className='option' to='/account'>Account</Link>
-            <div className='option' onClick={signOutStart}>SignOut</div>
+            <Link className='option' id='header-account-link' to='/account'>Account</Link>
+            <div className='option' id='header-signout-link' onClick={signOutStart}>SignOut</div>
             </React.Fragment>
             : 
-            <Link className='option' to='/signin'>SignIn</Link>
+            <Link className='option' id='header-signin-link' to='/signin'>SignIn</Link>
           }
 
           <CartIcon /> 
@@ -51,9 +51,9 @@ const mapStateToProps = createStructuredSelector({
   navHidden: selectNavHidden
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   signOutStart: () => dispatch(signOutStart()),
   toggleNavHidden: () => dispatch(toggleNavHidden())
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Header));

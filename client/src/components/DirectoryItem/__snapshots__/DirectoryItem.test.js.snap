@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DirectoryItem Component should render DirectoryItem Component 1`] = `ShallowWrapper {}`;

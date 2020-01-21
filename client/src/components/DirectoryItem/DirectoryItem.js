@@ -8,7 +8,7 @@ import CustomButton from '../CustomButton/CustomButton';
 
 import './DirectoryItem.scss';
 
-const DirectoryItem = ({ item, history, addItem }) => {
+export const DirectoryItem = ({ item, history, addItem }) => {
   const { title, imageUrl, price } = item;
   return (
     <div className='directory-item'>
@@ -24,7 +24,7 @@ const DirectoryItem = ({ item, history, addItem }) => {
   );
 };
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   addItem: item => dispatch(addItem(item))
 });
 

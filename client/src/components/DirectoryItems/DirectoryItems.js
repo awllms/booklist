@@ -9,7 +9,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import './DirectoryItems.scss';
 
 
-const DirectoryItems = ({ title, items, history, match }) => {
+export const DirectoryItems = ({ title, items, history }) => {
   
   const settings = {
     dots: true,
