@@ -6,7 +6,7 @@ import { addItem, removeItem, clearItem } from '../../redux/cart/cart.actions';
 
 import './CheckoutItem.scss';
 
-const CheckoutItem = ({ item, addItem, removeItem, clearItem, history }) => {
+export const CheckoutItem = ({ item, addItem, removeItem, clearItem, history }) => {
   const { imageUrl, title, quantity, price, routeName } = item;
   return (
     <div className='checkout-item'>
@@ -15,9 +15,9 @@ const CheckoutItem = ({ item, addItem, removeItem, clearItem, history }) => {
       </div>
       <span className='title' onClick={() => history.push(`/${routeName}`)}>{title}</span>
       <span className='quantity'>
-        <div className='arrow' onClick={() => removeItem(item)}>&#10094;</div>
+        <div className='arrow' id='checkout-remove-item' onClick={() => removeItem(item)}>&#10094;</div>
         <span className='value'>{quantity}</span>
-        <div className='arrow' onClick={() => addItem(item)}>&#10095;</div>
+        <div className='arrow' id='checkout-add-item' onClick={() => addItem(item)}>&#10095;</div>
       </span>
       <span className='price'>${price}</span>
       <div className='remove' onClick={() => clearItem(item)}>&#10005;</div>
@@ -25,7 +25,7 @@ const CheckoutItem = ({ item, addItem, removeItem, clearItem, history }) => {
   );
 };
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   addItem: item => dispatch(addItem(item)),
   removeItem: item => dispatch(removeItem(item)),
   clearItem: item => dispatch(clearItem(item))

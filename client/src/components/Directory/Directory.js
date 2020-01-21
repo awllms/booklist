@@ -10,7 +10,7 @@ import { selectShopBestSellers,
 
 import './Directory.scss';
 
-const Directory = ({ bestSellers, newReleases, comingSoon }) => {
+export const Directory = ({ bestSellers, newReleases, comingSoon }) => {
   return (
     <section className='directory'>
       <DirectoryItems title='Best Sellers' items={bestSellers} />

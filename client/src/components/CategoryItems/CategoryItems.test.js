@@ -28,11 +28,7 @@ describe('CategoryItems Component', () => {
   it('should render Directory Item if component has categoryItems', () => {
     expect(wrapper.exists(DirectoryItem)).toBe(true);
   });
-
-  it('should render Directory Item if component has categoryItems', () => {
-    expect(wrapper.exists(DirectoryItem)).toBe(true);
-  });
-
+  
   it('should not render a Directory Item if categoryItems are empty', () => {
     const mockProps = {
       categoryItems: undefined, 
@@ -43,8 +39,4 @@ describe('CategoryItems Component', () => {
     expect(wrapper.find('.category-items').children().length).toEqual(0);
     expect(mockProps.categoryItems).toBeUndefined();
   });
-
-  // it('should render correct amount of DirectoryItems as categories length', () => {
-  //   expect(wrapper.find(DirectoryItems).length).toEqual(mockCategories.length)
-  // });
 });
