@@ -5,7 +5,7 @@ import DirectoryItem from '../DirectoryItem/DirectoryItem';
 
 import './CategoryItems.scss'; 
 
-const CategoryItems = ({ categoryItems, categoryTitle }) => {
+export const CategoryItems = ({ categoryItems, categoryTitle }) => {
 
   return (
     <React.Fragment>

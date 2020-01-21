@@ -52,8 +52,8 @@ export const selectAllProductCategories = createSelector(
   [selectShopProducts, selectShopCategories],
   (products, categories) => products && categories ? 
     Object.keys(categories).map(keys => {
-      return [{ categoryName: categories[keys].name, 
-                items: products.filter(product => product.categories[keys] === true)}];
+      return { categoryName: categories[keys].name, 
+                items: products.filter(product => product.categories[keys] === true)};
   })
   : []
 );

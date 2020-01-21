@@ -7,14 +7,14 @@ import DirectoryItems from '../DirectoryItems/DirectoryItems';
 
 import './CategoriesOverview.scss';
 
-const CategoryOverview = ({ categories }) => {
+export const CategoryOverview = ({ categories }) => {
   return (
     <section className='category-overview'>
       {
         categories.map((category, index) => 
         <DirectoryItems key={index} 
-                        title={category[0].categoryName} 
-                        items={category[0].items}  />)
+                        title={category.categoryName} 
+                        items={category.items}  />)
       }
     </section>
   );

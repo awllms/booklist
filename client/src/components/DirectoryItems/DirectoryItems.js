@@ -49,11 +49,7 @@ const DirectoryItems = ({ title, items, history, match }) => {
   return (
     <div className='directory-items-container'>
       <div className='directory-items-title'>
-        <h3 onClick={() => 
-          match.path === '/categories' ? 
-          history.push(`${categoryURL}`) : 
-          history.push(`categories/${categoryURL}`)
-        }>
+        <h3 onClick={() => history.push(`/categories/${categoryURL}`)}>
           { title }
         </h3>
       </div>

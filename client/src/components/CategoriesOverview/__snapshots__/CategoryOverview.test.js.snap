@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryOverview Component should render CategoryOverview Component 1`] = `ShallowWrapper {}`;

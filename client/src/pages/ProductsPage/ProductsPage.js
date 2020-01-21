@@ -12,8 +12,8 @@ const ProductsPage = ({ match }) => {
   return (
     <Switch>
       <Suspense fallback={<Spinner />}>
-        <Route path={`${match.path}/:productTitle`} component={ProductItem} />
         <Route exact path={`${match.path}`} component={ShopPageContainer} />
+        <Route path={`${match.path}/:productTitle`} component={ProductItem} />
       </Suspense>
     </Switch>
   );
