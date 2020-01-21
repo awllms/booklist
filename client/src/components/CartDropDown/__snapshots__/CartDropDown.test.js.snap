@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CartDropDown Component should render CartDropDown Component 1`] = `ShallowWrapper {}`;

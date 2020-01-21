@@ -5,7 +5,6 @@ import { BreadCrumbNav } from './BreadCrumbNav';
 describe('BreadCrumbNav Component', () => {
   let wrapper;
   let mockHistory;
-  let mockDispatch;
   
   beforeEach(() => {
 
@@ -18,7 +17,7 @@ describe('BreadCrumbNav Component', () => {
       title: 'This is a title'
     };
 
-    wrapper = shallow(<BreadCrumbNav { ...mockProps } />)
+    wrapper = shallow(<BreadCrumbNav { ...mockProps } />);
   });
 
   it('should render BreadCrumbNav Component', () => {

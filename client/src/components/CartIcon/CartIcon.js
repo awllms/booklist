@@ -8,11 +8,12 @@ import { toggleCartHidden } from '../../redux/cart/cart.actions';
 import '../../assets/shopping-cart.png';
 import './CartIcon.scss';
 
-const CartIcon = ({ toggleCartHidden, cartTotal }) => {
+export const CartIcon = ({ toggleCartHidden, cartTotal }) => {
   return (
     <div className='cart-icon' onClick={() => toggleCartHidden()}>
       <div className='shopping-icon'></div>
-      { cartTotal === 0 ? null : (<span className='items-count'>{cartTotal}</span>)}
+      { cartTotal === 0 ? null 
+        : (<span className='items-count'>{cartTotal}</span>)}
     </div>
   )
 };
@@ -21,7 +22,7 @@ const mapStateToProps = createStructuredSelector({
   cartTotal: selectCartItemsTotal
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   toggleCartHidden: () => dispatch(toggleCartHidden())
 });
 
