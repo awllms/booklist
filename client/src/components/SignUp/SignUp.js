@@ -9,7 +9,7 @@ import { setAlert } from '../../redux/alert/alert.actions';
 
 import './SignUp.scss';
 
-const SignUp = ({ signUpStart, setAlert }) => {
+export const SignUp = ({ signUpStart, setAlert }) => {
   
   const [userCredentials, setUserCredentials] = useState({
     displayName: '',
@@ -88,7 +88,7 @@ const SignUp = ({ signUpStart, setAlert }) => {
   );
 };
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   signUpStart: userCredentials => dispatch(signUpStart(userCredentials)),
   setAlert: alert => dispatch(setAlert(alert))
 });

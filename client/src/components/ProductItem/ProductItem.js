@@ -11,7 +11,7 @@ import { selectProduct } from '../../redux/shop/shop.selectors';
 
 import './ProductItem.scss';
 
-const ProductItem = ({ product, addItem }) => {
+export const ProductItem = ({ product, addItem }) => {
   const item = product[0];
   const { 
     title,
@@ -102,7 +102,7 @@ const mapStateToProps = (state, ownProps) => ({
   product: selectProduct(ownProps.match.url)(state)
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   addItem: item => dispatch(addItem(item))
 });
 

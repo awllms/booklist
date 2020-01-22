@@ -8,7 +8,7 @@ import { googleSignInStart, emailSignInStart } from '../../redux/user/user.actio
 
 import './SignIn.scss';
 
-const SignIn = ({ googleSignInStart, emailSignInStart }) => {
+export const SignIn = ({ googleSignInStart, emailSignInStart }) => {
   const [userCredentials, setUserCredentials] = useState({ email: '', password: '' });
 
   const { email, password } = userCredentials;
@@ -62,7 +62,7 @@ const SignIn = ({ googleSignInStart, emailSignInStart }) => {
   );
 };
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   googleSignInStart: () => dispatch(googleSignInStart()),
   emailSignInStart: (email, password) => dispatch(emailSignInStart({ email, password }))
 });
