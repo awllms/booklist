@@ -9,12 +9,12 @@ import { toggleNavHidden } from '../../redux/nav/nav.actions';
 
 import './NavDropDown.scss';
 
-const NavDropDown = ({ history, currentUser, signOutStart, toggleNavHidden }) => {
+export const NavDropDown = ({ history, currentUser, signOutStart, toggleNavHidden }) => {
   return (
     <div className='nav-dropdown'>
       <ul className='nav-options'>
         <li>
-          <span className='nav-option' onClick={() => {
+          <span className='nav-option' id='nav-dropdown-shop-link' onClick={() => {
             history.push('/shop')
             toggleNavHidden()
           }}>
@@ -26,7 +26,7 @@ const NavDropDown = ({ history, currentUser, signOutStart, toggleNavHidden }) =>
           currentUser ? 
           <React.Fragment>
             <li>
-              <span className='nav-option' onClick={() => {
+              <span className='nav-option' id='nav-dropdown-account-link'onClick={() => {
                 history.push('/account')
                 toggleNavHidden()
               }}>
@@ -35,7 +35,7 @@ const NavDropDown = ({ history, currentUser, signOutStart, toggleNavHidden }) =>
               <div className='nav-border'></div>
             </li>
             <li>
-              <span className='nav-option' onClick={() => {
+              <span className='nav-option' id='nav-dropdown-signout-link' onClick={() => {
                 signOutStart()
                 toggleNavHidden()
               }}>
@@ -46,7 +46,7 @@ const NavDropDown = ({ history, currentUser, signOutStart, toggleNavHidden }) =>
           </React.Fragment>
           : 
           <li>
-            <span className='nav-option' onClick={() => {
+            <span className='nav-option' id='nav-dropdown-signin-link' onClick={() => {
               history.push('/signin')
               toggleNavHidden()
             }}>
@@ -56,7 +56,7 @@ const NavDropDown = ({ history, currentUser, signOutStart, toggleNavHidden }) =>
           </li>
         }
         <li>
-          <span className='nav-option checkout' onClick={() => {
+          <span className='nav-option checkout' id='nav-dropdown-checkout-link' onClick={() => {
             history.push('/checkout')
           }}>
             Checkout
@@ -71,7 +71,7 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   signOutStart: () => dispatch(signOutStart()),
   toggleNavHidden: () => dispatch(toggleNavHidden())
 });

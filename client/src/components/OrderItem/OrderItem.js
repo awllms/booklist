@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import './OrderItem.scss';
 
-const OrderItem = ({ item, history }) => {
+export const OrderItem = ({ item, history }) => {
   const { routeName, imageUrl, title, quantity, price } = item;
 
   return (

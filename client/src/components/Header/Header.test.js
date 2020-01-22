@@ -7,22 +7,14 @@ import { mapDispatchToProps } from './Header';
 
 describe('Header Component', () => {
   let wrapper;
+  let wrapper2;
   let mockHistory;
   let mockHidden;
   let mockNavHidden; 
   let mockCurrentUser; 
   let mockSignOutStart; 
   let mockToggleNavHidden;
-  let dummyFunction = jest.fn()
-
-  const mockProps2 = {
-    history: mockHistory, 
-    hidden: false, 
-    navHidden: false, 
-    currentUser: null, 
-    signOutStart: mockSignOutStart, 
-    toggleNavHidden: mockToggleNavHidden
-  };
+  let dummyFunction = jest.fn();
   
   beforeEach(() => {
     
@@ -42,7 +34,19 @@ describe('Header Component', () => {
       toggleNavHidden: mockToggleNavHidden
     };
 
+    const mockProps2 = {
+      history: mockHistory, 
+      hidden: false, 
+      navHidden: false, 
+      currentUser: null, 
+      signOutStart: mockSignOutStart, 
+      toggleNavHidden: mockToggleNavHidden
+    };
+    
+    // Signed In User
     wrapper = shallow(<Header { ...mockProps } />);
+    // Signed Out User
+    wrapper2 = shallow(<Header { ...mockProps2 } />);
   });
 
   it('should render Header Component', () => {
@@ -59,8 +63,7 @@ describe('Header Component', () => {
   });
 
   it('should render NavDropDown if navHidden is false', () => {
-    wrapper = shallow(<Header { ...mockProps2 } />);
-    expect(wrapper.exists(NavDropDown)).toBe(true);
+    expect(wrapper2.exists(NavDropDown)).toBe(true);
   });
 
   it('should show account link if there is a current user', () => {
@@ -76,18 +79,15 @@ describe('Header Component', () => {
   });
 
   it('should not show account link if there is not a current user', () => {
-    wrapper = shallow(<Header { ...mockProps2 } />);
-    expect(wrapper.exists('#header-account-link')).toBe(false);
+    expect(wrapper2.exists('#header-account-link')).toBe(false);
   });
 
   it('should not show signout link if there is not a current user', () => {
-    wrapper = shallow(<Header { ...mockProps2 } />);
-    expect(wrapper.exists('#header-signout-link')).toBe(false);
+    expect(wrapper2.exists('#header-signout-link')).toBe(false);
   });
 
   it('should show signin link if there is not a current user', () => {
-    wrapper = shallow(<Header { ...mockProps2 } />);
-    expect(wrapper.exists('#header-signin-link')).toBe(true);
+    expect(wrapper2.exists('#header-signin-link')).toBe(true);
   });
 
   it('should not render CartDropDown if hidden is true', () => {
@@ -95,8 +95,7 @@ describe('Header Component', () => {
   });
 
   it('should render CartDropDown if hidden is false', () => {
-    wrapper = shallow(<Header { ...mockProps2 } />);
-    expect(wrapper.exists(CartDropDown)).toBe(true);
+    expect(wrapper2.exists(CartDropDown)).toBe(true);
   });
 
   it('should dispatch signOutStart action when clicked', () => {

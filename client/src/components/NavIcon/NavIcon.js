@@ -2,7 +2,7 @@ import React from 'react';
 
 import './NavIcon.scss';
 
-const NavIcon = ({ toggleNavHidden }) => {
+export const NavIcon = ({ toggleNavHidden }) => {
   return (
     <div className='nav-icon' onClick={() => toggleNavHidden()}></div>
   );

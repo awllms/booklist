@@ -3,10 +3,9 @@ import React from 'react';
 import OrderItem from '../OrderItem/OrderItem';
 import './OrderItems.scss';
 
-const OrderItems = ({ order }) => {
+export const OrderItems = ({ order }) => {
   const { id, total, products, createdAt } = order;
-  const dateObject = new Date(createdAt.toDate())
-  
+  const dateObject = new Date(createdAt.toDate());
   const month = dateObject.getMonth() + 1;
   const day = dateObject.getDate();
   const year = dateObject.getFullYear();

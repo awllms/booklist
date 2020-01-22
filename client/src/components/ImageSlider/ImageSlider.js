@@ -12,7 +12,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './ImageSlider.scss';
 
-const ImageSlider = ({ history }) => {
+export const ImageSlider = ({ history }) => {
   
   const settings = {
     dots: true,
@@ -31,16 +31,19 @@ const ImageSlider = ({ history }) => {
     <section className='slider'>
       <Slider {...settings } >
         <div className='image-placeholder'
+          id='image-slider-placeholder1'
           onClick={() => history.push(`/categories/new-releases`)}>
           <img className='slider-image' src={sliderImageOne} alt='Books' />
           <CustomButton>Shop New Releases</CustomButton>
         </div>
         <div className='image-placeholder'
+          id='image-slider-placeholder2'
           onClick={() => history.push(`/categories/best-sellers`)}>
           <img className='slider-image' src={sliderImageTwo} alt='Books' />
           <CustomButton>Shop Best Sellers</CustomButton>
         </div>
         <div className='image-placeholder'
+          id='image-slider-placeholder3'
           onClick={() => history.push(`/categories/personal-development`)}>
           <img className='slider-image' src={sliderImageThree} alt='Books' />
           <CustomButton>Shop Self-Help</CustomButton>

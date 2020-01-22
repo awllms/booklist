@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavIcon Component should render NavDropDown Component 1`] = `ShallowWrapper {}`;

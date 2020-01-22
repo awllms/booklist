@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import OrderItems from '../../components/OrderItems/OrderItems';
 
-const Orders = ({ orderItems }) => {
+export const Orders = ({ orderItems }) => {
   return (
     <React.Fragment>
       { orderItems.length ?
