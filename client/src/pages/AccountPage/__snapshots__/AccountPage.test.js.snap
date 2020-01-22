@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccountPage Component should render AccountPage Component 1`] = `ShallowWrapper {}`;

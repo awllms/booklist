@@ -115,7 +115,7 @@ export const updateUserProfileDocument = async (userAuth, updateData) => {
           await user.updateEmail(updateData['email']);
         } catch (error) {
           console.log('Error updating user', error.message);
-          return  {error: 'The password is invalid.'};
+          return  {error: error.message};
         }
       
       }

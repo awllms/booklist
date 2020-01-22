@@ -10,7 +10,7 @@ import { clearCart } from '../../redux/cart/cart.actions';
 
 import CustomButton from '../CustomButton/CustomButton';
 
-const StripeCheckoutButton = ({ price, cartItems, setOrderStart, currentUser, history, clearCart, setOrderIsLoading, setAlert }) => {
+export const StripeCheckoutButton = ({ price, cartItems, setOrderStart, currentUser, history, clearCart, setOrderIsLoading, setAlert }) => {
   const priceForStripe = price * 100;
   const publishableKey = 'pk_test_Scr0qKBcKbhdWzEUC1QDuIaU00b3ncU2Cc';
 
@@ -60,7 +60,7 @@ const StripeCheckoutButton = ({ price, cartItems, setOrderStart, currentUser, hi
   )
 };
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   setOrderStart: userAndItems => dispatch(setOrderStart(userAndItems)),
   clearCart: () => dispatch(clearCart()),
   setOrderIsLoading: () => dispatch(setOrderIsLoading()),

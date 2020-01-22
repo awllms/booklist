@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StripeCheckoutButton Component should render StripeCheckoutButton Component 1`] = `ShallowWrapper {}`;

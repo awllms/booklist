@@ -3,7 +3,7 @@ import BreadCrumbNav from '../../components/BreadCrumbNav/BreadCrumbNav';
 import CategoriesOverview from '../../components/CategoriesOverview/CategoriesOverview';
 import './ShopPage.scss';
 
-const ShopPage = ({ match }) => {
+export const ShopPage = ({ match }) => {
   
   const shopPath = match.path.replace('/', '');
   const shopTitle = shopPath[0].toUpperCase() + shopPath.slice(1);

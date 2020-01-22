@@ -12,7 +12,7 @@ import { fetchOrdersStart } from '../../redux/orders/orders.actions';
 
 import './AccountPage.scss';
 
-const AccountPage = ({ currentUser, fetchOrdersStart, orderItems, history }) => {
+export const AccountPage = ({ currentUser, fetchOrdersStart, orderItems, history }) => {
   const { id, displayName } = currentUser;
   useEffect(() => {
     fetchOrdersStart(id);
@@ -43,7 +43,7 @@ const mapStateToProps = createStructuredSelector({
   orderItems: selectOrderItems
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   fetchOrdersStart: currentUserId => dispatch(fetchOrdersStart(currentUserId))
 })
 

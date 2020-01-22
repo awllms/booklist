@@ -12,11 +12,7 @@ import { setAlert } from '../../redux/alert/alert.actions';
 
 import './UpdateProfile.scss';
 
-const UpdateProfile = ({ currentUser, 
-                         updateNameStart, 
-                         updateEmailStart,
-                         updatePasswordStart, 
-                         setAlert }) => {
+export const UpdateProfile = ({ currentUser, updateNameStart, updateEmailStart, updatePasswordStart, setAlert }) => {
 
   const [userCredentials, setUserCredentials] = useState({
     displayName: currentUser.displayName,
@@ -166,7 +162,7 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+export const mapDispatchToProps = (dispatch, ownProps) => ({
   updateNameStart: displayName => dispatch(updateNameStart(displayName, ownProps)),
   updateEmailStart: (email, password) => dispatch(updateEmailStart(email, password, ownProps)),
   updatePasswordStart: (oldPassword, newPassword) => dispatch(updatePasswordStart(oldPassword, newPassword, ownProps)),

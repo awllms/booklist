@@ -2,7 +2,7 @@ import React from 'react';
 import ImageSlider from '../../components/ImageSlider/ImageSlider';
 import Directory from '../../components/Directory/Directory';
 
-const HomePage = () => {
+export const HomePage = () => {
   return (
     <React.Fragment>
       <ImageSlider />

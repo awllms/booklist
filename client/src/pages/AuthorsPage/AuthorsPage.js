@@ -7,7 +7,7 @@ import CategoryItems from '../../components/CategoryItems/CategoryItems';
 import { titleCase } from '../../utils/utils';
 import { selectAuthorItems } from '../../redux/shop/shop.selectors';
 
-const AuthorsPage = ({ match, authorItems }) => {
+export const AuthorsPage = ({ match, authorItems }) => {
   const authorName = titleCase(decodeURIComponent(match.params.authorName).replace(/[-]/g, ' '));
   
   return (

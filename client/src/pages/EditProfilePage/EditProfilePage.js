@@ -6,7 +6,7 @@ import UpdateProfile from '../../components/UpdateProfile/UpdateProfile';
 
 import './EditProfilePage.scss';
 
-const EditProfilePage = ({ history }) => {
+export const EditProfilePage = ({ history }) => {
   return(
     <React.Fragment>
       <BreadCrumbNav title='Edit Profile'/>

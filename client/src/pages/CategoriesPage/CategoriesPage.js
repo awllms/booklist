@@ -8,7 +8,7 @@ import { titleCase } from '../../utils/utils';
 import { selectCategoryItems } from '../../redux/shop/shop.selectors';
 
 
-const CategoriesPage = ({ match, categoryItemsList }) => {
+export const CategoriesPage = ({ match, categoryItemsList }) => {
   const categoryItems = categoryItemsList[0];
   const categoryTitle = titleCase(decodeURIComponent(match.params.categoryTitle).replace(/[-]/g, ' '));
 

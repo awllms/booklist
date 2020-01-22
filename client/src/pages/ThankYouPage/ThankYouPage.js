@@ -6,7 +6,7 @@ import CustomButton from '../../components/CustomButton/CustomButton';
 
 import './ThankYouPage.scss';
 
-const ThankYouPage = ({ location, history }) => {
+export const ThankYouPage = ({ location, history }) => {
   return (
     <React.Fragment>
       <BreadCrumbNav title='BookList Thanks You'/>

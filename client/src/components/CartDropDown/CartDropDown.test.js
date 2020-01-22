@@ -15,7 +15,7 @@ describe('CartDropDown Component', () => {
       push: jest.fn()
     };
 
-    mockCartItems = [{ id: 1}, { id: 2 }, { id: 3 }]
+    mockCartItems = [{ id: 1}, { id: 2 }, { id: 3 }];
 
     const mockProps = {
       history: mockHistory,

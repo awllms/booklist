@@ -14,7 +14,7 @@ import StripeCheckoutButton from '../../components/StripeButton/StripeButton';
 
 import './CheckoutPage.scss';
 
-const CheckoutPage = ({ cartItems, total, currentUser, setAlert }) => {
+export const CheckoutPage = ({ cartItems, total, currentUser, setAlert }) => {
   return (
     <React.Fragment>
       <BreadCrumbNav title='Checkout'/>
@@ -75,7 +75,7 @@ const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   setAlert: alert => dispatch(setAlert(alert))
 })
 

@@ -6,7 +6,7 @@ import SignUp from '../../components/SignUp/SignUp';
 
 import './SignInAndSignUpPage.scss';
 
-const SignInAndSignUpPage = () => {
+export const SignInAndSignUpPage = () => {
   return (
     <React.Fragment>
       <BreadCrumbNav title='SignIn & SignUp' />

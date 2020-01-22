@@ -8,7 +8,7 @@ import './ProductPage.scss';
 
 const ShopPageContainer = lazy(() => import('../ShopPage/ShopPageContainer'));
 
-const ProductsPage = ({ match }) => {
+export const ProductsPage = ({ match }) => {
   return (
     <Switch>
       <Suspense fallback={<Spinner />}>
