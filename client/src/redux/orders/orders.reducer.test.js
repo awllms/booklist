@@ -49,7 +49,7 @@ describe('ordersReducer test', () => {
   };
 
   it('should return the initial state', () => {
-    expect(ordersReducer(initialState, {})).toEqual(initialState);
+    expect(ordersReducer(undefined, {})).toEqual(initialState);
   });
 
   it('should handle FETCH_ORDERS_START action', () => {

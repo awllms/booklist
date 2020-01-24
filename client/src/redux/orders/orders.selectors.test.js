@@ -33,13 +33,5 @@ describe('Orders Selectors', () => {
   it('should select isOrderLoading off of state', () => {
     expect(ordersSelectors.selectIsOrderLoading(mockState)).toEqual(mockState.orders.isOrderLoading);
   });
-
-  // it('should accumulate and select cartItems quantity total', () => {
-  //   expect(cartSelectors.selectCartItemsTotal(mockState)).toEqual(15);
-  // });
-
-  // it('should accumulate and select checkout total amount', () => {
-  //   expect(cartSelectors.selectCheckoutTotal(mockState)).toEqual(300);
-  // });
 });
 

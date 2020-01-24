@@ -1,4 +1,4 @@
-import { createSelector } from 'reselect';
+import { createSelector } from 'reselect'; 
 
 const selectShop = state => state.shop;
 
@@ -10,6 +10,16 @@ export const selectShopProducts = createSelector(
 export const selectShopCategories = createSelector(
   [selectShop],
   shop => shop.categories
+);
+
+export const selectIsProductFetching = createSelector(
+  [selectShop],
+  shop => shop.isProductsFetching
+);
+
+export const selectIsProductLoaded = createSelector(
+  [selectShop],
+  shop => !!shop.products
 );
 
 export const selectShopBestSellersFromTimesSold = createSelector(
@@ -65,16 +75,6 @@ export const selectCategoryItems = productUrlParam => createSelector(
       .filter(keys => categories[keys].name.toLowerCase() === productUrlParam)
       .map(category => products.filter(product => product.categories[category] === true))
   : []
-);
-
-export const selectIsProductFetching = createSelector(
-  [selectShop],
-  shop => shop.isProductsFetching
-);
-
-export const selectIsProductLoaded = createSelector(
-  [selectShop],
-  shop => !!shop.products
 );
  
 export const selectAuthorItems = authorUrlParam => createSelector(

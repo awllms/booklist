@@ -25,6 +25,10 @@ describe('cartReducer test', () => {
     ]
   };
 
+  const mockToggleCartHiddenAction = {
+    type: CartActionTypes.TOGGLE_CART_HIDDEN
+  };
+
   const mockAddItemAction = {
     type: CartActionTypes.ADD_ITEM,
     payload: mockCartItem
@@ -45,7 +49,14 @@ describe('cartReducer test', () => {
   };
 
   it('should return the initial state', () => {
-    expect(cartReducer(initialState, {})).toEqual(initialState);
+    expect(cartReducer(undefined, {})).toEqual(initialState);
+  });
+
+  it('should handle TOGGLE_CART_HIDDEN action', () => {
+    expect(cartReducer(initialState, mockToggleCartHiddenAction)).toEqual({
+      ...initialState,
+      hidden: !initialState.hidden
+    });
   });
 
   it('should handle ADD_ITEM action', () => {

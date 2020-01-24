@@ -11,7 +11,7 @@ describe('navReducer test', () => {
   };
 
   it('should return the initial state', () => {
-    expect(navReducer(initialState, {})).toEqual(initialState);
+    expect(navReducer(undefined, {})).toEqual(initialState);
   });
 
   it('should handle TOGGLE_NAV_HIDDEN action', () => {

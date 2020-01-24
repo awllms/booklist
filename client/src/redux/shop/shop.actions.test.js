@@ -7,6 +7,10 @@ describe('Shop action tests', () => {
     {id: 1, name: 'Sample Product'}
   ];
 
+  const mockCategory = [
+    {id: 1, name: 'Sample Category'}
+  ];
+
   it('should create an action to fetch products start', () => {
     const expectedAction = {
       type: ShopActionTypes.FETCH_PRODUCTS_START
@@ -35,5 +39,21 @@ describe('Shop action tests', () => {
       type: ShopActionTypes.FETCH_CATEGORIES_START
     };
     expect(actions.fetchCategoriesStart()).toEqual(expectedAction);
+  });
+
+  it('should create an action to fetch category success', () => {
+    const expectedAction = {
+      type: ShopActionTypes.FETCH_CATEGORIES_SUCCESS,
+      payload: mockCategory
+    };
+    expect(actions.fetchCategoriesSuccess(mockCategory)).toEqual(expectedAction);
+  });
+
+  it('should create an action to fetch category failure', () => {
+    const expectedAction = {
+      type: ShopActionTypes.FETCH_CATEGORIES_FAILURE,
+      payload: 'error'
+    };
+    expect(actions.fetchCategoriesFailure('error')).toEqual(expectedAction);
   });
 });

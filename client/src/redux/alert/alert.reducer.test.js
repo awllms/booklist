@@ -16,7 +16,7 @@ describe('alertReducer test', () => {
   };
 
   it('should return the initial state', () => {
-    expect(alertReducer(initialState, {})).toEqual(initialState);
+    expect(alertReducer(undefined, {})).toEqual(initialState);
   });
 
   it('should handle SET_ALERT action', () => {
