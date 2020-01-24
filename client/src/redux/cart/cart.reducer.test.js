@@ -1,6 +1,5 @@
 import CartActionTypes from './cart.types';
 import cartReducer from './cart.reducer';
-import { addItemToCart, removeItemFromCart } from './cart.utils';
 
 describe('cartReducer test', () => {
   const initialState = {
