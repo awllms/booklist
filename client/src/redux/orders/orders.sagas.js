@@ -1,7 +1,7 @@
 import { takeLatest, put, all, call } from 'redux-saga/effects';
 
 import OrderActionTypes from './orders.types';
-import { firestore } from '../../firebase/firebase.utils';
+import { firestore, getUserOrders } from '../../firebase/firebase.utils';
 import { fetchOrdersSuccess, 
          fetchOrdersFailure,
          setOrderSuccess,
@@ -24,11 +24,9 @@ export function* onSetOrderStart() {
 
 export function* fetchOrdersAsync({ payload: currentUserId }) {
   try {
-    const ordersSnapShot = yield firestore.collection('orders')
-                                          .where('userId', '==', currentUserId)
-                                          .orderBy('createdAt', 'desc')
-                                          .get();
+    const ordersSnapShot = yield call(getUserOrders, currentUserId);
     if (ordersSnapShot.empty) {
+      // send empty array as success if no orders are found.
       yield put(fetchOrdersSuccess([]));
     }
     const orders = yield ordersSnapShot.docs.map(doc => doc.data());

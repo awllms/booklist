@@ -166,4 +166,12 @@ export const getCurrentUser = () => {
   })
 };
 
+export const getUserOrders = currentUserId => {
+  return (firestore
+    .collection('orders')
+    .where('userId', '==', currentUserId)
+    .orderBy('createdAt', 'desc')
+    .get());
+};
+
 export default firebase;

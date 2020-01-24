@@ -25,22 +25,22 @@ describe('cartReducer test', () => {
     ]
   };
 
-  const mockAddItem = {
+  const mockAddItemAction = {
     type: CartActionTypes.ADD_ITEM,
     payload: mockCartItem
   };
 
-  const mockRemoveItem = {
+  const mockRemoveItemAction = {
     type: CartActionTypes.REMOVE_ITEM,
     payload: mockCartItem2
   };
 
-  const mockClearItem = {
+  const mockClearItemAction = {
     type: CartActionTypes.CLEAR_ITEM,
     payload: mockCartItem2
   };
 
-  const mockClearCart = {
+  const mockClearCartAction = {
     type: CartActionTypes.CLEAR_CART
   };
 
@@ -49,28 +49,28 @@ describe('cartReducer test', () => {
   });
 
   it('should handle ADD_ITEM action', () => {
-    expect(cartReducer(initialState, mockAddItem)).toEqual({
+    expect(cartReducer(initialState, mockAddItemAction)).toEqual({
       ...initialState,
       cartItems: [{...mockCartItem, quantity: 1}]
     });
   });
 
   it('should handle REMOVE_ITEM action', () => {
-    expect(cartReducer(mockState, mockRemoveItem)).toEqual({
+    expect(cartReducer(mockState, mockRemoveItemAction)).toEqual({
       ...mockState,
       cartItems: [{ ...mockCartItem2, quantity: 1 }]
     });
   });
 
   it('should handle CLEAR_ITEM action', () => {
-    expect(cartReducer(mockState, mockClearItem)).toEqual({
+    expect(cartReducer(mockState, mockClearItemAction)).toEqual({
       ...mockState,
       cartItems: []
     });
   });
 
   it('should handle CLEAR_CART action', () => {
-    expect(cartReducer(mockState, mockClearCart)).toEqual({
+    expect(cartReducer(mockState, mockClearCartAction)).toEqual({
       ...mockState,
       cartItems: []
     });
