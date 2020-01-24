@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-const selectAlert = state => state.alert;
+export const selectAlert = state => state.alert;
 
 export const selectAlertItem = createSelector(
   [selectAlert],
