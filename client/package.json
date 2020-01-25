@@ -33,13 +33,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "reactSnap": {
-    "cacheAjaxRequests": true,
-    "inlineCss": true,
-    "http2PushManifest": true,
-    "include": ["/shell.html"],
-    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
-  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -58,7 +51,6 @@
   "devDependencies": {
     "@types/jest": "^24.9.0",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "react-snap": "^1.23.0"
+    "enzyme-adapter-react-16": "^1.15.2"
   }
 }
