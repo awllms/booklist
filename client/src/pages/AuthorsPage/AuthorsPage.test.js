@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { AuthorsPage } from './AuthorsPage';
-import CategoryItems from '../../components/CategoryItems/CategoryItems';
 
 describe('AuthorsPage Component', () => {
   let wrapper;

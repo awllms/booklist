@@ -32,7 +32,7 @@ const AccountPage = lazy(() => import('./pages/AccountPage/AccountPage'));
 const ThankYouPage = lazy(() => import('./pages/ThankYouPage/ThankYouPage'));
 const EditProfilePage = lazy(() => import('./pages/EditProfilePage/EditProfilePage'));
 
-const App = ({ 
+export const App = ({ 
   fetchProductsStart, 
   fetchCategoriesStart, 
   currentUser, 
@@ -111,7 +111,7 @@ const mapStateToProps = createStructuredSelector({
   navHidden: selectNavHidden
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   fetchProductsStart: () => dispatch(fetchProductsStart()),
   fetchCategoriesStart: () => dispatch(fetchCategoriesStart()),
   checkUserSession: () => dispatch(checkUserSession()),
