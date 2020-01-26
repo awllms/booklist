@@ -49,3 +49,59 @@
     }
   }
 }
+
+@media only screen and (max-width: 1500px) {
+  .directory-items-container {
+    .directory-items {
+      .slick-prev, .slick-next {
+        top: 125px;
+      }
+    }
+  } 
+}
+
+@media only screen and (max-width: 1100px) {
+  .directory-items-container {
+    .directory-items {
+      .slick-prev, .slick-next {
+        top: 95px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .directory-items-container {
+    h3 {
+      justify-content: center;
+    }
+    .directory-items-title {
+      justify-content: center;
+    }
+    .directory-items {
+      .slick-prev, .slick-next{
+        top: 155px;
+      }
+    }
+  } 
+}
+
+@media only screen and (max-width: 500px) {
+  .directory-items-container {
+    .directory-items {
+      .slick-prev, .slick-next {
+        top: 130px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .directory-items-container {
+    .directory-items {
+      .slick-prev, .slick-next {
+        top: 83px;
+      }
+    }
+  } 
+}

@@ -14,3 +14,15 @@
     font-size: 0.90rem;
   }
 }
+
+@media only screen and (max-width: 720px) {
+  .sign-up {
+    width: 100%;
+  }
+
+  .sign-up {
+    .custom-button {
+      width: 100%;
+    }
+  }
+}

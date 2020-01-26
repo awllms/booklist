@@ -27,3 +27,16 @@
     color: white;
   }
 }
+
+@media only screen and (max-width: 500px) {
+  .cart-icon {
+    /* display: none; */
+    margin-right: 2px;
+  }
+}
+
+@media only screen and (max-width: 260px) {
+  .cart-icon {
+    display: none;
+  }
+}
