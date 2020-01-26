@@ -8,6 +8,8 @@ import { setAlert, removeAlert } from './alert.actions';
 
 import * as alertSaga from './alert.sagas';
 
+import { signInEmailErrorMessage } from '../../utils/utils';
+
 describe('on set alert alert saga', () => {
   it('should trigger on SET_ALERT', () => {
     const generator = alertSaga.onSetAlert();
@@ -229,7 +231,7 @@ describe('show alert on sign in failure', () => {
     expect(generator.next().value).toEqual(
       put(setAlert({
         status: 'failure', 
-        message: 'The email or password is invalid.'
+        message: `The email or password is invalid. ${signInEmailErrorMessage}`
       }))
     );
   });

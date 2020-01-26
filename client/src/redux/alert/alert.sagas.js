@@ -6,6 +6,8 @@ import OrdersActionTypes from '../orders/orders.types';
 
 import { setAlert, removeAlert } from './alert.actions';
 
+import { signInEmailErrorMessage } from '../../utils/utils';
+
 export function* onSetAlert() {
   yield takeLatest(
     AlertActionTypes.SET_ALERT,
@@ -137,7 +139,7 @@ export function* showAlertOnSignUpSuccess() {
 export function* showAlertOnSignInFailure() {
   yield put(setAlert({
     status: 'failure', 
-    message: 'The email or password is invalid.'
+    message: `The email or password is invalid. ${signInEmailErrorMessage}`
   }));
 }
 

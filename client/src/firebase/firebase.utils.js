@@ -77,6 +77,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!snapShot.exists) {
     const {displayName, email } = userAuth;
     const createdAt = new Date();
+    console.log(userRef)
 
     try {
       await userRef.set({
@@ -117,8 +118,8 @@ export const updateUserProfileDocument = async (userAuth, updateData) => {
           console.log('Error updating user', error.message);
           return  {error: error.message};
         }
-      
       }
+      if (updateData.password) delete updateData.password;
       await userRef.update({
         ...updateData
       });

@@ -1,8 +1,7 @@
 import { takeLatest, put, all, call } from 'redux-saga/effects';
 import * as userSaga from './user.sagas';
 import UserActionTypes from './user.types';
-import { auth, 
-         googleProvider, 
+import { auth,
          createUserProfileDocument,
          updateUserProfileDocument,
          updateUserPassword,
@@ -21,7 +20,7 @@ import { signInSuccess,
          updatePasswordSuccess,
          updatePasswordFailure } from '../user/user.actions';
 
-import { errorMessage, sampleUserId } from '../../utils/utils';
+import { errorMessage, sampleUserId, detectMobile } from '../../utils/utils';
 
 describe('on google sign in start saga', () => {
   it('should trigger on GOOGLE_SIGN_IN_START', () => {
@@ -183,16 +182,24 @@ describe('signInWithGoogle', () => {
 
   const mockError = 'There was an error.';
   const generator = userSaga.signInWithGoogle();
-  const mockSnapShot = {
-    id: '1w123e343rrsa',
-    data: () => {
-      return {displayName: 'Sample User'};
-    }
-  };
+
+  it('should call detectMobile', () => {
+    expect(generator.next().value).toEqual(
+      call(detectMobile)
+    );
+  });
+
+  it('should call signInWithRedirect if mobile browser detected', () => {
+    const newGenerator = userSaga.signInWithGoogle();
+    const signInWithRedirect = jest.spyOn(auth, 'signInWithRedirect');
+    newGenerator.next();
+    newGenerator.next(true);
+    expect(signInWithRedirect).toHaveBeenCalled();
+  });
   
-  it('should call signInWithPopup', () => {
+  it('should call signInWithPopup if mobile browser is not', () => {
     const signInWithPopup = jest.spyOn(auth, 'signInWithPopup');
-    generator.next();
+    generator.next(false);
     expect(signInWithPopup).toHaveBeenCalled();
   });
 

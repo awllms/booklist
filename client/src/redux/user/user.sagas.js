@@ -21,7 +21,7 @@ import { signInSuccess,
          updatePasswordSuccess,
          updatePasswordFailure } from '../user/user.actions';
 
-import { errorMessage, sampleUserId } from '../../utils/utils';
+import { errorMessage, sampleUserId, detectMobile } from '../../utils/utils';
 
 export function* onGoogleSignInStart() {
   yield takeLatest(
@@ -98,8 +98,13 @@ export function* getSnapshotFromUserAuth(userAuth, additionalData) {
 
 export function* signInWithGoogle() {
   try {
-    const { user } = yield auth.signInWithPopup(googleProvider);
-    yield call(getSnapshotFromUserAuth, user);
+    const detect = yield call(detectMobile);
+    if (detect) {
+      yield auth.signInWithRedirect(googleProvider);
+    } else {
+      const { user } = yield auth.signInWithPopup(googleProvider);
+      yield call(getSnapshotFromUserAuth, user);
+    }
   } catch (error) {
     yield put(signInFailure(error));
   }
