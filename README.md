@@ -12,4 +12,4 @@ npm run dev
 ```
 
 ### Requirements
-You need to install Node.js.
+You'll need to install NPM & Node.js.
