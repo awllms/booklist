@@ -9,10 +9,12 @@ import { mapDispatchToProps } from './CheckoutPage';
 describe('CheckoutPage Component', () => {
   let wrapper;
   let wrapper2;
+  let wrapper3;
   let mockCartItems;
   let mockTotal;
   let mockCurrentUser;
   let mockSetAlert;
+  let mockHistory;
 
   const mockAlert = {
     status: 'failure',
@@ -31,23 +33,38 @@ describe('CheckoutPage Component', () => {
     mockCurrentUser = { id: 1, name: 'Sample User'};
     mockSetAlert = jest.fn();
     
+    mockHistory = {
+      push: jest.fn()
+    };
+    
 
     const mockProps = {
       cartItems: mockCartItems, 
       total: mockTotal, 
       currentUser: mockCurrentUser, 
-      setAlert: mockSetAlert
+      setAlert: mockSetAlert,
+      history: mockHistory
     };
 
     const mockProps2 = {
       cartItems: [], 
       total: mockTotal, 
       currentUser: mockCurrentUser, 
-      setAlert: mockSetAlert
+      setAlert: mockSetAlert,
+      history: mockHistory
+    };
+
+    const mockProps3 = {
+      cartItems: mockCartItems, 
+      total: mockTotal, 
+      currentUser: null, 
+      setAlert: mockSetAlert,
+      history: mockHistory
     };
 
     wrapper = shallow(<CheckoutPage { ...mockProps } />);
     wrapper2 = shallow(<CheckoutPage { ...mockProps2 } />);
+    wrapper3 = shallow(<CheckoutPage { ...mockProps3 } />);
   });
 
   it('should render CheckoutPage Component', () => {
@@ -86,9 +103,23 @@ describe('CheckoutPage Component', () => {
     expect(wrapper2.exists(CustomButton)).toBe(true);
   });
 
-  it('should call setAlert when Custom Button component is clicked', () => {
+  it('should call setAlert when Custom Button component is clicked if there are no cartItems', () => {
     wrapper2.find(CustomButton).simulate('click');
     expect(mockSetAlert).toHaveBeenCalled();
+  });
+
+  it('should not render StripeCheckoutButton if there is not a currentUser', () => {
+    expect(wrapper3.exists(StripeCheckoutButton)).toBe(false);
+  });
+
+  it('should call setAlert when clicked if there is not a currentUser', () => {
+    wrapper3.find(CustomButton).simulate('click');
+    expect(mockSetAlert).toHaveBeenCalled();
+  });
+
+  it('should call history.push when clicked if there is not a currentUser', () => {
+    wrapper3.find(CustomButton).simulate('click');
+    expect(mockHistory.push).toHaveBeenCalled();
   });
 
   it('should dispatch setAlert action when clicked', () => {

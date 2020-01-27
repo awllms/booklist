@@ -83,10 +83,6 @@ describe('StripeCheckoutButton Component', () => {
     expect(wrapper.exists(StripeCheckout)).toBe(true);
   });
 
-  it('should not render StripeCheckout if user is not signed in', () => {
-    expect(wrapper2.exists(StripeCheckout)).toBe(false);
-  });
-
   it('should dispatch setOrderStart action when clicked', () => {
     const dispatch = jest.fn();
     mapDispatchToProps(dispatch).setOrderStart(mockSetOrderStartAction);

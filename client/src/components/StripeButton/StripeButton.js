@@ -2,7 +2,7 @@ import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import { setOrderStart, setOrderIsLoading } from '../../redux/orders/orders.actions';
 import { setAlert } from '../../redux/alert/alert.actions';
@@ -38,7 +38,6 @@ export const StripeCheckoutButton = ({ price, cartItems, setOrderStart, currentU
 
   return (
     <React.Fragment>
-    { !currentUser ? (<Redirect to='/signin' />) : 
       <StripeCheckout 
         name='Booklist'
         description={`Your total is $${price}`}
@@ -54,7 +53,6 @@ export const StripeCheckoutButton = ({ price, cartItems, setOrderStart, currentU
       >
       <CustomButton>Pay Now</CustomButton>
       </StripeCheckout>
-    }
     </React.Fragment>
     
   )
