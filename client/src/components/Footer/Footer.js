@@ -19,7 +19,7 @@ export const Footer = () => {
           </div>
         </div>
         <div className='footer-bottom'>
-          <span className='footer-bottom-text'>&copy; Copyright 1997-2019 BookList, Inc</span>
+          <span className='footer-bottom-text'>&copy; Copyright 2020 BookList, Inc</span>
         </div>
       </div>
     </footer>
