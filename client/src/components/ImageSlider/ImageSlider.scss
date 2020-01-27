@@ -88,7 +88,7 @@
   .slider {
     .image-placeholder {
       .custom-button {
-        font-size: 0.84rem;
+        font-size: 0.74rem;
       }
     }
   }
@@ -105,17 +105,17 @@
   }
 }
 
-@media only screen and (max-width: 380px) {
+@media only screen and (max-width: 400px) {
   .slider {
     .image-placeholder {
       .custom-button {
-        font-size: .54rem;
+        font-size: .24rem;
       }
     }
   }
 }
 
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 330px) {
   .slider {
     .image-placeholder {
       .custom-button {
