@@ -105,7 +105,17 @@
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 380px) {
+  .slider {
+    .image-placeholder {
+      .custom-button {
+        font-size: .54rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 300px) {
   .slider {
     .image-placeholder {
       .custom-button {
