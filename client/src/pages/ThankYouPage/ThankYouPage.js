@@ -9,27 +9,31 @@ import './ThankYouPage.scss';
 export const ThankYouPage = ({ location, history }) => {
   return (
     <React.Fragment>
-      <BreadCrumbNav title='BookList Thanks You'/>
-      {
-        location.state ?
-          location.state.token ?
-            <section className='thank-you-page'>
-              <div className='thank-you'>
-                <div className='image-container'>
-                  <img src='https://i.ibb.co/YQh8Tfy/thank-you-success.png' alt='success' />
-                </div>
-                <h2>Thank you for your purchase!</h2>
-                <CustomButton onClick={() => history.push('/account')}>
-                  View Order
-                </CustomButton>
+      <BreadCrumbNav title="BookList Thanks You" />
+      {location.state ? (
+        location.state.token ? (
+          <section className="thank-you-page">
+            <div className="thank-you">
+              <div className="image-container">
+                <img
+                  src="https://booklist1187.s3-us-west-1.amazonaws.com/thank-you-success.png"
+                  alt="success"
+                />
               </div>
-            </section>
-          : <Redirect to='/' />
-        : <Redirect to='/' />
-      }
-
+              <h2>Thank you for your purchase!</h2>
+              <CustomButton onClick={() => history.push('/account')}>
+                View Order
+              </CustomButton>
+            </div>
+          </section>
+        ) : (
+          <Redirect to="/" />
+        )
+      ) : (
+        <Redirect to="/" />
+      )}
     </React.Fragment>
-  )
+  );
 };
 
 export default withRouter(ThankYouPage);
