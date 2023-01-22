@@ -67,7 +67,7 @@ export const CheckoutPage = ({
             <span>
               *Please ONLY use the following test credit card for payments*
             </span>
-            <span>4242 4242 4242 4242 - Exp: 01/22 - CVV: 123</span>
+            <span>4242 4242 4242 4242 - Exp: 01/34 - CVV: 123</span>
           </div>
           <div className="checkout-button">
             {cartItems.length ? (

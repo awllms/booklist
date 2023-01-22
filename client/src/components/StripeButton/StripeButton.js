@@ -28,7 +28,8 @@ export const StripeCheckoutButton = ({ price, cartItems, setOrderStart, currentU
       clearCart();
       history.push(`/thank-you`, {token})
     }).catch(error => {
-      console.log('Payment Error: ', JSON.parse(error));
+      // console.log('Payment Error: ', JSON.parse(error));
+      console.log('Payment Error: ', error);
       setAlert({ 
         status: 'failure',
         message: 'There was an issue with your payment. Please use the provided credit card.'
